@@ -111,8 +111,7 @@ class OrderForm extends Form {
         const input = new Select('shipment');
         input.setLabel('Пункт отгрузки');
 
-        input.addOption('Дмитрия Ульянова 7Б', 'Дмитрия Ульянова 7Б', true);
-        input.addOption('Иркутская 17 ст5', 'Иркутская 17 ст5');
+        input.addOption('Березовая роща д.1', 'Березовая роща д.1', true);
 
         this.addInput(input);
         return input;
