@@ -7,8 +7,9 @@
     "build": "parcel build index.html",
     "deploy": "rm -rf dist/ && npm run build && gh-pages -d dist"
   },
+  "homepage": "https://skimsk.github.io/calculator",
   "devDependencies": {
-    "gh-pages": "^6.1.1",
+    "gh-pages": "6.1.1",
     "parcel-bundler": "^1.12.5"
   }
 }
