@@ -1,0 +1,16 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev":"parcel index.html",
+    "build":"parcel build index.html",
+    "deploy":"rm -rf dist/ && npm build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
