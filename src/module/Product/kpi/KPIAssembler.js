@@ -55,7 +55,7 @@ export default class KPIAssembler {
         return kpi;
     }
 
-    PlisseItalia() {
+    PlisseItaly() {
         let kpi = 0, priceM2 = 0;
         const installValue = this.formData.get('install')?.value;
         const openingKPI = this.getInputKPI('opening');

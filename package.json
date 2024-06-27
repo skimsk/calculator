@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "dev": "node index.js & parcel index.html",
     "build": "parcel build index.html",
     "deploy": "npm run build && gh-pages -d dist"
   },
@@ -11,5 +11,17 @@
   "devDependencies": {
     "gh-pages": "6.1.1",
     "parcel-bundler": "^1.12.5"
-  }
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "google-spreadsheet": "^4.1.2",
+    "googleapis": "^140.0.1",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "tslib": "^2.6.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

@@ -1,5 +1,5 @@
 import Table from "../../components/Table.js";
-// import Button from "../../components/buttons/Button.js";
+import Button from "../../components/buttons/Button.js";
 import ButtonDelete from "../../components/buttons/ButtonDelete.js";
 import InputQuantity from "../../components/form/InputQuantity.js";
 import Order from "./Order.js";

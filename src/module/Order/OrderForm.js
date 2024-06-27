@@ -7,6 +7,9 @@ import InputQuantity from "../../components/form/InputQuantity.js";
 import InputPhone from "../../components/form/InputPhone.js";
 import Radio from "../../components/form/Radio.js";
 import Textarea from "../../components/form/Textarea.js";
+import InputNumber from "../../components/form/InputNumber.js";
+import InputValue from "../../components/form/InputCount.js";
+import InputCount from "../../components/form/InputCount.js";
 
 
 class OrderForm extends Form {
@@ -19,12 +22,13 @@ class OrderForm extends Form {
         // Добавляем поля в форму согласно ролям пользователей: монтажник или диллер
         switch (User.getRole()) {
             case 'employee':
-                this.addField(this.inputShipment());
-                this.addField(this.inputDeliveryAddress());
+                /*this.addField(this.inputShipment());*/
+                /*this.addField(this.inputDeliveryAddress());*/
                 this.addField(this.inputDeliveryDistance());
-                this.addField(this.inputCustomerName());
-                this.addField(this.inputCustomerPhone());
-                this.addField(this.inputCustomerPickup());
+                this.addField(this.inputDeliveryCustom());
+                /*this.addField(this.inputCustomerName());*/
+                /*this.addField(this.inputCustomerPhone());*/
+                /*this.addField(this.inputCustomerPickup());*/
                 this.addField(this.inputDiscount());
                 this.addField(this.inputComment());
                 this.addField(this.inputDealID());
@@ -91,6 +95,19 @@ class OrderForm extends Form {
         return input;
     }
 
+    inputDeliveryCustom() {
+        const input = new InputCount('delivery_custom', 0);
+        input.setLabel('Доставка cпец.транспорт');
+        input.setDefault('0');
+
+        input.on('change', function() {
+            Order.setDeliveryCustom(this.getValue());  
+        })
+
+        this.addInput(input);
+        return input;
+    }
+
     // Самовывоз
     inputCustomerPickup() {
         const input = new Select('customer_pickup');
@@ -105,7 +122,7 @@ class OrderForm extends Form {
         this.addInput(input);
         return input;
     }
-
+    
     // Пункт отгрузки
     inputShipment() {
         const input = new Select('shipment');
@@ -126,6 +143,7 @@ class OrderForm extends Form {
         return input;
     }
 
+    
     // Имя:
     inputCustomerName() {
         const input = new InputText('customer_name')

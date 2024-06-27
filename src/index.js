@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function createCalculator(container = 'app') {
     const $app = document.getElementById(container);
     $app.innerHTML = `
+
         <div class="container">
+                <div class="content">
+                 <div class="logo"></div>
+                 <div class="logo-text">Расчет стоимость заказа</div>
+        </div>
             <ul class="nav nav-tabs mb-3">
                 <li class="nav-item">
                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ModuleProduct" type="button">Москитные сетки</button>

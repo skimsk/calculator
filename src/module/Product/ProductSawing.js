@@ -26,8 +26,4 @@ export default class ProductSawing {
         const sawingItem = this.sawingData.find((item) => item.key === key);
         return sawingItem ? sawingItem.value : 0;
     }
-
- 
-    
-
 }

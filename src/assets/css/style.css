@@ -17,11 +17,19 @@ body {background-color: #eaeaea;}
 .disabled {pointer-events: none !important;}
 
 
+
+
 .icon {display: inline-block;width: 25px;height: 25px;}
 
+.logo {width: 230px; height: 100px; background: center center / cover no-repeat url("../images/logo.png");}
+.logo-text{width:640px;text-align: left;margin-left: 10px;}
+.app .content  {max-width: 870px;}
+.content {display: flex;align-items: center;justify-content: space-between;}
+
+
 /* Application */
-.app .container {max-width: 850px;}
-.app > .container {padding-top: 30px;}
+.app .container {max-width: 870px;}
+.app > .container {padding-top: 0px;}
 
 /* Table */
 @media (max-width: 575px) {
@@ -51,7 +59,7 @@ body {background-color: #eaeaea;}
 /* Field Group */
 .form .field-group {margin-bottom: 10px;}
 .form .field-group-label {font-weight: bold; display: inline-block;padding: 5px 5px;border-radius: 15px}
-.form .field-group-fields {padding: 10px 15px;border: 1px solid #cfcfcf;display: flex;justify-content: space-between;flex-wrap: wrap}
+.form .field-group-fields {padding: 10px 15px;border: 1px solid #f7f3f3;display: flex;border-radius: 5px;justify-content: space-between;flex-wrap: wrap}
 .form .field-group-fields .form-group {width: 49%;}
 
 /* Form Group */
@@ -91,7 +99,7 @@ body {background-color: #eaeaea;}
 .input-radio span:before {width: 40px;height: 14px;border-radius: 8px;top: 5px;background-color: #f7f7f7;}
 .input-radio span:after {top:1px;border-radius: 50%;z-index: 2;background-color: #f3eedd;width: 22px;height: 22px;transition: .4s;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.21)}
 .input-radio input:checked ~ span {color: #00a550;}
-.input-radio input:checked ~ span:before {background-color: #c2f1d9fd;}
+.input-radio input:checked ~ span:before {background-color: #e7dab4;}
 .input-radio input:checked ~ span:after {left: 19px;background-color: #00a550;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3)}
 .input-radio input:disabled ~ span {opacity: .3;pointer-events: none;}
 
@@ -122,7 +130,7 @@ body {background-color: #eaeaea;}
 /**
  * Module Product
  */
-.module-product-select {padding: 20px 0 30px 0;margin-bottom: 20px;background-color: #e9ecef;}
+.module-product-select {padding: 20px 0 30px 0;margin-bottom: 20px;/*background-color: #e9ecef;*/}
 
 .module-product-form {margin-bottom: 30px;}
 .form-product .field-group-fixation .field-group-fields {padding-bottom: 0;}
@@ -202,7 +210,7 @@ body {background-color: #eaeaea;}
 /**
  * Module Extras
  */
-.module-extras-search {padding: 20px 0 30px 0;margin-bottom: 10px;background-color: #e9ecef;}
+.module-extras-search {padding: 20px 0 30px 0;margin-bottom: 10px;/*background-color: #e9ecef;*/}
 
 .module-extras-search .form-search {position: relative;}
 .module-extras-search .form-search .form-group {position: relative;z-index: 1;}

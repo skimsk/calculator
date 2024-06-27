@@ -3,33 +3,50 @@ export default {
         {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
     ],
+    fiberglassitatly: [
+        {value: 'gray', label: 'Серый'},
+        {value: 'black', label: 'Чёрный'},
+    ],
     petscreen: [
         {value: 'gray', label: 'Серый'},
-        {value: 'graylight', label: 'Светло-серый'},
-        {value: 'black', label: 'Чёрный'},
         {value: 'blackwhite', label: 'Черно-Белый'},
-        {value: 'blacksun', label: 'Белый «Светоотражающий»'},
+        {value: 'blacksun', label: 'Белый'},
+        {value: 'black', label: 'Чёрный'},
+        {value: 'whiteglitter', label: 'Белый блеск'},
         {value: 'bronze', label: 'Бронзовый'},
+        {value: 'graylight', label: 'Светло-серый'},
+        {value: 'brown', label: 'Коричневый'},
+
     ],
     micromesh: [
-        {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
     ],
     maxivision: [
-        {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
+    ],
+    metalmesh: [
+        {value: 'gray', label: 'Cерый'},
     ],
     polltex: [
         {value: 'gray', label: 'Чёрный'},
-        {value: 'black', label: 'Белый'},
     ],
     sunlight: [
-        {value: 'lightmetal', label: 'Светлый металик'},
+        {value: 'lightmetal', label: 'Серый'},
     ],
     antibird: [
         {value: 'alum', label: 'Алюминиевый'},
     ],
-    diamondsteel: [
+    diamonds: [
+        {value: 'black', label: 'Чёрный'},
+    ],
+    respilon: [
+        {value: 'gray', label: 'Cерый'},
+    ],
+    antipyl: [
+        {value: 'gray', label: 'Cерый'},
+    ],
+    antipo: [
+        {value: 'lightmetal', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
     ],
 }

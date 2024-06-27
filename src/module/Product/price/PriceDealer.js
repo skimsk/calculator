@@ -35,7 +35,7 @@ export default class PriceDealer extends Price {
         return total;
     }
 
-    PlisseItalia() {
+    PlisseItaly() {
         let total = 0, priceM2 = 0;
         priceM2 += this.getInputPrice('opening').price;
         priceM2 += this.getInputPrice('install').price;

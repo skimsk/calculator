@@ -36,14 +36,14 @@ export default class KPIInstaller {
         return kpi; 
     }
 
-    RamochnayaStandart() {
+    Ramochnaya25() {
         let kpi = 0;
         kpi += this.Default();
         if (kpi === 0) kpi += Math.round(this.productPrice * 15 / 100);
         return kpi;
     }
     
-    VstavnayaSKF() {
+    VstavnayaVSN() {
         let kpi = 0;
         const kpiData = this.kpiData.find(item => item.key === 'easy');
         if (kpiData) kpi += Math.round(this.productPrice * kpiData.percent / 100);

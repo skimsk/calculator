@@ -1,5 +1,10 @@
 export default {
-    RamochnayaStandart: [
+    Ramochnaya25: [
+        { key: 'width', value: 60 },
+        { key: 'height', value: 60 },
+        { key: 'impost', value: 48 },
+    ],
+    VstavnayaVSN: [
         { key: 'width', value: 60 },
         { key: 'height', value: 60 },
         { key: 'impost', value: 48 },

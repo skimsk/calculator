@@ -1,7 +1,7 @@
 export default {
     // Монтажник
     installer: {
-        RamochnayaStandart: [
+        Ramochnaya25: [
             { key: 'easy', fix: 200, percent: 10 },
             { key: 'hard', fix: 250, percent: 10 },
             { key: 'off', fix: 0, percent: 10 },
@@ -20,6 +20,10 @@ export default {
             { key: 'easy', fix: 0, percent: 12 },
             { key: 'hard', fix: 0, percent: 12 },
             { key: 'off', fix: 0, percent: 12 },
+        ],
+        VstavnayaVSN: [
+            { key: 'easy', fix: 0, percent: 14 },
+            { key: 'hard', fix: 0, percent: 14 },
         ],
         VstavnayaSKF: [
             { key: 'easy', fix: 0, percent: 14 },
@@ -98,7 +102,7 @@ export default {
 
     // Сборщик
     assembler: {
-        RamochnayaStandart: {
+        Ramochnaya25: {
             canvas: [
                 { key: 'fiberglass', price: 60 },
                 { key: 'petscreen', price: 150 },
@@ -119,6 +123,18 @@ export default {
                 { key: 'vnutrennie-zacepi', price: 100 },
                 { key: 'plungery', price: 130 },
             ]
+        },
+        VstavnayaVSN: {
+            canvas: [
+                { key: 'fiberglass', price: 90 },
+                { key: 'petscreen', price: 200 },
+                { key: 'micromesh', price: 90 },
+                { key: 'maxivision', price: 90 },
+                { key: 'polltex', price: 190 },
+                { key: 'sunlight', price: 90 },
+                { key: 'antibird', price: 190 },
+                { key: 'diamondsteel', price: 230 },
+            ],
         },
         Ramochnaya32: {
             canvas: [

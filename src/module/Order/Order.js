@@ -95,6 +95,11 @@ class Order {
         return this.update(); 
     }
 
+    setDeliveryCustom(distancecustom) {
+        this.deliveryCustom= distancecustom;
+        return this.update(); 
+    }
+
     setPickup(pickup) {
         this.pickup = pickup;
         return this.update();
@@ -123,7 +128,7 @@ class Order {
     // Рассчет доставки 
     // min - минимальная цена доставки
     // mkad - цена доставки за 1 км за МКАД
-    calcDelivery(min = 500, mkad = 40) {
+    calcDelivery(min = 800, mkad = 80) {
         let delivery = 0;
         if (!this.pickup) delivery += min + (mkad * this.deliveryDistance);    
         
@@ -144,8 +149,20 @@ class Order {
     }
 
     // Рассчет суммарной цены на все товары с учетом скидки и доставки
-    // Минимальная сумма заказа 4000 р
-    calcTotalPrice(min = 4000) {
+    // Минимальная сумма заказа  5000 р
+    calcDelivery(min = 800, mkad = 80) {
+        let delivery = 0;
+        if (!this.pickup) delivery += min + (mkad * this.deliveryDistance);    
+        return delivery;
+    }
+
+    calcSpecialDelivecry() {
+        let delivery_custom = 0;
+        delivery_custom += this.deliveryCustom;    
+        return delivery_custom;
+    }
+    
+    calcTotalPrice(min = 5000) {
         // Рассчет по умолчанию
         let total = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
         // Рассчет с покраской по RAL
@@ -153,12 +170,19 @@ class Order {
         // + Рассчет со скидкой только на товары и комплектующие
         total = this.calcDiscount(total);
         // + Рассчет с доставкой (если нет самовывоза)
-        total += this.calcDelivery(500);
-
-        return (total <= min && !this.pickup) ? min : total;
+        total += this.calcDelivery();
+        // + Рассчет с спец.транспортом
+        const specialDeliveryCost = this.calcSpecialDelivecry();
+        total += specialDeliveryCost;
+    
+        if (total < min && !this.pickup) {
+            total = min;
+            total += specialDeliveryCost;
+        }
+    
+        return total;
     }
-
-
+    
     // Рассчет суммарного KPI монтажника + КПИ доставки
     // min - минимальная оплата монтажнику, р.
     calcTotalKPIInstaller(min = 1000) {
@@ -221,6 +245,7 @@ class Order {
     // Сброс атрибутов к значениям по умолчанию
     setDefaults() {
         this.deliveryDistance = 0;                  // Расстояние доставки (км)
+        this.deliveryCustom = 0;                  // Доставка и спец.транспорт
         this.discount = 0;                          // Скидка (%)
         this.pickup = this.#userRole === 'dealer';  // Самовывоз (true/false) У диллеров самовывоз по умолчанию "Да" 
         this.montage = false;                       // Монтаж (true/false)

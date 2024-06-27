@@ -13,17 +13,17 @@ import DTOProduct from '../../dto/DTOProduct.js';
 import Order from '../Order/Order.js';
 
 // Товары с индивидуальным поведением
-import RamochnayaStandart from "./products/RamochnayaStandart.js";
+import Ramochnaya25 from "./products/Ramochnaya25.js";
+import RamochnayaOptima from "./products/RamochnayaOptima.js";
 import RulonnayaItalia from "./products/RulonnayaItalia.js";
-import PlisseRussia from './products/PlisseRussia.js';
-import PlisseItalia from './products/PlisseItalia.js';
+import PlisseItaly from './products/PlisseItaly.js';
 
 
 const ProductKeys = {
-    'RamochnayaStandart': RamochnayaStandart,
+    'Ramochnaya25': Ramochnaya25,
+    'RamochnayaOptima': RamochnayaOptima,
     'RulonnayaItalia': RulonnayaItalia,
-    'PlisseRussia' : PlisseRussia,
-    'PlisseItalia' : PlisseItalia,
+    'PlisseItaly' : PlisseItaly,
 }
 
 const userRole = User.getRole();

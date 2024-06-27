@@ -41,11 +41,17 @@ export default class ProductForm extends Form {
             console.log('Ошибка конфигурации полей конструкции', error)
         }
 
+
+        this.addField(this.createInputSpesmontaz());
+        
+        this.addField(this.createInputKomnata());
+
         // Добавляем в форму поле "комментарий"
-        this.addField(this.createInputComment());
+        this.addField(this.createInputComment())
 
         // Добавляем в форму поле "монтаж"
         // this.addField(this.createInputMontage());
+
 
         // Добавляем в форму модальное окно с "RAL" цветами
         this.addField(this.createModalRAL());
@@ -97,18 +103,41 @@ export default class ProductForm extends Form {
     }  
 
     // Установка (Показываем только монтажникам) (type Select)
+    createInputSpesmontaz() {
+        const input = new Textarea('mogtagespes');
+        input.setLabel('Введите стоимость монтажных работ');
+        input.setPlaceholder('');
+    
+        // Скрыть поле по умолчанию
+        input.setVisible(false);
+    
+        this.addInput(input);
+        return input;
+    }
+    
     montage(field) {
         if (User.getRole() === 'employee') {
             field.addOption('easy', 'Монтаж', true);
             field.addOption('hard', 'Сложный монтаж');
+            field.addOption('specific', 'Специфический монтаж');
             field.addOption('off', 'Без монтажа');
+    
+            const inputSpesmontaz = this.getInput('mogtagespes'); // Поле ввода стоимости монтажа
+    
+            field.on('change', function() {
+                if (this.getValue() === 'specific') {
+                    inputSpesmontaz.setVisible(true); // Показываем поле ввода стоимости монтажа
+                } else {
+                    inputSpesmontaz.setVisible(false); // Скрываем поле ввода стоимости монтажа
+                }
+            });
         } else {
             field.setVisible(false);
             field.setDisabled(true);
         }
-    }
-
+    }    
     
+
 
     /** 
      * Нестандартные поля  
@@ -171,11 +200,21 @@ export default class ProductForm extends Form {
         return field;    
     }
 
-    // Комментарий
+    // Комментарий к изделию
     createInputComment() {
         const input = new Textarea('comment');
-        input.setLabel('Комментарий');
+        input.setLabel('Комментарий к изделию');
         input.setPlaceholder('Текст комментария');
+
+        this.addInput(input);
+        return input;
+    }
+
+    // Тип комннаты
+    createInputKomnata() {
+        const input = new Textarea('typeroom');
+        input.setLabel('Тип комнаты');
+        input.setPlaceholder('Название компанты');
 
         this.addInput(input);
         return input;

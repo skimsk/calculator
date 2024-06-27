@@ -76,11 +76,12 @@ class OrderTotal {
     update(order) {
         let summary = `<ul class="order-total-debug">`;
         summary += `<li>Сумма: <span>${order.totalPrice}</span> ₽</li>`;
+        /*
         if (order.getUserRole() === 'employee') {
             summary += `<li>KPI.Монт: <span>${order.kpi.installer}</span> ₽ </li>`;
         }
         summary += `</ul>`;
-
+        */
         // console.log(order.kpi);
         
         this.$total.innerHTML = summary;
