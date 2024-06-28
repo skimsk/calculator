@@ -3,7 +3,7 @@ export default {
   employee: {
     Ramochnaya25: {
       canvas: [
-        { key: 'fiberglass', price: 1980, min: 800000 },
+        { key: 'fiberglass', price: 1980, min: 1980 },
         { key: 'petscreen', price: 3795, min: 3795 },
         { key: 'micromesh', price: 4098, min: 850 },
         { key: 'maxivision', price: 1100, min: 800 },
