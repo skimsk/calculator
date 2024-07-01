@@ -26,9 +26,13 @@ class OrderForm extends Form {
                 /*this.addField(this.inputDeliveryAddress());*/
                 this.addField(this.inputDeliveryDistance());
                 this.addField(this.inputDeliveryCustom());
+                this.addField(this.inputDeliveryCdek());
                 /*this.addField(this.inputCustomerName());*/
                 /*this.addField(this.inputCustomerPhone());*/
                 /*this.addField(this.inputCustomerPickup());*/
+                this.addField(this.inputBeznal());
+                this.addField(this.inputNdc());
+                this.addField(this.inputCdek());
                 this.addField(this.inputDiscount());
                 this.addField(this.inputComment());
                 this.addField(this.inputDealID());
@@ -95,13 +99,27 @@ class OrderForm extends Form {
         return input;
     }
 
+    //Доставка + спец.транспорт
     inputDeliveryCustom() {
         const input = new InputCount('delivery_custom', 0);
-        input.setLabel('Доставка cпец.транспорт');
+        input.setLabel('Доставка cпецтранспорт');
         input.setDefault('0');
 
         input.on('change', function() {
             Order.setDeliveryCustom(this.getValue());  
+        })
+
+        this.addInput(input);
+        return input;
+    }
+
+    inputDeliveryCdek() {
+        const input = new InputCount('delivery_cdek', 0);
+        input.setLabel('Тариф отправкой СДЭК');
+        input.setDefault('0');
+
+        input.on('change', function() {
+            Order.setDeliveryCdek(this.getValue());  
         })
 
         this.addInput(input);
@@ -185,6 +203,54 @@ class OrderForm extends Form {
 
         input.on('change', function() {
             Order.setDiscount(this.getValue());
+        })
+
+        this.addInput(input);
+        return input;
+    }
+
+    // Доставка до сдек
+    inputCdek() {
+        const input = new Radio('cdek');
+        input.setLabel('Доставка до СДЭК (+1700р)');
+        input.addItem('0', 'Нет', true);  // По умолчанию нет доставки
+        input.addItem('1700', 'Да');  // Стоимость доставки при выборе опции
+    
+        input.on('change', function() {
+            Order.setCdek(this.getValue());  // Передаем значение радиокнопки в setCdek
+        })
+    
+        this.addInput(input);
+        return input;
+    }
+    
+
+    // Безнал:
+    inputBeznal() {
+        const input = new Radio('beznal');
+        input.setLabel('Безнал (Без НДС)');
+        input.addItem('0', 'Нет', true);
+        input.addItem('10', 'Да');
+        input.setDefault('0');
+
+        input.on('change', function() {
+            Order.setBeznal(this.getValue());
+        })
+
+        this.addInput(input);
+        return input;
+    }
+
+    // с НДС:
+    inputNdc() {
+        const input = new Radio('ndc');
+        input.setLabel('Безнал c (НДС 20%)');
+        input.addItem('0', 'Нет', true);
+        input.addItem('20', 'Да');
+        input.setDefault('0');
+
+        input.on('change', function() {
+            Order.setNdc(this.getValue());
         })
 
         this.addInput(input);

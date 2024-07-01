@@ -22,9 +22,12 @@ body {background-color: #eaeaea;}
 .icon {display: inline-block;width: 25px;height: 25px;}
 
 .logo {width: 230px; height: 100px; background: center center / cover no-repeat url("../images/logo.png");}
-.logo-text{width:640px;text-align: left;margin-left: 10px;}
+.logo-text{width:640px;text-align: left;padding-top: 15px; margin-left: 10px;}
 .app .content  {max-width: 870px;}
 .content {display: flex;align-items: center;justify-content: space-between;}
+.hidden {
+   display: none;
+}
 
 
 /* Application */
@@ -61,6 +64,7 @@ body {background-color: #eaeaea;}
 .form .field-group-label {font-weight: bold; display: inline-block;padding: 5px 5px;border-radius: 15px}
 .form .field-group-fields {padding: 10px 15px;border: 1px solid #f7f3f3;display: flex;border-radius: 5px;justify-content: space-between;flex-wrap: wrap}
 .form .field-group-fields .form-group {width: 49%;}
+.form .field-group-fields .form-group-plusprice{display: none !important;}
 
 /* Form Group */
 .form .form-group {margin-bottom: 5px;border-color: #cfcfcf;}
@@ -110,9 +114,9 @@ body {background-color: #eaeaea;}
 .input-check span:after {position: absolute;display: block;content: "";left: 0;top: 0;}
 .input-check span:before {width: 40px;height: 14px;border-radius: 8px;top: 5px;background-color: #f7f7f7;}
 .input-check span:after {top:1px;border-radius: 50%;z-index: 2;background-color: #f3eedd;width: 22px;height: 22px;transition: .4s;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.21)}
-.input-check input:checked ~ span {color: #c97e38;}
+.input-check input:checked ~ span {color: #00a550;}
 .input-check input:checked ~ span:before {background-color: #fae7d0;}
-.input-check input:checked ~ span:after {left: 19px;background-color: #c97e38;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3)}
+.input-check input:checked ~ span:after {left: 19px;background-color: #00a550;box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3)}
 .input-check input:disabled ~ span {opacity: .3;pointer-events: none;}
 
 

@@ -17,9 +17,10 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -42,7 +43,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -111,7 +112,7 @@ export default [
                         },
                         {
                             key: 'komplekt',
-                            type: 'select',
+                            type: 'radio',
                             label: 'Комплект креплений',
                             items: [
                                 {value: 'one', label: '1', checked: true},
@@ -124,20 +125,20 @@ export default [
                             type: 'radio',
                             label: 'Углы',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические'},
                                 {value: 'plastikovie', label: 'Пластиковые', checked: true},
-                                {value: '45gradusov', label: '45 градусов'},
+                                {value: 'metallicheskie', label: 'Металлические'},
                             ]
                         },
                         {
                             key: 'peremychka',
-                            type: 'select',
+                            type: 'radio',
                             label: 'Количество перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
                         },
                         {
@@ -145,8 +146,8 @@ export default [
                             type: 'radio',
                             label: 'Ручки',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические'},
-                                {value: 'silikonovie', label: 'Силиконовые', checked: true},
+                                {value: 'silikonovie', label: 'Силиконовые'},
+                                {value: 'metallicheskie', label: 'Металлические', checked: true},
                                 {value: 'bezruchek', label: 'Без ручек'},
                             ]
                         },
@@ -164,7 +165,7 @@ export default [
     // Вставная VSN
     {
         key: 'VstavnayaVSN',
-        title: 'Вставная VSN',
+        title: 'Вставная «VSN» ',
         // selected: true,
         form: {
             name: 'VstavnayaVSN',
@@ -179,9 +180,10 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -204,7 +206,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -258,23 +260,25 @@ export default [
                     label: 'Опции',
                     inputs: [
                         {
-                            key: 'corners',
+                            key: 'komplekt',
                             type: 'radio',
-                            label: 'Углы',
+                            label: 'Комплект креплений',
                             items: [
-                                {value: 'plastikovie', label: 'Пластиковые', checked: true},
-                                {value: '45gradusov', label: '45 градусов'},
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'half', label: '1,5'},
+                                {value: 'two', label: '2'},
                             ]
-                        },    
+                        },
                         {
                             key: 'peremychka',
-                            type: 'select',
-                            label: 'Количество перемычек',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
                         },   
                     ]
@@ -306,9 +310,11 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
@@ -330,7 +336,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -385,7 +391,7 @@ export default [
                     inputs: [
                         {
                             key: 'komplekt',
-                            type: 'select',
+                            type: 'radio',
                             label: 'Комплект креплений',
                             items: [
                                 {value: 'one', label: '1', checked: true},
@@ -394,13 +400,14 @@ export default [
                         },
                         {
                             key: 'peremychka',
-                            type: 'select',
-                            label: 'Количество перемычек',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
                         },  
                     ]
@@ -417,7 +424,7 @@ export default [
     // Раздвижная «Проведал»
     {
         key: 'RazdvignayaProvedal',
-        title: 'Раздвижная «Проведал»',
+        title: 'Раздвижная «PROVEDAL»',
         // selected: true,
         form: {
             name: 'RazdvignayaProvedal',
@@ -432,10 +439,9 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
@@ -457,7 +463,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -507,10 +513,10 @@ export default [
                             key: 'rail',
                             type: 'number',
                             name: 'rail',
-                            label: 'Длинна рельсы (направляющие)',
+                            label: 'Длинна рельс (направляющих)',
                             value: '0',
                             min: '0',
-                            max: '20000',
+                            max: '6000',
                             step: '1',
                             unit: 'мм.',
                         },
@@ -522,23 +528,25 @@ export default [
                     label: 'Опции',
                     inputs: [
                         {
-                            key: 'handles',
+                            key: 'rails',
                             type: 'radio',
-                            label: 'Ручки',
+                            label: 'Кол-во рельс',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические'},
-                                {value: 'plastik', label: 'Пластиковые', checked: true},
+                                {value: 'two', label: '2', checked: true},
+                                {value: 'one', label: '1'},
+                                {value: 'norels', label: 'без рельс'},
                             ]
-                        },
+                        },  
                         {
                             key: 'peremychka',
-                            type: 'select',
-                            label: 'Количество перемычек',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
                         },  
                     ]
@@ -570,10 +578,11 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
@@ -595,7 +604,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -623,11 +632,13 @@ export default [
                             name: 'width',
                             label: 'Ширина',
                             value: '',
-                            min: '400',
+                            min: '200',
                             max: '2000',
                             step: '1',
                             unit: 'мм.',
                             required: true,
+
+
                         },
                         {
                             key: 'height',
@@ -635,7 +646,7 @@ export default [
                             name: 'height',
                             label: 'Высота',
                             value: '',
-                            min: '400',
+                            min: '200',
                             max: '3000',
                             step: '1',
                             unit: 'мм.',
@@ -655,37 +666,31 @@ export default [
                             items: [
                                 {value: 'metallicheskie', label: 'Без доводчика', checked: true},
                                 {value: 's-dovodchikom', label: 'С доводчиком'},
-                            ]
-                        },
-                        {
-                            key: 'handles',
-                            type: 'radio',
-                            label: 'Ручки',
-                            items: [
-                                {value: 'metallicheskie', label: 'Металлические'},
-                                {value: 'plastik', label: 'Пластиковые', checked: true},
+                                {value: 'usilenye', label: 'Усиленные'}
                             ]
                         },
                         {
                             key: 'peremychka',
-                            type: 'select',
-                            label: 'Количество перемычек',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'}
                             ]
                         },
                         {
                             key: 'latches',
-                            type: 'select',
-                            label: 'Количество шпингалетов',
+                            type: 'radio',
+                            label: 'Кол-во шпингалетов',
                             items: [
-                                {value: 'one', label: '1', checked: true},
-                                {value: 'two', label: '2'},
+                                {value: 'null', label: '0', checked: true},
+                                {value: 'one', label: '1'},
+                                {value: 'two', label: '2'}
                             ]
-                        },   
+                        },
                     ]
                 },
                 {
@@ -699,11 +704,11 @@ export default [
 
     // Плиссе (Италия)
     {
-        key: 'PlisseItaly',
-        title: 'Плиссе (Италия)',
+        key: 'PlisseItalia',
+        title: 'PLISSE22 (Италия)',
         // selected: true,
         form: {
-            name: 'PlisseItaly',
+            name: 'PlisseItalia',
             fields: [
                 {
                     key: 'frame',
@@ -715,8 +720,8 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -724,15 +729,20 @@ export default [
                             key: 'ral',
                             type: 'ral',
                             label: 'Код RAL',
-                        },
+                        }
+                    ] 
+                },
+                {
+                    key: 'canvas',
+                    type: 'group',
+                    inputs: [
                         {
                             key: 'canvas',
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglassitatly', label: 'Стандарт "Fiberglass" (Италия)', selected: true}, 
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass" (Италия)', selected: true}, 
                             ]
-                            
                         },
                         {
                             key: 'canvas_color',
@@ -751,7 +761,7 @@ export default [
                             type: 'number',
                             name: 'width',
                             label: 'Ширина',
-                            value: '',
+                            value: '700',
                             min: '400',
                             max: '3000',
                             step: '1',
@@ -763,7 +773,7 @@ export default [
                             type: 'number',
                             name: 'height',
                             label: 'Высота',
-                            value: '',
+                            value: '1400',
                             min: '400',
                             max: '3000',
                             step: '1',
@@ -773,39 +783,32 @@ export default [
                     ]
                 },
                 {
-                    key: 'options',
-                    type: 'group',
-                    label: 'Опции',
-                    inputs: [
-                        {
-                            key: 'opening',
-                            type: 'radio',
-                            label: 'Тип закрывания',
-                            items: [
-                                {value: 'odnostoronee', label: 'Односторонние', checked: true},
-                                {value: 'vstrechnoe', label: 'Встречное'},
-                                {value: 'reversivnoe', label: 'Реверсивное'},
-                                {value: 'verticalnoe', label: 'Вертикальное'},
-                            ]
-                        },
-                        {
-                            key: 'doorstep',
-                            type: 'radio',
-                            label: 'Порог',
-                            items: [
-                                {value: 'obichniy33mm', label: 'Обычный 33мм', checked: true},
-                                {value: 'nizkiy4mm', label: 'Низкий 4мм'},
-                            ]
-                        },
-                        {
-                            key: 'montageplisse',
-                            type: 'radio',
-                            label: 'Тип монтажа',
-                            items: [
-                                {value: 'sobran', label: 'В сборке', checked: true},
-                                {value: 'razobran', label: 'Без сборки'},
-                            ]
-                        },
+                    key: 'opening',
+                    type: 'radio',
+                    label: 'Открывание',
+                    items: [
+                        { value: 'odnostoronee', label: 'Односторонние', checked: true },
+                        { value: 'vstrechnoe', label: 'Встречное' },
+                        { value: 'reversivnoe', label: 'Реверсивное' },
+                        { value: 'verticalnoe', label: 'Вертикальное' },
+                    ]
+                },
+                {
+                    key: 'doorstep',
+                    type: 'radio',
+                    label: 'Порог',
+                    items: [
+                        {value: 'obichniy29mm', label: 'Обычный 29мм', checked: true},
+                        {value: 'nizkiy7mm', label: 'Низкий 7мм'},
+                    ]
+                },
+                {
+                    key: 'montageplisse',
+                    type: 'radio',
+                    label: 'Тип монтажа',
+                    items: [
+                        {value: 'sobran', label: 'В сборке', checked: true},
+                        {value: 'razobran', label: 'Без сборки'},
                     ]
                 },
                 {
@@ -817,13 +820,12 @@ export default [
         }
     },
 
-    // Роллетная (Италья)
     {
-        key: 'RolletnaayaItaliya',
-        title: 'Роллетная (Италья)',
+        key: 'RulonnayaItalia',
+        title: 'Роллетная KLIP40 (Италия)',
         // selected: true,
         form: {
-            name: 'RolletnaayaItaliya',
+            name: 'RulonnayaItalia',
             fields: [
                 {
                     key: 'frame',
@@ -835,8 +837,8 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -856,8 +858,8 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglassitatly', label: 'Стандарт "Fiberglass" (Италия)', selected: true}, 
-                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'fiberglassrollet', label: 'Стандарт "Fiberglass"', selected: true},
+                                {value: 'antiporollet', label: 'Антипыль "Antipo" (Италия)'}
                             ]
                         },
                         {
@@ -878,11 +880,13 @@ export default [
                             name: 'width',
                             label: 'Ширина',
                             value: '',
-                            min: '400',
+                            min: '200',
                             max: '2000',
                             step: '1',
                             unit: 'мм.',
                             required: true,
+
+
                         },
                         {
                             key: 'height',
@@ -890,8 +894,8 @@ export default [
                             name: 'height',
                             label: 'Высота',
                             value: '',
-                            min: '500',
-                            max: '2500',
+                            min: '200',
+                            max: '3000',
                             step: '1',
                             unit: 'мм.',
                             required: true,
@@ -909,11 +913,11 @@ export default [
 
     // Рамочная OPTIMA
     {
-        key: 'RamochnayaOptima',
+        key: 'Dvernaya52',
         title: 'Рамочная OPTIMA',
         // selected: true,
         form: {
-            name: 'RamochnayaOptima',
+            name: 'Dvernaya52',
             fields: [
                 {
                     key: 'frame',
@@ -925,8 +929,8 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -949,7 +953,7 @@ export default [
                                 {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'antipyl', label: 'Антипыль "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
                                 {value: 'diamond', label: 'Металлическая "Diamond"'},
                                 {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
@@ -957,7 +961,137 @@ export default [
                                 {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
                                 {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
                                 {value: 'resplion', label: 'Антибактериальная “Respilon”'}
+                            
+                            ]
+                        },
+                        {
+                            key: 'canvas_color',
+                            type: 'canvas_color',
+                            label: 'Цвет полотна',
+                        },
+                    ] 
+                },
+                {
+                    key: 'size',
+                    type: 'group',
+                    label: 'Размеры конструкции',
+                    inputs: [
+                        {
+                            key: 'width',
+                            type: 'number',
+                            name: 'width',
+                            label: 'Ширина',
+                            value: '700',
+                            min: '300',
+                            max: '2000',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                        {
+                            key: 'height',
+                            type: 'number',
+                            name: 'height',
+                            label: 'Высота',
+                            value: '1400',
+                            min: '300',
+                            max: '3000',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                    ]
+                },
+                {
+                    key: 'options',
+                    type: 'group',
+                    label: 'Опции',
+                    inputs: [
+                        {
+                            key: 'komplekt',
+                            type: 'radio',
+                            label: 'Комплект креплений',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'half', label: '1,5'},
+                                {value: 'two', label: '2'},
+                            ]
+                        },
+                        {
+                            key: 'peremychka',
+                            type: 'radio',
+                            label: 'Количество перемычек',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'two', label: '2'},
+                                {value: 'three', label: '3'},
+                                {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
+                            ]
+                        },
+                    ]
+                },
+                {
+                    key: 'montage',
+                    type: 'select',
+                    label: 'Установка',
+                },
+            ]
+        }
+    },
 
+    // Рамочная 32мм
+    {
+        key: 'Ramochnaya32',
+        title: 'Рамочная 32мм',
+        // selected: true,
+        form: {
+            name: 'Ramochnaya32',
+            fields: [
+                {
+                    key: 'frame',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'frame_color',
+                            type: 'select',
+                            label: 'Цвет рамки',
+                            required: true,
+                            items: [
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
+                            ]
+                        },
+                        {
+                            key: 'ral',
+                            type: 'ral',
+                            label: 'Код RAL',
+                        },
+                    ] 
+                },
+                {
+                    key: 'canvas',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'canvas',
+                            type: 'select',
+                            label: 'Полотно',
+                            items: [
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
+                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
+                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
+                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'metalmesh', label: 'Металлическая сетка 20*20'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
+                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
                             ]
                         },
                         {
@@ -1017,7 +1151,7 @@ export default [
                         },
                         {
                             key: 'komplekt',
-                            type: 'select',
+                            type: 'radio',
                             label: 'Комплект креплений',
                             items: [
                                 {value: 'one', label: '1', checked: true},
@@ -1026,16 +1160,36 @@ export default [
                             ]
                         },
                         {
+                            key: 'corners',
+                            type: 'radio',
+                            label: 'Углы',
+                            items: [
+                                {value: 'plastikovie', label: 'Пластиковые', checked: true},
+                                {value: 'metallicheskie', label: 'Металлические'},
+                            ]
+                        },
+                        {
                             key: 'peremychka',
-                            type: 'select',
+                            type: 'radio',
                             label: 'Количество перемычек',
                             items: [
                                 {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
-                        },              
+                        },
+                        {
+                            key: 'handles',
+                            type: 'radio',
+                            label: 'Ручки',
+                            items: [
+                                {value: 'silikonovie', label: 'Силиконовые'},
+                                {value: 'metallicheskie', label: 'Металлические', checked: true},
+                                {value: 'bezruchek', label: 'Без ручек'},
+                            ]
+                        },
                     ]
                 },
                 {
@@ -1047,13 +1201,12 @@ export default [
         }
     },
 
-    // Рамочная 32мм
     {
-        key: 'Ramochnaya32',
-        title: 'Рамочная 32мм',
+        key: 'PlisseRussia',
+        title: 'Плиссе DMF',
         // selected: true,
         form: {
-            name: 'Ramochnaya32',
+            name: 'PlisseRussia',
             fields: [
                 {
                     key: 'frame',
@@ -1065,16 +1218,16 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
                             key: 'ral',
                             type: 'ral',
                             label: 'Код RAL',
-                        },
+                        }
                     ] 
                 },
                 {
@@ -1086,14 +1239,7 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
                             ]
                         },
                         {
@@ -1113,9 +1259,9 @@ export default [
                             type: 'number',
                             name: 'width',
                             label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '2000',
+                            value: '700',
+                            min: '400',
+                            max: '3000',
                             step: '1',
                             unit: 'мм.',
                             required: true,
@@ -1125,13 +1271,42 @@ export default [
                             type: 'number',
                             name: 'height',
                             label: 'Высота',
-                            value: '',
-                            min: '300',
-                            max: '3500',
+                            value: '1400',
+                            min: '400',
+                            max: '3000',
                             step: '1',
                             unit: 'мм.',
                             required: true,
                         },
+                    ]
+                },
+                {
+                    key: 'opening',
+                    type: 'radio',
+                    label: 'Открывание',
+                    items: [
+                        { value: 'odnostoronee', label: 'Односторонние', checked: true },
+                        { value: 'vstrechnoe', label: 'Встречное' },
+                        { value: 'reversivnoe', label: 'Реверсивное' },
+                        { value: 'verticalnoe', label: 'Вертикальное' },
+                    ]
+                },
+                {
+                    key: 'doorstep',
+                    type: 'radio',
+                    label: 'Порог',
+                    items: [
+                        {value: 'obichniy29mm', label: 'Обычный 29мм', checked: true},
+                        {value: 'nizkiy7mm', label: 'Низкий 7мм'},
+                    ]
+                },
+                {
+                    key: 'montageplisse',
+                    type: 'radio',
+                    label: 'Тип монтажа',
+                    items: [
+                        {value: 'sobran', label: 'В сборке', checked: true},
+                        {value: 'razobran', label: 'Без сборки'},
                     ]
                 },
                 {
@@ -1143,10 +1318,10 @@ export default [
         }
     },
 
-    // Трапеция «Стандарт»
+    // Трапеция «25мм»
     {
         key: 'TrapeciyaStandart',
-        title: 'Трапеция «Стандарт»',
+        title: 'Трапеция 25мм',
         // selected: true,
         form: {
             name: 'TrapeciyaStandart',
@@ -1161,10 +1336,11 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
@@ -1183,14 +1359,17 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'metalmesh', label: 'Металлическая сетка 20*20'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
                                 {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
                             ]
                         },
                         {
@@ -1213,18 +1392,6 @@ export default [
                             value: '',
                             min: '200',
                             max: '1600',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота прямоугольной части',
-                            value: '',
-                            min: '200',
-                            max: '2500',
                             step: '1',
                             unit: 'мм.',
                             required: true,
@@ -1259,12 +1426,45 @@ export default [
                     label: 'Опции',
                     inputs: [
                         {
+                            key: 'fastings',
+                            type: 'radio',
+                            label: 'Тип крепления',
+                            items: [
+                                {value: 'z-krepleniya-m', label: 'Z-образное (металл)', checked: true},
+                                {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
+                                {value: 'plungery', label: 'Плунжеры'},
+                                {value: 'bezkrepleniya', label: 'Без креплений'},
+                            ]
+                        },
+                        {
+                            key: 'komplekt',
+                            type: 'radio',
+                            label: 'Комплект креплений',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'half', label: '1,5'},
+                                {value: 'two', label: '2'},
+                            ]
+                        },
+                        {
                             key: 'corners',
                             type: 'radio',
                             label: 'Углы',
                             items: [
                                 {value: 'metallicheskie', label: 'Металлические', checked: true},
                                 {value: 'plastikovie', label: 'Пластиковые'},
+                            ]
+                        },
+                        {
+                            key: 'peremychka',
+                            type: 'radio',
+                            label: 'Количество перемычек',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'two', label: '2'},
+                                {value: 'three', label: '3'},
+                                {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
                             ]
                         },
                         {
@@ -1276,6 +1476,13 @@ export default [
                                 {value: 'silikonovie', label: 'Силиконовые'},
                             ]
                         },
+                        {
+                            key: 'plusprice',
+                            type: 'radio',
+                            items: [
+                                {value: 'priceplus', label: '', checked: true},
+                            ] 
+                        }
                     ]
                 },
                 {
@@ -1290,7 +1497,7 @@ export default [
     // Арочная
     {
         key: 'Arochnaya',
-        title: 'Арочная',
+        title: 'Арочная 25мм',
         // selected: true,
         form: {
             name: 'Arochnaya',
@@ -1305,10 +1512,10 @@ export default [
                             label: 'Цвет рамки',
                             required: true,
                             items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
                         {
@@ -1327,14 +1534,17 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'metalmesh', label: 'Металлическая сетка 20*20'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
                                 {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
                             ]
                         },
                         {
@@ -1393,6 +1603,27 @@ export default [
                     label: 'Опции',
                     inputs: [
                         {
+                            key: 'fastings',
+                            type: 'radio',
+                            label: 'Тип крепления',
+                            items: [
+                                {value: 'z-krepleniya-m', label: 'Z-образное (металл)', checked: true},
+                                {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
+                                {value: 'plungery', label: 'Плунжеры'},
+                                {value: 'bezkrepleniya', label: 'Без креплений'},
+                            ]
+                        },
+                        {
+                            key: 'komplekt',
+                            type: 'radio',
+                            label: 'Комплект креплений',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'half', label: '1,5'},
+                                {value: 'two', label: '2'},
+                            ]
+                        },
+                        {
                             key: 'corners',
                             type: 'radio',
                             label: 'Углы',
@@ -1410,12 +1641,284 @@ export default [
                                 {value: 'silikonovie', label: 'Силиконовые'},
                             ]
                         },
+                        {
+                            key: 'plusprice',
+                            type: 'radio',
+                            items: [
+                                {value: 'priceplus', label: '', checked: true},
+                            ] 
+                        }
                     ]
                 },
                 {
                     key: 'montage',
                     type: 'select',
                     label: 'Установка',
+                },
+            ]
+        }
+    },
+
+    // Раздвижная "SLIDORS"
+    {
+        key: 'RulonnayaPolsha',
+        title: 'Раздвижная SLIDORS',
+        // selected: true,
+        form: {
+            name: 'RulonnayaPolsha',
+            fields: [
+                {
+                    key: 'frame',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'frame_color',
+                            type: 'select',
+                            label: 'Цвет рамки',
+                            required: true,
+                            items: [
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+
+                            ]
+                        },
+                    ] 
+                },
+                {
+                    key: 'canvas',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'canvas',
+                            type: 'select',
+                            label: 'Полотно',
+                            items: [
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
+                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
+                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
+                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'metalmesh', label: 'Металлическая сетка 20*20'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
+                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
+                            ]
+                        },
+                        {
+                            key: 'canvas_color',
+                            type: 'canvas_color',
+                            label: 'Цвет полотна',
+                        },
+                    ] 
+                },
+                {
+                    key: 'size',
+                    type: 'group',
+                    label: 'Размеры конструкции',
+                    inputs: [
+                        {
+                            key: 'width',
+                            type: 'number',
+                            name: 'width',
+                            label: 'Ширина',
+                            value: '',
+                            min: '200',
+                            max: '1600',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                        {
+                            key: 'height',
+                            type: 'number',
+                            name: 'height',
+                            label: 'Высота',
+                            value: '',
+                            min: '200',
+                            max: '2500',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                        {
+                            key: 'rail',
+                            type: 'number',
+                            name: 'rail',
+                            label: 'Длинна рельс (направляющих)',
+                            value: '0',
+                            min: '0',
+                            max: '6000',
+                            step: '1',
+                            unit: 'мм.',
+                        },
+                    ]
+                },
+                {
+                    key: 'options',
+                    type: 'group',
+                    label: 'Опции',
+                    inputs: [
+                        {
+                            key: 'rails',
+                            type: 'radio',
+                            label: 'Кол-во рельс',
+                            items: [
+                                {value: 'two', label: '2', checked: true},
+                                {value: 'one', label: '1'},
+                                {value: 'norels', label: 'без рельс'},
+                            ]
+                        },  
+                        {
+                            key: 'peremychka',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'two', label: '2'},
+                                {value: 'three', label: '3'},
+                                {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
+                            ]
+                        },
+                        {
+                            key: 'plusprice',
+                            type: 'radio',
+                            items: [
+                                {value: 'priceplus', label: '', checked: true},
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    key: 'montage',
+                    type: 'select',
+                    label: 'Установка'
+                },
+            ]
+        }
+    },
+
+    //Рамочная в раме Provedal
+    {
+        key: 'Dvernaya32',
+        title: 'Рамочная в раме «PROVEDAL» ',
+        // selected: true,
+        form: {
+            name: 'Dvernaya32',
+            fields: [
+                {
+                    key: 'frame',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'frame_color',
+                            type: 'select',
+                            label: 'Цвет рамки',
+                            required: true,
+                            items: [
+                                {value: 'white', label: 'Белый (9003)', selected: true},
+                                {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'ral', label: 'Покраска в RAL'},
+                            ]
+                        },
+                        {
+                            key: 'ral',
+                            type: 'ral',
+                            label: 'Код RAL',
+                        },
+                    ] 
+                },
+                {
+                    key: 'canvas',
+                    type: 'group',
+                    inputs: [
+                        {
+                            key: 'canvas',
+                            type: 'select',
+                            label: 'Полотно',
+                            items: [
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
+                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
+                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
+                                {value: 'antipyl', label: 'Антипыль'},
+                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
+                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
+                            ]
+                        },
+                        {
+                            key: 'canvas_color',
+                            type: 'canvas_color',
+                            label: 'Цвет полотна',
+                        },
+                    ] 
+                },
+                {
+                    key: 'size',
+                    type: 'group',
+                    label: 'Размеры конструкции',
+                    inputs: [
+                        {
+                            key: 'width',
+                            type: 'number',
+                            name: 'width',
+                            label: 'Ширина',
+                            value: '',
+                            min: '200',
+                            max: '1600',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                        {
+                            key: 'height',
+                            type: 'number',
+                            name: 'height',
+                            label: 'Высота',
+                            value: '',
+                            min: '200',
+                            max: '2500',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                    ]
+                },
+                {
+                    key: 'options',
+                    type: 'group',
+                    label: 'Опции',
+                    inputs: [
+ 
+                        {
+                            key: 'peremychka',
+                            type: 'radio',
+                            label: 'Кол-во перемычек',
+                            items: [
+                                {value: 'one', label: '1', checked: true},
+                                {value: 'two', label: '2'},
+                                {value: 'three', label: '3'},
+                                {value: 'four', label: '4'},
+                                {value: 'krest', label: 'Крестообразная'},
+                            ]
+                        },
+                        {
+                            key: 'plusprice',
+                            type: 'radio',
+                            items: [
+                                {value: 'priceplus', label: '', checked: true},
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    key: 'montage',
+                    type: 'select',
+                    label: 'Установка'
                 },
             ]
         }
@@ -1438,14 +1941,17 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
+                                {value: 'fiberglass', label: 'Стандарт "Fiberglass"', selected: true},
                                 {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
                                 {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
+                                {value: 'antipyl', label: 'Антипыль'},
                                 {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
+                                {value: 'diamond', label: 'Металлическая "Diamond"'},
+                                {value: 'antipo', label: 'Антипыль "Antipo" (Италия)'},
+                                {value: 'metalmesh', label: 'Металлическая сетка 20*20'},
+                                {value: 'maxivision', label: 'Ультравью "Maxi vision"'},
                                 {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
+                                {value: 'resplion', label: 'Антибактериальная “Respilon”'}
                             ]
                         },
                         {
@@ -1492,1026 +1998,28 @@ export default [
                     type: 'checkbox',
                     label: 'Переделать',
                     items: [
-                        {value: 'z-krepleniya', label: 'Z-Крепления'},
+                        {value: 'z-krepleniya-m', label: 'Z-образное (металл)'},
+                        {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
                         {value: 'vnutrennie-zacepi', label: 'Внутренние зацепы'},
                         {value: 'plungery', label: 'Плунжеры'},
                         {value: 'ugly-metallicheskie', label: 'Металлические углы'},
                         {value: 'ugly-plastikovie', label: 'Пластиковые углы'},
                         {value: 'ruchki-metallicheskie', label: 'Металлические ручки'},
-                        {value: 'petli-metallicheskie', label: 'Металлические петли'},
-                        {value: 'petli-s-dovodchikom', label: 'Петли с доводчиком 2 шт'},
+                        {value: 'ruchki-plastikovie', label: 'Пластиковые ручки'},
+                        {value: 'fetr', label: 'Фетр'},
                     ]
                 },
                 {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-
-
-    // Типы изделий отключены
-    /*
-    // Рамочная "USN"
-    {
-        key: 'RamochnayaUSN',
-        title: 'Рамочная «USN»',
-        // selected: true,
-        form: {
-            name: 'RamochnayaUSN',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'black', label: 'Черный'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '1600',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '300',
-                            max: '3500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                // {
-                //     key: 'montage',
-                //     type: 'select',
-                //     label: 'Установка',
-                // },
-            ]
-        }
-    },
-
-    // Крыло
-    {
-        key: 'Krilo',
-        title: 'Крыло',
-        //selected: true,
-        form: {
-            name: 'Krilo',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '1600',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '200',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'handles',
+                    key: 'komplekt',
                     type: 'radio',
-                    label: 'Ручки',
+                    label: 'Комплект креплений',
                     items: [
-                        {value: 'metallicheskie', label: 'Металлические', checked: true},
-                        {value: 'silikonovie', label: 'Силиконовые'},
+                        {value: 'one', label: '1', checked: true},
+                        {value: 'half', label: '1,5'},
+                        {value: 'two', label: '2'},
                     ]
-                },
-                
-            ]
-        }
-    },
-
-    // Дверная 25мм
-    {
-        key: 'Dvernaya25',
-        title: 'Дверная 25мм',
-        // selected: true,
-        form: {
-            name: 'Dvernaya25',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '200',
-                            max: '3000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'fixation',
-                    type: 'group',
-                    label: 'Система фиксации',
-                    inputs: [
-                        {
-                            key: 'fixation_handles',
-                            type: 'radio',
-                            label: 'Фиксация-ручки',
-                            items: [
-                                {value: 'ruchka-sleva', label: 'Ручка слева', checked: true},
-                                {value: 'ruchka-sprava', label: 'Ручка справа'},
-                            ]
-                        },
-                        {
-                            key: 'fixation_magnets',
-                            type: 'radio',
-                            label: 'Фиксация-магниты',
-                            items: [
-                                {value: 'magnit', label: 'Магнит', checked: true},
-                                {value: 'zashelka', label: 'Защёлка'},
-                            ]
-                        },
-                    ] 
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
                 },
             ]
         }
     },
-
-    // Дверная 32мм
-    {
-        key: 'Dvernaya32',
-        title: 'Дверная 32мм',
-        // selected: true,
-        form: {
-            name: 'Dvernaya32',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '300',
-                            max: '3500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'fixation',
-                    type: 'group',
-                    label: 'Система фиксации',
-                    inputs: [
-                        {
-                            key: 'fixation_handles',
-                            type: 'radio',
-                            label: 'Фиксация-ручки',
-                            items: [
-                                {value: 'ruchka-sleva', label: 'Ручка слева', checked: true},
-                                {value: 'ruchka-sprava', label: 'Ручка справа'},
-                            ]
-                        },
-                        {
-                            key: 'fixation_magnets',
-                            type: 'radio',
-                            label: 'Фиксация-магниты',
-                            items: [
-                                {value: 'magnit', label: 'Магнит', checked: true},
-                                {value: 'zashelka', label: 'Защёлка'},
-                            ]
-                        },
-                    ] 
-                },
-                {
-                    key: 'options',
-                    type: 'group',
-                    label: 'Опции',
-                    inputs: [
-                        {
-                            key: 'hinges',
-                            type: 'radio',
-                            label: 'Петли',
-                            items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 's-dovodchikom', label: 'С доводчиком'},
-                            ]
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-    // Дверная 52мм
-    {
-        key: 'Dvernaya52',
-        title: 'Дверная 52мм',
-        // selected: true,
-        form: {
-            name: 'Dvernaya52',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '300',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '300',
-                            max: '3000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'fixation',
-                    type: 'group',
-                    label: 'Система фиксации',
-                    inputs: [
-                        {
-                            key: 'fixation_handles',
-                            type: 'radio',
-                            label: 'Фиксация-ручки',
-                            items: [
-                                {value: 'ruchka-sleva', label: 'Ручка слева', checked: true},
-                                {value: 'ruchka-sprava', label: 'Ручка справа'},
-                            ]
-                        },
-                        {
-                            key: 'fixation_magnets',
-                            type: 'radio',
-                            label: 'Фиксация-магниты',
-                            items: [
-                                {value: 'magnit', label: 'Магнит', checked: true},
-                                {value: 'zashelka', label: 'Защёлка'},
-                            ]
-                        },
-                    ] 
-                },        
-                {
-                    key: 'options',
-                    type: 'group',
-                    label: 'Опции',
-                    inputs: [
-                        {
-                            key: 'hinges',
-                            type: 'radio',
-                            label: 'Петли',
-                            items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 's-dovodchikom', label: 'С доводчиком'},
-                            ]
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-    // Рулонная (Польша)
-    {
-        key: 'RulonnayaPolsha',
-        title: 'Рулонная (Польша)',
-        // selected: true,
-        form: {
-            name: 'RulonnayaPolsha',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '400',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '500',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-    
-
-    // Рулонная (Италия)
-    {
-        key: 'RulonnayaItalia',
-        title: 'Рулонная (Италия)',
-        // selected: true,
-        form: {
-            name: 'RulonnayaItalia',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'standart-gray', label: 'Серое «Стандарт»', selected: true},
-                                {value: 'sunox', label: 'Антибактериальное «Sunox»'},
-                                {value: 'antipo-gray', label: 'Антипыль Серая «Antipo»'},
-                                {value: 'antipo-black', label: 'Антипыль Черная «Antipo»'},
-                            ]
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '400',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота',
-                            value: '',
-                            min: '500',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-
-    // Трапеция «Стандарт»
-    {
-        key: 'TrapeciyaStandart',
-        title: 'Трапеция «Стандарт»',
-        // selected: true,
-        form: {
-            name: 'TrapeciyaStandart',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'antracite', label: 'Антрацит'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '1600',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота прямоугольной части',
-                            value: '',
-                            min: '200',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height_left',
-                            type: 'number',
-                            name: 'height_left',
-                            label: 'Высота лево',
-                            value: '1000',
-                            min: '200',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                        },
-                        {
-                            key: 'height_right',
-                            type: 'number',
-                            name: 'height_right',
-                            label: 'Высота право',
-                            value: '1000',
-                            min: '200',
-                            max: '2500',
-                            step: '1',
-                            unit: 'мм.',
-                        },
-                    ]
-                },
-                {
-                    key: 'options',
-                    type: 'group',
-                    label: 'Опции',
-                    inputs: [
-                        {
-                            key: 'corners',
-                            type: 'radio',
-                            label: 'Углы',
-                            items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 'plastikovie', label: 'Пластиковые'},
-                            ]
-                        },
-                        {
-                            key: 'handles',
-                            type: 'radio',
-                            label: 'Ручки',
-                            items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 'silikonovie', label: 'Силиконовые'},
-                            ]
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-
-    // Трапеция «Усиленная» 32мм
-    {
-        key: 'TrapeciyaUsilennaya32',
-        title: 'Трапеция «Усиленная» 32мм',
-        // selected: true,
-        form: {
-            name: 'TrapeciyaUsilennaya32',
-            fields: [
-                {
-                    key: 'frame',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'frame_color',
-                            type: 'select',
-                            label: 'Цвет рамки',
-                            required: true,
-                            items: [
-                                {value: 'white', label: 'Белый', selected: true},
-                                {value: 'brown', label: 'Коричневый'},
-                                {value: 'ral', label: 'RAL'},
-                            ]
-                        },
-                        {
-                            key: 'ral',
-                            type: 'ral',
-                            label: 'Код RAL',
-                        },
-                    ] 
-                },
-                {
-                    key: 'canvas',
-                    type: 'group',
-                    inputs: [
-                        {
-                            key: 'canvas',
-                            type: 'select',
-                            label: 'Полотно',
-                            items: [
-                                {value: 'fiberglass', label: 'Стандарт «Fiberglass»', selected: true},
-                                {value: 'petscreen', label: 'Антикошка "Pet Screen"'},
-                                {value: 'micromesh', label: 'Антимошка "Micro Mesh"'},
-                                {value: 'maxivision', label: 'Максимальный обзор "Maxi-Vision"'},
-                                {value: 'polltex', label: 'Антипыльца "Poll-Tex"'},
-                                {value: 'sunlight', label: 'Светоотражающие "Sunlight"'},
-                                {value: 'antibird', label: 'Алюминиевая/Антиптица'},
-                                {value: 'diamondsteel', label: 'Стальное "Diamond steel"'},
-                            ]
-                        },
-                        {
-                            key: 'canvas_color',
-                            type: 'canvas_color',
-                            label: 'Цвет полотна',
-                        },
-                    ] 
-                },
-                {
-                    key: 'size',
-                    type: 'group',
-                    label: 'Размеры конструкции',
-                    inputs: [
-                        {
-                            key: 'width',
-                            type: 'number',
-                            name: 'width',
-                            label: 'Ширина',
-                            value: '',
-                            min: '200',
-                            max: '2000',
-                            step: '1',
-                            unit: 'мм.',
-                            required: true,
-                        },
-                        {
-                            key: 'height',
-                            type: 'number',
-                            name: 'height',
-                            label: 'Высота лево',
-                            value: '',
-                            min: '200',
-                            max: '3000',
-                            step: '1',
-                            unit: 'мм.',
-                        },
-                        {
-                            key: 'height_right',
-                            type: 'number',
-                            name: 'height_right',
-                            label: 'Высота право',
-                            value: '1000',
-                            min: '200',
-                            max: '3000',
-                            step: '1',
-                            unit: 'мм.',
-                        },
-                    ]
-                },
-                {
-                    key: 'montage',
-                    type: 'select',
-                    label: 'Установка',
-                },
-            ]
-        }
-    },
-    */
 ]

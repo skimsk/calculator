@@ -1,6 +1,6 @@
 import ProductForm from "../ProductForm.js";
 
-export default class PlisseItaly extends ProductForm {
+export default class PlisseRussia extends ProductForm {
 
 
     constructor(config = {}) {

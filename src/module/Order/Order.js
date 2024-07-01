@@ -2,27 +2,22 @@ import CartExtras from "../Cart/CartExtras.js";
 import CartProducts from "../Cart/CartProducts.js";
 import PriceData from "../../data/order.js"
 import User from "../../user/User.js";
+import priceData from '../../data/price.js';
+
 
 class Order {
-
-
     #userRole = null;
-
     #priceData = Object.create(null);
-
     #cartProducts = new CartProducts();
-
     #cartExtras = new CartExtras();
-
     #observers = new Set();
-
 
     constructor(user) {
         if (!user.getRole()) throw Error(`Order[constructor] User.getRole error`);        
         this.#userRole = user.getRole();
 
-        if (!PriceData[this.#userRole]) throw Error(`Order[PriceData] get userdata error ${this.#userRole}`);
-        this.#priceData = PriceData[this.#userRole];
+        if (!priceData[this.#userRole]) throw Error(`Order[PriceData] get userdata error ${this.#userRole}`);
+        this.#priceData = priceData[this.#userRole];
 
         this.setDefaults();
     }
@@ -90,8 +85,28 @@ class Order {
         return this.update();   
     }
 
+    setBeznal(percent) {
+        if (percent !== undefined) this.beznal = Number(percent) || 0;
+        return this.update();   
+    }
+
+    setCdek(amount) {
+        if (amount !== undefined) this.cdek = Number(amount) || 0;  // Преобразуем amount в число или 0, если NaN
+        return this.update();   // Обновляем состояние заказа
+    } 
+
+    setNdc(percent) {
+        if (percent !== undefined) this.ndc = Number(percent) || 0;
+        return this.update();   
+    }
+
     setDeliveryDistance(distance) {
         this.deliveryDistance = distance;
+        return this.update(); 
+    }
+
+    setDeliveryCdek(dostavkacdek) {
+        this.deliveryCdek= dostavkacdek;
         return this.update(); 
     }
 
@@ -125,6 +140,19 @@ class Order {
         return Math.round(price - (price * this.discount / 100)); 
     }
 
+    calcBeznal(price = 0) {
+        return Math.round(price + (price * this.beznal / 100)); 
+    }
+
+    calcNdc(price = 0) {
+        return Math.round(price + (price * this.ndc / 100)); 
+    }
+
+    calcCdek(price = 0) {
+        return Math.round(price + this.cdek ); 
+    }
+    
+
     // Рассчет доставки 
     // min - минимальная цена доставки
     // mkad - цена доставки за 1 км за МКАД
@@ -139,12 +167,21 @@ class Order {
     calcRAL() {
         let total = 0;
         if (this.ral === true) {
-            const data = this.#priceData.ral;
+            // Получаем данные для RAL из импортированных данных
+            const ral = priceData.employee.Ramochnaya25.frame_color.find(item => item.key === 'ral');
+            const ralMin = priceData.employee.Ramochnaya25.frame_color.find(item => item.key === 'ral.min');
+            
+            // Получаем количество товаров в корзине
             const quantity = this.#cartProducts.totalQuantity();
-            if (quantity <= 20) total += data.min;    
-            if (quantity > 20) total += data.price * quantity;    
+    
+            // Рассчитываем стоимость в зависимости от количества товаров
+            if (quantity <= 2) {
+                total += ralMin.price;  // Минимальная стоимость
+            } else if (quantity > 2) {
+                total += ralMin.price + ral.price * (quantity - 2);  // Минимальная стоимость плюс стоимость за дополнительное количество
+            }
         }
- 
+    
         return total;
     }
 
@@ -156,10 +193,16 @@ class Order {
         return delivery;
     }
 
-    calcSpecialDelivecry() {
+    calcSpecialDelivery() {
         let delivery_custom = 0;
         delivery_custom += this.deliveryCustom;    
         return delivery_custom;
+    }
+
+    calcDeliveryCdek() {
+        let delivery_cdek = 0;
+        delivery_cdek += this.deliveryCdek;    
+        return delivery_cdek;
     }
     
     calcTotalPrice(min = 5000) {
@@ -167,20 +210,28 @@ class Order {
         let total = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
         // Рассчет с покраской по RAL
         total += this.calcRAL();
-        // + Рассчет со скидкой только на товары и комплектующие
-        total = this.calcDiscount(total);
         // + Рассчет с доставкой (если нет самовывоза)
         total += this.calcDelivery();
-        // + Рассчет с спец.транспортом
-        const specialDeliveryCost = this.calcSpecialDelivecry();
+        total += this.calcCdek();
+        // + Рассчет с спецтранспортом
+        const specialDeliveryCost = this.calcSpecialDelivery();
         total += specialDeliveryCost;
+
+        const DeliveryCdelCost = this.calcDeliveryCdek();
+        total += DeliveryCdelCost;
+    
+        // Рассчет со скидкой только на товары и комплектующие
+        total = this.calcDiscount(total);
+        total = this.calcBeznal(total);
+        total = this.calcNdc(total);
     
         if (total < min && !this.pickup) {
             total = min;
             total += specialDeliveryCost;
+            total += DeliveryCdelCost;
         }
     
-        return total;
+        return +total.toFixed(2);  // Округляем итоговую стоимость до двух знаков после запятой
     }
     
     // Рассчет суммарного KPI монтажника + КПИ доставки
@@ -246,7 +297,12 @@ class Order {
     setDefaults() {
         this.deliveryDistance = 0;                  // Расстояние доставки (км)
         this.deliveryCustom = 0;                  // Доставка и спец.транспорт
+        this.deliveryCdek = 0;                  // Тариф ТК СДЭК
+        this.specificalMontage = 0;             //Стоимость работ по специфическому монтажу
         this.discount = 0;                          // Скидка (%)
+        this.beznal = 0;                          //Безнал
+        this.ndc = 0;                          //Безнал
+        this.cdek = 0;                          //Доставка до ТК СДЭК отгрузка
         this.pickup = this.#userRole === 'dealer';  // Самовывоз (true/false) У диллеров самовывоз по умолчанию "Да" 
         this.montage = false;                       // Монтаж (true/false)
         this.ral = false;                           // RAL (true/false)

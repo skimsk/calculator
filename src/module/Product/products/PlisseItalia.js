@@ -26,7 +26,21 @@ export default class PlisseItalia extends ProductForm {
         });
     }
 
-
-
+    // Изменение максимальной высоты в зависимости от полотна
+    canvas(field) {
+        const height = this.getInput('height'); // Поле "высота"
+        field.on('change', function() {
+            switch (this.getValue()) {
+                case 'antivandal-gray': 
+                    height.setMax('2800').validate();
+                break;
+                case 'maxivision-black': 
+                    height.setMax('2400').validate();
+                break; 
+                default: 
+                    height.setMax('3000').validate();
+                break;   
+            }
+        });
+    }
 }
-

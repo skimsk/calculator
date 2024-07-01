@@ -86,6 +86,9 @@ export default class Price {
                 case 'corners':
                 case 'handles':
                 case 'fastings':
+                case 'komplekt':
+                case 'peremychka':
+                case 'plusprice':
                 case 'hinges':
                     price += this.getInputPrice(input.key).price;
                 break;
@@ -104,7 +107,19 @@ export default class Price {
     // Рассчет цены на рельсы
     calcRailPrice() {
         let price = 0;
-        let priceM = 290; // Цена за погонный метр рельсы, р.
+        let priceM = 800; // Цена за погонный метр рельсы, р.
+        const rail = this.formData.get('rail');
+
+        if (rail) {
+            price = (rail.value / 1000) * priceM; // с переводом мм в метры 
+        }
+
+        return price;
+    }
+
+    calcRailPriceSlidors() {
+        let price = 0;
+        let priceM = 1000; // Цена за погонный метр рельсы, р.
         const rail = this.formData.get('rail');
 
         if (rail) {

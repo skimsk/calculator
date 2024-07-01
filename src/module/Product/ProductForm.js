@@ -50,7 +50,7 @@ export default class ProductForm extends Form {
         this.addField(this.createInputComment())
 
         // Добавляем в форму поле "монтаж"
-        // this.addField(this.createInputMontage());
+        //this.addField(this.createInputMontage());
 
 
         // Добавляем в форму модальное окно с "RAL" цветами
@@ -105,8 +105,8 @@ export default class ProductForm extends Form {
     // Установка (Показываем только монтажникам) (type Select)
     createInputSpesmontaz() {
         const input = new Textarea('mogtagespes');
-        input.setLabel('Введите стоимость монтажных работ');
-        input.setPlaceholder('');
+        input.setLabel('Монтажные работы');
+        input.setPlaceholder('Укажите сумму');
     
         // Скрыть поле по умолчанию
         input.setVisible(false);
@@ -213,8 +213,8 @@ export default class ProductForm extends Form {
     // Тип комннаты
     createInputKomnata() {
         const input = new Textarea('typeroom');
-        input.setLabel('Тип комнаты');
-        input.setPlaceholder('Название компанты');
+        input.setLabel('Название помещения');
+        input.setPlaceholder('Введите название');
 
         this.addInput(input);
         return input;
@@ -379,10 +379,4 @@ export default class ProductForm extends Form {
     // getPrice() {
     //     console.log(this);
     // }
-
-
-
-
-
-
 }

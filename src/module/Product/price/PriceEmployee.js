@@ -26,23 +26,20 @@ export default class PriceEmployee extends Price {
         total += this.calcMontage(total);      
         return total;
     }
-
+    
 
     PlisseRussia() {
         let total = 0, priceM2 = 0;
-        priceM2 += this.getInputPrice('canvas').price;
         priceM2 += this.getInputPrice('opening').price;
-        priceM2 += this.getInputPrice('doorstep').price;
-        total = this.calcAreaPrice(priceM2, priceM2);                
-        // Рассчет монтажа
-        total += this.calcMontage(total);                   
+        priceM2 += this.getInputPrice('install').price;
+        total = this.calcAreaPrice(priceM2, priceM2);
+        return total;
         return total;
     }
 
     PlisseItalia() {
         let total = 0, priceM2 = 0;
         priceM2 += this.getInputPrice('opening').price;
-        priceM2 += this.getInputPrice('install').price;
         total = this.calcAreaPrice(priceM2, priceM2);                
         // Рассчет монтажа
         total += this.calcMontage(total);                   
@@ -58,22 +55,23 @@ export default class PriceEmployee extends Price {
         total += this.calcMontage(total);
         return total;
     }
+
+    RulonnayaPolsha() {
+        let total = 0;
+        total += this.calcCanvasFramePrice();
+        total += this.calcOptionsPrice();
+        total += this.calcRailPriceSlidors();
+        // Рассчет монтажа
+        total += this.calcMontage(total);
+        return total;
+    }
  
     RulonnayaItalia() {
         let total = 0;
-        total += this.calcCanvasFramePrice();      
+        total += this.calcCanvasFramePrice();
         // Рассчет монтажа
-        total += this.calcMontage(total);          
+        total += this.calcMontage(total);
         return total;
     }
-
-    RulonnayaPolsha() {
-        let total = 0, priceM2 = 7800, priceM2Min = 7800;
-        total += this.calcAreaPrice(priceM2, priceM2Min);
-        // Рассчет монтажа
-        total += this.calcMontage(total);          
-        return total;
-    }
-
 
 }

@@ -25,13 +25,12 @@ export default class PriceDealer extends Price {
         return total;
     }
 
-
     PlisseRussia() {
         let total = 0, priceM2 = 0;
-        priceM2 += this.getInputPrice('canvas').price;
         priceM2 += this.getInputPrice('opening').price;
-        priceM2 += this.getInputPrice('doorstep').price;
+        priceM2 += this.getInputPrice('install').price;
         total = this.calcAreaPrice(priceM2, priceM2);
+        return total;
         return total;
     }
 
@@ -62,9 +61,5 @@ export default class PriceDealer extends Price {
         total += this.calcAreaPrice(priceM2, priceM2Min);
         return total;
     }
-
-
-
-
 
 }

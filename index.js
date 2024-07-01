@@ -1,3 +1,4 @@
+/*
 const { google } = require('googleapis');
 const fs = require('fs');
 const path = require('path');
@@ -195,3 +196,4 @@ authorize()
   .catch((err) => {
     console.error('Ошибка при авторизации:', err);
   });
+  */

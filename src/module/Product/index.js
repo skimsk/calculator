@@ -16,14 +16,16 @@ import Order from '../Order/Order.js';
 import Ramochnaya25 from "./products/Ramochnaya25.js";
 import RamochnayaOptima from "./products/RamochnayaOptima.js";
 import RulonnayaItalia from "./products/RulonnayaItalia.js";
-import PlisseItaly from './products/PlisseItaly.js';
+import PlisseItalia from "./products/PlisseItalia.js"
+import PlisseRussia from "./products/PlisseRussia.js"
 
 
 const ProductKeys = {
     'Ramochnaya25': Ramochnaya25,
     'RamochnayaOptima': RamochnayaOptima,
     'RulonnayaItalia': RulonnayaItalia,
-    'PlisseItaly' : PlisseItaly,
+    'PlisseItalia': PlisseItalia,
+    'PlisseRussia': PlisseRussia,
 }
 
 const userRole = User.getRole();
@@ -73,10 +75,16 @@ function createOrderItem(form) {
     const productKey = form.key;
     const formData = form.getFormData();
 
+    // Получение значения монтажных работ
+    const montagePrice = parseFloat(formData.get('mogtagespes')?.value) || 0;
+
     // Цена сетки с монтажом или без (считается сразу в ProductPrice)
     const productPrice = new ProductPrice(productKey, userRole, formData).calculate();
+    // Итоговая цена с учётом стоимости монтажа
+    const totalPrice = productPrice + montagePrice;
+
     // KPI Монтажника
-    const kpiInstaller = new KPIInstaller(productKey, formData, productPrice).calculate();
+    const kpiInstaller = new KPIInstaller(productKey, formData, totalPrice).calculate();
     // KPI Сборщика
     const kpiAssembler = new KPIAssembler(productKey, formData).calculate();
     // Распил
@@ -84,9 +92,9 @@ function createOrderItem(form) {
 
     const product = new DTOProduct({
         id: new Date().getTime(), 
-        name: createProductName(form, productPrice),
+        name: createProductName(form, totalPrice),
         quantity: formData.get('quantity').value,
-        price: Math.round(productPrice),
+        price: Math.round(totalPrice), // Округляем до целого числа
         montage: (formData.get('montage')?.value && formData.get('montage')?.value !== 'off'),
         ral: formData.get('frame_color')?.value === 'ral',
         kpi: {
@@ -94,10 +102,11 @@ function createOrderItem(form) {
             assembler: Math.round(kpiAssembler)
         },
         sawing: productSawing
-    })
+    });
 
     return product;
 }
+
 
 
 // Установка формы

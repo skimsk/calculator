@@ -22,6 +22,7 @@ export default class Ramochnaya25 extends ProductForm {
                 inputHandles.setDisabled(false);
                 inputKomplekt.setDisabled(true);
                 switch (this.getValue()) {
+                    case 'plungery': inputKomplekt.setDisabled(false); break;
                     case 'plungery': inputHandles.setDisabled(true); break;
                     case 'vnutrennie-zacepi': inputKomplekt.setDisabled(true); break;
                     case 'z-krepleniya-m': inputKomplekt.setDisabled(false); break;
@@ -33,3 +34,4 @@ export default class Ramochnaya25 extends ProductForm {
 
 
 }
+ 

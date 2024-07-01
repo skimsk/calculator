@@ -3,20 +3,20 @@ export default {
         {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
     ],
-    fiberglassitatly: [
+    fiberglassplisse: [
         {value: 'gray', label: 'Серый'},
-        {value: 'black', label: 'Чёрный'},
+    ],
+    fiberglassrollet: [
+        {value: 'gray', label: 'Серый'},
     ],
     petscreen: [
-        {value: 'gray', label: 'Серый'},
-        {value: 'blackwhite', label: 'Черно-Белый'},
         {value: 'blacksun', label: 'Белый'},
+        {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
+        {value: 'blackwhite', label: 'Черно-Белый'},
         {value: 'whiteglitter', label: 'Белый блеск'},
         {value: 'bronze', label: 'Бронзовый'},
-        {value: 'graylight', label: 'Светло-серый'},
         {value: 'brown', label: 'Коричневый'},
-
     ],
     micromesh: [
         {value: 'black', label: 'Чёрный'},
@@ -28,6 +28,9 @@ export default {
         {value: 'gray', label: 'Cерый'},
     ],
     polltex: [
+        {value: 'gray', label: 'Чёрный'},
+    ],
+    polltexplisse: [
         {value: 'gray', label: 'Чёрный'},
     ],
     sunlight: [
