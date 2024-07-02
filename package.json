@@ -1,0 +1,30 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "homepage": "https://skimsk.github.io/calculator",
+  "devDependencies": {
+    "gh-pages": "6.1.1",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "adminjs": "^7.8.2",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "google-spreadsheet": "^4.1.2",
+    "googleapis": "^140.0.1",
+    "mongoose": "^8.4.4",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7",
+    "tslib": "^2.6.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
