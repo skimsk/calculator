@@ -46,9 +46,9 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],  
       //комплект креплений
@@ -129,11 +129,11 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
-      ],  
+      ],
       komplekt:[
         { key: 'one', price: 0},
         { key: 'half', price: 675 },
@@ -189,11 +189,11 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
-      ],  
+      ], 
       //комплект креплений
       komplekt: [
         { key: 'one', price: 0 },
@@ -231,11 +231,11 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
-      ], 
+      ],  
       // Монтаж
       montage: [
         { key: 'easy', price: 1100 },
@@ -267,11 +267,11 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
-      ], 
+      ],
       // Монтаж
       montage: [
         { key: 'easy', price: 1100 },
@@ -308,11 +308,11 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
-      ], 
+      ],
       // Монтаж
       montage: [
         { key: 'easy', price: 1100 },
@@ -623,14 +623,16 @@ export default {
       { key: 'ral.min', price: 6000 },
       { key: 'ral', price: 1000 },
     ],
+    //тип крепления
     fastings: [
       { key: 'z-krepleniya-m', price: 450 },
       { key: 'z-krepleniya-p', price: 220 },
       { key: 'plungery', price: 900 },
-      { key: 'bezkrepleniya', price: 0 }
     ],
-    // Углы
-    corners: [
+    //ручки
+    handles: [
+      { key: 'silikonovie', price: 0 },
+      { key: 'metallicheskie', price: 220 },
     ],
     //комплект креплений
     komplekt: [

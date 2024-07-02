@@ -39,10 +39,10 @@ export default {
     antibird: [
         {value: 'alum', label: 'Алюминиевый'},
     ],
-    diamonds: [
+    diamond: [
         {value: 'black', label: 'Чёрный'},
     ],
-    respilon: [
+    resplion: [
         {value: 'gray', label: 'Cерый'},
     ],
     antipyl: [

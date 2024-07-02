@@ -1120,7 +1120,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'width',
         label: 'Ширина',
-        value: '700',
+        value: '',
         min: '400',
         max: '3000',
         step: '1',
@@ -1131,7 +1131,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'height',
         label: 'Высота',
-        value: '1400',
+        value: '',
         min: '400',
         max: '3000',
         step: '1',
@@ -1357,7 +1357,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'width',
         label: 'Ширина',
-        value: '700',
+        value: '',
         min: '300',
         max: '2000',
         step: '1',
@@ -1368,7 +1368,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'height',
         label: 'Высота',
-        value: '1400',
+        value: '',
         min: '300',
         max: '3000',
         step: '1',
@@ -1684,7 +1684,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'width',
         label: 'Ширина',
-        value: '700',
+        value: '',
         min: '400',
         max: '3000',
         step: '1',
@@ -1695,7 +1695,7 @@ var _default = exports.default = [
         type: 'number',
         name: 'height',
         label: 'Высота',
-        value: '1400',
+        value: '',
         min: '400',
         max: '3000',
         step: '1',
@@ -2612,8 +2612,7 @@ var _default = exports.default = [
       label: 'Комплект креплений',
       items: [{
         value: 'one',
-        label: '1',
-        checked: true
+        label: '1'
       }, {
         value: 'half',
         label: '1,5'
@@ -3458,11 +3457,11 @@ var _default = exports.default = {
     value: 'alum',
     label: 'Алюминиевый'
   }],
-  diamonds: [{
+  diamond: [{
     value: 'black',
     label: 'Чёрный'
   }],
-  respilon: [{
+  resplion: [{
     value: 'gray',
     label: 'Cерый'
   }],
@@ -5838,13 +5837,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -7084,7 +7083,7 @@ var _default = exports.default = {
       }]
     }
   },
-  Perekatka: _defineProperty(_defineProperty({
+  Perekatka: _defineProperty({
     canvas: [{
       key: 'fiberglass',
       price: 1782,
@@ -7151,6 +7150,7 @@ var _default = exports.default = {
       key: 'ral',
       price: 1000
     }],
+    //тип крепления
     fastings: [{
       key: 'z-krepleniya-m',
       price: 450
@@ -7160,12 +7160,15 @@ var _default = exports.default = {
     }, {
       key: 'plungery',
       price: 900
-    }, {
-      key: 'bezkrepleniya',
-      price: 0
     }],
-    // Углы
-    corners: [],
+    //ручки
+    handles: [{
+      key: 'silikonovie',
+      price: 0
+    }, {
+      key: 'metallicheskie',
+      price: 220
+    }],
     //комплект креплений
     komplekt: [{
       key: 'one',
@@ -7176,14 +7179,16 @@ var _default = exports.default = {
     }, {
       key: 'two',
       price: 440
+    }],
+    // Углы
+    corners: [{
+      key: 'plastikovie',
+      price: 0
+    }, {
+      key: 'metallicheskie',
+      price: 450
     }]
-  }, "corners", [{
-    key: 'plastikovie',
-    price: 0
-  }, {
-    key: 'metallicheskie',
-    price: 450
-  }]), "handles", [{
+  }, "handles", [{
     key: 'silikonovie',
     price: 0
   }, {
@@ -12505,7 +12510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60401" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60733" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
