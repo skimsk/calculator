@@ -88,9 +88,9 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],  
       komplekt:[
