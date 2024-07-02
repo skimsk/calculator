@@ -89,6 +89,7 @@ export default class Price {
                 case 'komplekt':
                 case 'peremychka':
                 case 'plusprice':
+                case 'latche':
                 case 'hinges':
                     price += this.getInputPrice(input.key).price;
                 break;

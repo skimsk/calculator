@@ -664,7 +664,7 @@ export default [
                             type: 'radio',
                             label: 'Петли',
                             items: [
-                                {value: 'metallicheskie', label: 'Без доводчика', checked: true},
+                                {value: 'bez-dovodchika', label: 'Без доводчика', checked: true},
                                 {value: 's-dovodchikom', label: 'С доводчиком'},
                                 {value: 'usilenye', label: 'Усиленные'}
                             ]
@@ -682,13 +682,13 @@ export default [
                             ]
                         },
                         {
-                            key: 'latches',
+                            key: 'latche',
                             type: 'radio',
                             label: 'Кол-во шпингалетов',
                             items: [
                                 {value: 'null', label: '0', checked: true},
-                                {value: 'one', label: '1'},
-                                {value: 'two', label: '2'}
+                                {value: 'onelatche', label: '1'},
+                                {value: 'twolatche', label: '2'}
                             ]
                         },
                     ]

@@ -26,7 +26,7 @@ class OrderTotal {
         this.setButtonOrderActions();
     }
 
-
+    
     setButtonOrderActions() {
         this.$buttonOrder.on('click', () => {
             if (OrderForm.validate()) {

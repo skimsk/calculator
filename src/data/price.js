@@ -351,10 +351,10 @@ export default {
         { key: 's-dovodchikom', price: 4500 },
         { key: 'usilenye', price: 4500 },
       ],
-      latches: [
+      latche: [
         { key: 'null', price: 0},
-        { key: 'one', price: 600 },
-        { key: 'two', price: 1200 },
+        { key: 'onelatche', price: 600 },
+        { key: 'twolatche', price: 1200 },
       ],
       //Перемычки
       peremychka: [
