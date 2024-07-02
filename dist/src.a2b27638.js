@@ -6033,13 +6033,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6168,13 +6168,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6268,13 +6268,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6354,13 +6354,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6452,13 +6452,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
