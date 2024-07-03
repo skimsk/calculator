@@ -94,7 +94,7 @@ export default {
         { key: 'height', value: 0 },
         { key: 'impost', value: 0 },
     ],
-    Perekatka: [
+    Perekat: [
         { key: 'width', value: 0 },
         { key: 'height', value: 0 },
         { key: 'impost', value: 0 },

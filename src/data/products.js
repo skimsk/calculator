@@ -1926,11 +1926,11 @@ export default [
 
     // Перекат
     {
-        key: 'Perekatka',
+        key: 'Perekat',
         title: 'Перекат',
         // selected: true,
         form: {
-            name: 'Perekatka',
+            name: 'Perekat',
             fields: [
                 {
                     key: 'frame',

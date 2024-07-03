@@ -599,57 +599,115 @@ export default {
         { key: 'hard', price: 1200 }
       ]
     },
-  },
-  Perekatka: {
-    canvas: [
-      { key: 'fiberglass', price: 1782, min: 1782 },
-      { key: 'petscreen', price: 3688, min: 3688 },
-      { key: 'maxivision', price: 3688, min: 3688 },
-      { key: 'micromesh', price: 3795, min: 3795 },
-      { key: 'antipyl', price: 3415, min: 3415 },
-      { key: 'polltex', price: 3415, min: 3415 },
-      { key: 'antibird', price: 3415, min: 3415 },
-      { key: 'sunlight', price: 3415, min: 3415 },
-      { key: 'diamond', price: 4039, min: 4039 },
-      { key: 'antipo', price: 4315, min: 4315 },
-      { key: 'metalmesh', price: 4588, min: 4588 },
-      { key: 'resplion', price: 5098, min: 5098 }
-    ],
-      // Цвет рамки
-    frame_color: [
-      { key: 'white', price: 0 },
-      { key: 'antracite', price: 1000 },
-      { key: 'black', price: 1000 },
-      { key: 'ral.min', price: 6000 },
-      { key: 'ral', price: 1000 },
-    ],
-    //тип крепления
-    fastings: [
-      { key: 'z-krepleniya-m', price: 450 },
-      { key: 'z-krepleniya-p', price: 220 },
-      { key: 'plungery', price: 900 },
-    ],
-    //ручки
-    handles: [
-      { key: 'silikonovie', price: 0 },
-      { key: 'metallicheskie', price: 220 },
-    ],
-    //комплект креплений
-    komplekt: [
-      { key: 'one', price: 0 },
-      { key: 'half', price: 220 },
-      { key: 'two', price: 440 },
+    Perekat: {
+      min: [
+        { key: 'minprice', price: 0 }
       ],
-      // Углы
-    corners: [
-      { key: 'plastikovie', price: 0 },
-      { key: 'metallicheskie', price: 450 }
-    ],
-    // Ручки
-    handles: [
-      { key: 'silikonovie', price: 0 },
-      { key: 'metallicheskie', price: 220 },
-      { key: 'bezruchek', price: 0 }
-    ],
+      canvas: [
+        { key: 'fiberglass', price: 1782, min: 1782 },
+        { key: 'petscreen', price: 3688, min: 3688 },
+        { key: 'maxivision', price: 3688, min: 3688 },
+        { key: 'micromesh', price: 3795, min: 3795 },
+        { key: 'antipyl', price: 3415, min: 3415 },
+        { key: 'polltex', price: 3415, min: 3415 },
+        { key: 'antibird', price: 3415, min: 3415 },
+        { key: 'sunlight', price: 3415, min: 3415 },
+        { key: 'diamond', price: 4039, min: 4039 },
+        { key: 'antipo', price: 4315, min: 4315 },
+        { key: 'metalmesh', price: 4588, min: 4588 },
+        { key: 'resplion', price: 5098, min: 5098 }
+      ],
+        // Цвет рамки
+      frame_color: [
+        { key: 'white', price: 0 },
+        { key: 'antracite', price: 1000 },
+        { key: 'black', price: 1000 },
+        { key: 'ral.min', price: 6000 },
+        { key: 'ral', price: 1000 },
+      ],
+      //тип крепления
+      fastings: [
+        { key: 'z-krepleniya-m', price: 450 },
+        { key: 'z-krepleniya-p', price: 220 },
+        { key: 'plungery', price: 900 },
+      ],
+      //ручки
+      handles: [
+        { key: 'silikonovie', price: 0 },
+        { key: 'metallicheskie', price: 220 },
+      ],
+      //комплект креплений
+      komplekt: [
+        { key: 'one', price: 0 },
+        { key: 'half', price: 220 },
+        { key: 'two', price: 440 },
+        ],
+        // Углы
+      corners: [
+        { key: 'plastikovie', price: 0 },
+        { key: 'metallicheskie', price: 450 }
+      ],
+      // Ручки
+      handles: [
+        { key: 'silikonovie', price: 0 },
+        { key: 'metallicheskie', price: 220 },
+        { key: 'bezruchek', price: 0 }
+      ],
+    },
+  },
+  dealer: {
+    Perekat: {
+      canvas: [
+        { key: 'fiberglass', price: 1782, min: 1782 },
+        { key: 'petscreen', price: 3688, min: 3688 },
+        { key: 'maxivision', price: 3688, min: 3688 },
+        { key: 'micromesh', price: 3795, min: 3795 },
+        { key: 'antipyl', price: 3415, min: 3415 },
+        { key: 'polltex', price: 3415, min: 3415 },
+        { key: 'antibird', price: 3415, min: 3415 },
+        { key: 'sunlight', price: 3415, min: 3415 },
+        { key: 'diamond', price: 4039, min: 4039 },
+        { key: 'antipo', price: 4315, min: 4315 },
+        { key: 'metalmesh', price: 4588, min: 4588 },
+        { key: 'resplion', price: 5098, min: 5098 }
+      ],
+        // Цвет рамки
+      frame_color: [
+        { key: 'white', price: 0 },
+        { key: 'antracite', price: 1000 },
+        { key: 'black', price: 1000 },
+        { key: 'ral.min', price: 6000 },
+        { key: 'ral', price: 1000 },
+      ],
+      //тип крепления
+      fastings: [
+        { key: 'z-krepleniya-m', price: 450 },
+        { key: 'z-krepleniya-p', price: 220 },
+        { key: 'plungery', price: 900 },
+      ],
+      //ручки
+      handles: [
+        { key: 'silikonovie', price: 0 },
+        { key: 'metallicheskie', price: 220 },
+      ],
+      //комплект креплений
+      komplekt: [
+        { key: 'one', price: 0 },
+        { key: 'half', price: 220 },
+        { key: 'two', price: 440 },
+        ],
+        // Углы
+      corners: [
+        { key: 'plastikovie', price: 0 },
+        { key: 'metallicheskie', price: 450 }
+      ],
+      // Ручки
+      handles: [
+        { key: 'silikonovie', price: 0 },
+        { key: 'metallicheskie', price: 220 },
+        { key: 'bezruchek', price: 0 }
+      ],
+    },
+
   },
 };

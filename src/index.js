@@ -16,7 +16,7 @@ function createCalculator(container = 'app') {
         <div class="container">
                 <div class="content">
                  <div class="logo"></div>
-                 <div class="logo-text">Расчет стоимость заказа</div>
+                 <div class="logo-text">Расчет стоимости заказа</div>
         </div>
             <ul class="nav nav-tabs mb-3">
                 <li class="nav-item">

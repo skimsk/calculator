@@ -18,6 +18,7 @@ export default class Price {
      * Получение цены по имени поля формы
      * @param {string} inputKey 
      */
+    
     getInputPrice(inputKey) {
         const inputData = this.formData.get(inputKey);
         if (!inputData || !inputData.value) return { price: 0, min: 0 }

@@ -5,6 +5,7 @@ import User from "../../user/User.js";
 import priceData from '../../data/price.js';
 
 
+
 class Order {
     #userRole = null;
     #priceData = Object.create(null);
@@ -140,6 +141,14 @@ class Order {
         return Math.round(price - (price * this.discount / 100)); 
     }
 
+    /**
+     * Метод для расчета суммы скидки
+     */
+    getDiscountAmount(price = 0) {
+        const discountedPrice = this.calcDiscount(price);
+        return price - discountedPrice;
+    }
+
     calcBeznal(price = 0) {
         return Math.round(price + (price * this.beznal / 100)); 
     }
@@ -204,8 +213,21 @@ class Order {
         delivery_cdek += this.deliveryCdek;    
         return delivery_cdek;
     }
+
+    // Новый метод для проверки наличия сетки Perekat в корзине
+    hasPerekat() {
+        const products = this.#cartProducts.getItems();
+        return products.some(item => item.name.includes('Перекат'));
+    } 
     
-    calcTotalPrice(min = 5000) {
+    calcTotalPrice() {
+        let minOrderAmount = 5000;
+
+        // Проверка наличия сетки Perekat и установка минимальной суммы заказа в 0
+        if (this.hasPerekat()) {
+            minOrderAmount = 0;
+        }
+
         // Рассчет по умолчанию
         let total = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
         // Рассчет с покраской по RAL
@@ -217,22 +239,23 @@ class Order {
         const specialDeliveryCost = this.calcSpecialDelivery();
         total += specialDeliveryCost;
 
-        const DeliveryCdelCost = this.calcDeliveryCdek();
-        total += DeliveryCdelCost;
+        const deliveryCdekCost = this.calcDeliveryCdek();
+        total += deliveryCdekCost;
     
         // Рассчет со скидкой только на товары и комплектующие
         total = this.calcDiscount(total);
         total = this.calcBeznal(total);
         total = this.calcNdc(total);
     
-        if (total < min && !this.pickup) {
-            total = min;
+        if (total < minOrderAmount && !this.pickup) {
+            total = minOrderAmount;
             total += specialDeliveryCost;
-            total += DeliveryCdelCost;
+            total += deliveryCdekCost;
         }
     
         return +total.toFixed(2);  // Округляем итоговую стоимость до двух знаков после запятой
     }
+    
     
     // Рассчет суммарного KPI монтажника + КПИ доставки
     // min - минимальная оплата монтажнику, р.
@@ -258,9 +281,6 @@ class Order {
     }
 
 
-    /**
-     * Уведомление наблюдателей об изменениях в заказе
-     */
     update() {
         if (this.isEmpty()) {
             this.setDefaults();
@@ -280,15 +300,40 @@ class Order {
             
             // Сумма KPI установщика
             this.kpi.assembler = this.calcTotalKPIAssembler();
+
+            // Сумма продукции и комплектующих
+            this.totalZakaz = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
+
+            // Сумма покраски
+            this.totalRAL = this.calcRAL();
+
+            // Сумма доставки
+            this.totalDelivery = this.calcDelivery() + this.calcSpecialDelivery() + this.calcCdek() + this.calcDeliveryCdek();
+
+            // Итоговая сумма до применения скидки
+            let totalBeforeDiscount = this.totalZakaz + this.totalRAL + this.totalDelivery;
+
+            // Сумма скидки
+            this.totalDis = this.getDiscountAmount(totalBeforeDiscount);
             
-            // Сумма заказа
-            this.totalPrice = this.calcTotalPrice();
+            // Итоговая цена с учетом скидки
+            this.totalPrice = this.calcDiscount(totalBeforeDiscount);
+            
+            // Проверка минимальной суммы заказа и добавление стоимости спецтранспорта и доставки при необходимости
+            let minOrderAmount = 5000;
+            if (this.hasPerekat()) {
+                minOrderAmount = 0;
+            }
+            if (this.totalPrice < minOrderAmount && !this.pickup) {
+                this.totalPrice = minOrderAmount;
+                this.totalPrice += this.calcSpecialDelivery();
+                this.totalPrice += this.calcDeliveryCdek();
+            }
         }
 
         this.broadcast();
         return this;
     }
-
 
     /**
      * Дополнительные функции
@@ -300,6 +345,7 @@ class Order {
         this.deliveryCdek = 0;                  // Тариф ТК СДЭК
         this.specificalMontage = 0;             //Стоимость работ по специфическому монтажу
         this.discount = 0;                          // Скидка (%)
+        this.totalDis = 0;                          //Сумма скидки
         this.beznal = 0;                          //Безнал
         this.ndc = 0;                          //Безнал
         this.cdek = 0;                          //Доставка до ТК СДЭК отгрузка

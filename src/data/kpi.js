@@ -93,7 +93,7 @@ export default {
             { key: 'hard', fix: 500, percent: 10 },
             { key: 'off', fix: 0, percent: 10 },
         ],
-        Perekatka: [
+        Perekat: [
             { key: 'easy', fix: 250, percent: 10 },
             { key: 'hard', fix: 350, percent: 10 },
             { key: 'off', fix: 0, percent: 10 },
@@ -345,7 +345,7 @@ export default {
                 { key: 'diamondsteel', price: 750 },
             ],
         },
-        Perekatka: {
+        Perekat: {
             canvas: [
                 { key: 'fiberglass', price: 60 },
                 { key: 'petscreen', price: 150 },

@@ -1,15 +1,3 @@
 node_modules
 .cache
 dist
-dist/bootstrap.bundle.min.4732ec62.js
-dist/bootstrap.bundle.min.4732ec62.js.map
-dist/bootstrap.min.ea896c48.css
-dist/bootstrap.min.ea896c48.css.map
-dist/bootstrap.min.ea896c48.js
-dist/bootstrap.min.ea896c48.js.map
-dist/ral.8fe6a3e0.js
-dist/ral.8fe6a3e0.js.map
-dist/src.a2b27638.js
-dist/src.a2b27638.js.map
-dist/style.92d87892.js
-dist/style.92d87892.js.map

@@ -42,7 +42,7 @@ function render() {
         <div class="module-order-form">
             <div class="container">
                 <div class="module-header">
-                    <h2>Дополнительная информация</h2>
+                    <h2>Дополнительно в заказ</h2>
                 </div>
                 <div id="OrderForm"></div>
             </div>
