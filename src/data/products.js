@@ -71,7 +71,7 @@ export default [
                             name: 'width',
                             label: 'Ширина',
                             value: '',
-                            min: '200',
+                            min: '60',
                             max: '2000',
                             step: '1',
                             unit: 'мм.',
@@ -85,7 +85,7 @@ export default [
                             name: 'height',
                             label: 'Высота',
                             value: '',
-                            min: '200',
+                            min: '60',
                             max: '3000',
                             step: '1',
                             unit: 'мм.',
@@ -146,8 +146,8 @@ export default [
                             type: 'radio',
                             label: 'Ручки',
                             items: [
-                                {value: 'silikonovie', label: 'Силиконовые'},
                                 {value: 'metallicheskie', label: 'Металлические', checked: true},
+                                {value: 'silikonovie', label: 'Силиконовые'},
                                 {value: 'bezruchek', label: 'Без ручек'},
                             ]
                         },
@@ -702,7 +702,7 @@ export default [
         }
     },
 
-    // Плиссе (Италия)
+    // Плиссе22 (Италия)
     {
         key: 'PlisseItalia',
         title: 'PLISSE22 (Италия)',
@@ -807,8 +807,8 @@ export default [
                     type: 'radio',
                     label: 'Тип монтажа',
                     items: [
-                        {value: 'sobran', label: 'В сборке', checked: true},
-                        {value: 'razobran', label: 'Без сборки'},
+                        {value: 'sobran', label: 'В собранном виде', checked: true},
+                        {value: 'razobran', label: 'В разобранном виде'},
                     ]
                 },
                 {
@@ -881,7 +881,7 @@ export default [
                             label: 'Ширина',
                             value: '',
                             min: '200',
-                            max: '2000',
+                            max: '1600',
                             step: '1',
                             unit: 'мм.',
                             required: true,
@@ -895,7 +895,7 @@ export default [
                             label: 'Высота',
                             value: '',
                             min: '200',
-                            max: '3000',
+                            max: '2500',
                             step: '1',
                             unit: 'мм.',
                             required: true,
@@ -931,6 +931,8 @@ export default [
                             items: [
                                 {value: 'white', label: 'Белый (9003)', selected: true},
                                 {value: 'brown', label: 'Коричневый (8017)'},
+                                {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -1060,8 +1062,6 @@ export default [
                             items: [
                                 {value: 'white', label: 'Белый (9003)', selected: true},
                                 {value: 'brown', label: 'Коричневый (8017)'},
-                                {value: 'antracite', label: 'Антрацит (7016)'},
-                                {value: 'black', label: 'Черный (9005)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -1143,9 +1143,6 @@ export default [
                             label: 'Тип крепления',
                             items: [
                                 {value: 'z-krepleniya-m', label: 'Z-образное (металл)', checked: true},
-                                {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
-                                {value: 'vnutrennie-zacepi', label: 'Внутренние зацепы'},
-                                {value: 'plungery', label: 'Плунжеры'},
                                 {value: 'bezkrepleniya', label: 'Без креплений'},
                             ]
                         },
@@ -1164,8 +1161,7 @@ export default [
                             type: 'radio',
                             label: 'Углы',
                             items: [
-                                {value: 'plastikovie', label: 'Пластиковые', checked: true},
-                                {value: 'metallicheskie', label: 'Металлические'},
+                                {value: 'metallicheskie', label: 'Металлические', checked: true},
                             ]
                         },
                         {
@@ -1185,9 +1181,7 @@ export default [
                             type: 'radio',
                             label: 'Ручки',
                             items: [
-                                {value: 'silikonovie', label: 'Силиконовые'},
                                 {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 'bezruchek', label: 'Без ручек'},
                             ]
                         },
                     ]
@@ -1305,8 +1299,7 @@ export default [
                     type: 'radio',
                     label: 'Тип монтажа',
                     items: [
-                        {value: 'sobran', label: 'В сборке', checked: true},
-                        {value: 'razobran', label: 'Без сборки'},
+                        {value: 'sobran', label: 'В собранном виде', checked: true},
                     ]
                 },
                 {
@@ -1397,6 +1390,19 @@ export default [
                             required: true,
                         },
                         {
+                            key: 'height',
+                            type: 'number',
+                            name: 'height',
+                            label: 'Высота прямоугольной части',
+                            value: '',
+                            min: '200',
+                            max: '2500',
+                            step: '1',
+                            unit: 'мм.',
+                            required: true,
+                        },
+                        /*
+                        {
                             key: 'height_left',
                             type: 'number',
                             name: 'height_left',
@@ -1418,6 +1424,7 @@ export default [
                             step: '1',
                             unit: 'мм.',
                         },
+                        */
                     ]
                 },
                 {
@@ -1451,8 +1458,8 @@ export default [
                             type: 'radio',
                             label: 'Углы',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
-                                {value: 'plastikovie', label: 'Пластиковые'},
+                                {value: 'plastikovie', label: 'Пластиковые', checked: true},
+                                {value: 'metallicheskie', label: 'Металлические'},
                             ]
                         },
                         {
@@ -1515,6 +1522,7 @@ export default [
                                 {value: 'white', label: 'Белый (9003)', selected: true},
                                 {value: 'brown', label: 'Коричневый (8017)'},
                                 {value: 'antracite', label: 'Антрацит (7016)'},
+                                {value: 'black', label: 'Черный (9005)'},
                                 {value: 'ral', label: 'Покраска в RAL'},
                             ]
                         },
@@ -2029,16 +2037,6 @@ export default [
                         {value: 'ruchki-metallicheskie', label: 'Металлические ручки'},
                         {value: 'ruchki-plastikovie', label: 'Пластиковые ручки'},
                         {value: 'fetr', label: 'Фетр'},
-                    ]
-                },
-                {
-                    key: 'komplekt',
-                    type: 'radio',
-                    label: 'Комплект креплений',
-                    items: [
-                        {value: 'one', label: '1'},
-                        {value: 'half', label: '1,5'},
-                        {value: 'two', label: '2'},
                     ]
                 },
             ]

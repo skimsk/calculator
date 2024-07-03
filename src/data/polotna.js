@@ -9,6 +9,10 @@ export default {
     fiberglassrollet: [
         {value: 'gray', label: 'Серый'},
     ],
+    antiporollet: [
+        {value: 'gray', label: 'Серый'},
+        {value: 'black', label: 'Чёрный'},
+    ],
     petscreen: [
         {value: 'blacksun', label: 'Белый'},
         {value: 'gray', label: 'Серый'},

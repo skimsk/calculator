@@ -17,15 +17,15 @@ export default class PlisseItalia extends ProductForm {
             switch (this.getValue()) {
                 case 'vstrechnoe': 
                 case 'reversivnoe': 
-                    width.setMax('6000').validate();
+                    width.setMax('4000').validate();
                 break; 
                 default: 
-                    width.setMax('3000').validate();
+                    width.setMax('2000').validate();
                 break;   
             }
         });
     }
-
+    /*
     // Изменение максимальной высоты в зависимости от полотна
     canvas(field) {
         const height = this.getInput('height'); // Поле "высота"
@@ -43,4 +43,5 @@ export default class PlisseItalia extends ProductForm {
             }
         });
     }
+        */
 }

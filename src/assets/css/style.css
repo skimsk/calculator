@@ -21,7 +21,7 @@ body {background-color: #eaeaea;}
 
 .icon {display: inline-block;width: 25px;height: 25px;}
 
-.logo {width: 254px; height: 90px; background: center center / cover no-repeat url("../images/logo.png");}
+.logo {width: 250px; height: 85px; background: center center / cover no-repeat url("../images/logo.png");}
 .logo-text{width: 70%;text-align: left;padding-top: 15px; }
 .app .content  {max-width: 870px;}
 .content {display: flex;padding: 10px 0px; align-items: center;justify-content: space-between;}

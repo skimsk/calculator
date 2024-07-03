@@ -18,7 +18,8 @@ import RamochnayaOptima from "./products/RamochnayaOptima.js";
 import RulonnayaItalia from "./products/RulonnayaItalia.js";
 import PlisseItalia from "./products/PlisseItalia.js";
 import PlisseRussia from "./products/PlisseRussia.js"
-
+import Ramochnaya32 from "./products/Ramochnaya32.js";
+import TrapeciyaStandart from "./products/TrapeciyaStandart.js";
 
 const ProductKeys = {
     'Ramochnaya25': Ramochnaya25,
@@ -26,6 +27,8 @@ const ProductKeys = {
     'RulonnayaItalia': RulonnayaItalia,
     'PlisseItalia': PlisseItalia,
     'PlisseRussia': PlisseRussia,
+    'Ramochnaya32': Ramochnaya32,
+    'TrapeciyaStandart': TrapeciyaStandart,
 }
 
 const userRole = User.getRole();

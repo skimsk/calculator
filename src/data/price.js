@@ -1,6 +1,7 @@
 export default {
   // Монтажник
   employee: {
+    //Рамочная 25мм
     Ramochnaya25: {
       canvas: [
         { key: 'fiberglass', price: 1980, min: 1980 },
@@ -10,11 +11,11 @@ export default {
         { key: 'antipyl', price: 3795, min: 3795 },
         { key: 'polltex', price: 4857, min: 4857 },
         { key: 'antibird', price: 6527, min: 6527 },
-        { key: 'sunlight', price: 1900, min: 1500 },
-        { key: 'diamond', price: 4929, min: 4929 },
-        { key: 'antipo', price: 5795, min: 5795 },
-        { key: 'metalmesh', price: 4488, min: 4488},
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'sunlight', price: 4929, min: 4929 },
+        { key: 'diamond', price: 4488, min: 4488 },
+        { key: 'antipo', price: 4795, min: 4795 },
+        { key: 'metalmesh', price: 5098, min: 5098 },
+        { key: 'resplion', price: 6527, min: 6527 }
       ],
       // Цвет рамки
       frame_color: [
@@ -53,8 +54,8 @@ export default {
       ],  
       //комплект креплений
       komplekt: [
-        { key: 'one', price: 0 },
-        { key: 'half', price: 110 },
+        { key: 'one', price: 220 },
+        { key: 'half', price: 330 },
         { key: 'two', price: 440 },
       ],
       // Монтаж
@@ -74,7 +75,7 @@ export default {
         { key: 'resplion', price: 8404, min: 8404 },
         { key: 'sunlight', price: 6886, min: 6886},
         { key: 'diamond', price: 6196, min: 6196},
-        { key: 'antipo', price: 7920, min: 7920 },
+        { key: 'antipo', price: 6920, min: 6920 },
         { key: 'metalmesh', price: 7196, min: 7196},
 
       ],
@@ -82,6 +83,7 @@ export default {
       frame_color: [
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
+        { key: 'black', price: 1000 },
         { key: 'ral.min', price: 6000 },
         { key: 'ral', price: 1000 },
       ],
@@ -95,8 +97,8 @@ export default {
       ],  
       komplekt:[
         { key: 'one', price: 0},
-        { key: 'half', price: 675 },
-        { key: 'two', price: 900 },
+        { key: 'half', price: 500},
+        { key: 'two', price: 1000 },
       ],
       // Монтаж
       montage: [
@@ -115,13 +117,14 @@ export default {
         { key: 'resplion', price: 12804, min: 12804 },
         { key: 'sunlight', price: 11286, min: 11286 },
         { key: 'diamond', price: 10596, min: 10596 },
-        { key: 'antipo', price: 12320, min: 12320 },
+        { key: 'antipo', price: 11320, min: 11320 },
         { key: 'metalmesh', price: 11596, min: 11596 },
       ],
       // Цвет рамки
       frame_color: [
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
+        { key: 'brown', price: 1000 },
         { key: 'black', price: 1000 },
         { key: 'ral.min', price: 6000 },
         { key: 'ral', price: 1000 },
@@ -134,10 +137,10 @@ export default {
         { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],
+      //Комплект креплений
       komplekt:[
         { key: 'one', price: 0},
-        { key: 'half', price: 675 },
-        { key: 'two', price: 900 },
+        { key: 'half', price: 500 },
       ],
       // Монтаж
       montage: [
@@ -145,6 +148,7 @@ export default {
         { key: 'hard', price: 1600 }
       ]
     },
+    //Рамочная 32мм
     Ramochnaya32: {
       canvas: [
         { key: 'fiberglass', price: 3980, min: 3980 },
@@ -156,7 +160,7 @@ export default {
         { key: 'resplion', price: 8527, min: 8527 },
         { key: 'sunlight', price: 6929, min: 6929},
         { key: 'diamond', price: 6488, min: 6488},
-        { key: 'antipo', price: 7795, min: 7795 },
+        { key: 'antipo', price: 6795, min: 6795 },
         { key: 'metalmesh', price: 7098, min: 7098},
       ],
       // Цвет рамки
@@ -217,7 +221,7 @@ export default {
         { key: 'resplion', price: 9577, min: 9577 },
         { key: 'sunlight', price: 8059, min: 8059 },
         { key: 'diamond', price: 7369, min: 7369 },
-        { key: 'antipo', price: 9093, min: 9093 },
+        { key: 'antipo', price: 8093, min: 8093 },
         { key: 'metalmesh', price: 8369, min: 8369 },
       ],
       // Цвет рамки
@@ -245,16 +249,17 @@ export default {
     //Рамочная в раме Provedal
     Dvernaya32: {
       canvas: [
-        { key: 'fiberglass', price: 5023, min: 5023 },
-        { key: 'petscreen', price: 7369, min: 7369 },
-        { key: 'maxivision', price: 7369, min: 7369 },
-        { key: 'micromesh', price: 7093, min: 7093 },
-        { key: 'antipyl', price: 7093, min: 7093 },
-        { key: 'polltex', price: 8059, min: 8059 },
-        { key: 'resplion', price: 9577, min: 9577 },
-        { key: 'sunlight', price: 8059, min: 8059 },
-        { key: 'antipo', price: 9093, min: 9093 },
-        { key: 'metalmesh', price: 8369, min: 8369 },
+        { key: 'fiberglass', price: 1980, min: 1980 },
+        { key: 'petscreen', price: 4098, min: 4098 },
+        { key: 'maxivision', price: 4098, min: 4098 },
+        { key: 'micromesh', price: 3795, min: 3795 },
+        { key: 'antipyl', price: 3795, min: 3795 },
+        { key: 'polltex', price: 4857, min: 4857 },
+        { key: 'antibird', price: 6527, min: 6527 },
+        { key: 'sunlight', price: 4929, min: 4929 },
+        { key: 'diamond', price: 4488, min: 4488 },
+        { key: 'antipo', price: 4795, min: 4795 },
+        { key: 'resplion', price: 6527, min: 6527 }
       ],
       // Цвет рамки
       frame_color: [
@@ -291,11 +296,11 @@ export default {
         { key: 'antipyl', price: 3795, min: 3795 },
         { key: 'polltex', price: 4857, min: 4857 },
         { key: 'antibird', price: 6527, min: 6527 },
-        { key: 'sunlight', price: 1900, min: 1500 },
-        { key: 'diamond', price: 4929, min: 4929 },
-        { key: 'antipo', price: 5795, min: 5795 },
-        { key: 'metalmesh', price: 4488, min: 4488},
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'sunlight', price: 4929, min: 4929 },
+        { key: 'diamond', price: 4488, min: 4488 },
+        { key: 'antipo', price: 4795, min: 4795 },
+        { key: 'metalmesh', price: 5098, min: 5098 },
+        { key: 'resplion', price: 6527, min: 6527 }
       ],
       // Цвет рамки
       frame_color: [
@@ -322,20 +327,21 @@ export default {
         { key: 'priceplus', price: 15000 }
       ],
     },
+    //Дверная 42
     Dvernaya42: {
       canvas: [
-        { key: 'fiberglass', price: 1980, min: 1980 },
-        { key: 'petscreen', price: 4098, min: 4098 },
-        { key: 'maxivision', price: 4098, min: 4098 },
-        { key: 'micromesh', price: 3795, min: 3795 },
-        { key: 'antipyl', price: 3795, min: 3795 },
-        { key: 'polltex', price: 4857, min: 4857 },
-        { key: 'antibird', price: 6527, min: 6527 },
-        { key: 'sunlight', price: 1900, min: 1500 },
-        { key: 'diamond', price: 4929, min: 4929 },
-        { key: 'antipo', price: 5795, min: 5795 },
-        { key: 'metalmesh', price: 4488, min: 4488},
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'fiberglass', price: 6142, min: 6142 },
+        { key: 'petscreen', price: 8488, min: 8488 },
+        { key: 'maxivision', price: 8488, min: 8488 },
+        { key: 'micromesh', price: 8212, min: 8212 },
+        { key: 'antipyl', price: 8212, min: 8212 },
+        { key: 'polltex', price: 9178, min: 9178 },
+        { key: 'resplion', price: 10696, min: 10696 },
+        { key: 'sunlight', price: 9178, min: 9178 },
+        { key: 'diamond', price: 8488, min: 8488 },
+        { key: 'antipo', price: 9212, min: 9212 },
+        { key: 'metalmesh', price: 9488, min: 9488},
+
       ],
       // Цвет рамки
       frame_color: [
@@ -359,9 +365,9 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ], 
       // Монтаж
@@ -370,6 +376,7 @@ export default {
         { key: 'hard', price: 2200 }
       ]
     },
+    //Плиссе22 италия
     PlisseItalia: {
       opening: [
           { key: 'odnostoronee', price: 20790},
@@ -447,6 +454,8 @@ export default {
       // Цвет рамки
       frame_color: [
         { key: 'white', price: 0 },
+        { key: 'brown', price: 0},
+        { key: 'black', price: 1000 },
         { key: 'antracite', price: 1000 },
         { key: 'ral.min', price: 6000 },
         { key: 'ral', price: 1000 },
@@ -454,16 +463,16 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],  
       //комплект креплений
       komplekt: [
         { key: 'one', price: 0 },
-        { key: 'half', price: 110 },
-        { key: 'two', price: 440 },
+        { key: 'half', price: 225 },
+        { key: 'two', price: 450 },
       ],
       // Монтаж
       montage: [
@@ -471,6 +480,7 @@ export default {
         { key: 'hard', price: 1200 }
       ]
     },
+    //Трапеция 25мм
     TrapeciyaStandart: {
       canvas: [
         { key: 'fiberglass', price: 1980, min: 1980 },
@@ -480,11 +490,11 @@ export default {
         { key: 'antipyl', price: 3795, min: 3795 },
         { key: 'polltex', price: 4857, min: 4857 },
         { key: 'antibird', price: 6527, min: 6527 },
-        { key: 'sunlight', price: 1900, min: 1500 },
-        { key: 'diamond', price: 4929, min: 4929 },
-        { key: 'antipo', price: 5795, min: 5795 },
-        { key: 'metalmesh', price: 4488, min: 4488},
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'sunlight', price: 4929, min: 4929 },
+        { key: 'diamond', price: 4488, min: 4488 },
+        { key: 'antipo', price: 4795, min: 4795 },
+        { key: 'metalmesh', price: 5098, min: 5098 },
+        { key: 'resplion', price: 6527, min: 6527 }
       ],
       // Цвет рамки
       frame_color: [
@@ -518,9 +528,9 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],  
       //комплект креплений
@@ -544,11 +554,11 @@ export default {
         { key: 'antipyl', price: 3795, min: 3795 },
         { key: 'polltex', price: 4857, min: 4857 },
         { key: 'antibird', price: 6527, min: 6527 },
-        { key: 'sunlight', price: 1900, min: 1500 },
-        { key: 'diamond', price: 4929, min: 4929 },
-        { key: 'antipo', price: 5795, min: 5795 },
-        { key: 'metalmesh', price: 4488, min: 4488},
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'sunlight', price: 4929, min: 4929 },
+        { key: 'diamond', price: 4488, min: 4488 },
+        { key: 'antipo', price: 4795, min: 4795 },
+        { key: 'metalmesh', price: 5098, min: 5098 },
+        { key: 'resplion', price: 6527, min: 6527 }
       ],
       // Цвет рамки
       frame_color: [
@@ -579,9 +589,9 @@ export default {
       //Перемычки
       peremychka: [
         { key: 'one', price: 0 },
-        { key: 'two', price: 440 },
-        { key: 'three', price: 660 },
-        { key: 'four', price: 880 },
+        { key: 'two', price: 220 },
+        { key: 'three', price: 440 },
+        { key: 'four', price: 660 },
         { key: 'krest', price: 2200 }
       ],  
       //комплект креплений
@@ -607,15 +617,15 @@ export default {
         { key: 'fiberglass', price: 1782, min: 1782 },
         { key: 'petscreen', price: 3688, min: 3688 },
         { key: 'maxivision', price: 3688, min: 3688 },
-        { key: 'micromesh', price: 3795, min: 3795 },
+        { key: 'micromesh', price: 3415, min: 3415 },
         { key: 'antipyl', price: 3415, min: 3415 },
-        { key: 'polltex', price: 3415, min: 3415 },
-        { key: 'antibird', price: 3415, min: 3415 },
-        { key: 'sunlight', price: 3415, min: 3415 },
+        { key: 'polltex', price: 4371, min: 4371 },
+        { key: 'antibird', price: 5874, min: 5874 },
+        { key: 'sunlight', price: 4436, min: 4436 },
         { key: 'diamond', price: 4039, min: 4039 },
         { key: 'antipo', price: 4315, min: 4315 },
         { key: 'metalmesh', price: 4588, min: 4588 },
-        { key: 'resplion', price: 5098, min: 5098 }
+        { key: 'resplion', price: 5874, min: 5874 }
       ],
         // Цвет рамки
       frame_color: [

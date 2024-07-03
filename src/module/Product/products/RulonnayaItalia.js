@@ -15,8 +15,7 @@ export default class RulonnayaItalia extends ProductForm {
         const height = this.getInput('height'); // Поле "высота"
         field.on('change', function() {
             switch (this.getValue()) {
-                case 'antipo-gray': 
-                case 'antipo-black': 
+                case 'antiporollet': 
                     height.setMax('1800').validate();
                 break; 
                 default: 

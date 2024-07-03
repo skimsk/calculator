@@ -302,16 +302,18 @@ class Order {
             this.kpi.assembler = this.calcTotalKPIAssembler();
 
             // Сумма продукции и комплектующих
-            this.totalZakaz = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
+            this.totalZakaz = this.calcTotalPriceProducts() + this.calcTotalPriceExtras() + this.calcBeznal();
 
             // Сумма покраски
             this.totalRAL = this.calcRAL();
+
+            this.totalBeznal = this.calcBeznal();
 
             // Сумма доставки
             this.totalDelivery = this.calcDelivery() + this.calcSpecialDelivery() + this.calcCdek() + this.calcDeliveryCdek();
 
             // Итоговая сумма до применения скидки
-            let totalBeforeDiscount = this.totalZakaz + this.totalRAL + this.totalDelivery;
+            let totalBeforeDiscount = this.totalZakaz + this.totalRAL + this.totalDelivery + this.totalBeznal;
 
             // Сумма скидки
             this.totalDis = this.getDiscountAmount(totalBeforeDiscount);
@@ -347,6 +349,7 @@ class Order {
         this.discount = 0;                          // Скидка (%)
         this.totalDis = 0;                          //Сумма скидки
         this.beznal = 0;                          //Безнал
+        this.totalBeznal =0;
         this.ndc = 0;                          //Безнал
         this.cdek = 0;                          //Доставка до ТК СДЭК отгрузка
         this.pickup = this.#userRole === 'dealer';  // Самовывоз (true/false) У диллеров самовывоз по умолчанию "Да" 
