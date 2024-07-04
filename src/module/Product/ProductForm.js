@@ -164,7 +164,7 @@ export default class ProductForm extends Form {
     createInputRAL(config = {}) {
         const input = new InputRAL(config.key, '1000', '9023'); // Ключ, мин, макс
         input.setLabel(config.label);
-        input.setDisabled(false);
+        input.setDisabled(true);
         input.setValue('1000');
         // input.setVisible(config.visible);
 

@@ -220,7 +220,7 @@ body {background-color: #eaeaea;}
 .module-order-total .order-total-debug span {font-size: 18px;font-weight: 700;color: #bb1616;}
 
 @media (max-width: 575px) {
-   .module-order-total .order-total {font-weight: 700;grid-template-columns: repeat(2, 1fr);display: grid;}
+   .module-order-total .order-total {font-weight: 700;grid-template-columns: repeat(2, 1fr);display: flex;}
    .module-order-total .order-total-delivery {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;}
    .module-order-total .order-total-delivery li {margin-right: 10px;} 
    .module-order-total .order-total-delivery span {font-size: 16px;font-weight: 500;color: #000;}
