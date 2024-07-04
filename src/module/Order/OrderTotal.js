@@ -10,7 +10,7 @@ class OrderTotal {
     constructor() {
         this.$wrapper = document.createElement('div');
         this.$buttonOrder = new Button('button_order').setText('Отправить в CRM').setIcon('icon-loader');
-        //this.$buttonSave = new Button('button_save').setText('Сохранить')
+        this.$buttonSave = new Button('button_save').setText('Сохранить')
         this.$actions = document.createElement('div');
         this.$total = document.createElement('div');
 
@@ -18,9 +18,9 @@ class OrderTotal {
         this.$total.className = 'order-total';
         this.$actions.className = 'order-actions';
         this.$buttonOrder.setClass('button button-order');
-        //this.$buttonSave.setClass('button button-save');
+        this.$buttonSave.setClass('button button-save');
         /*this.$actions.append(this.$buttonOrder.render());*/
-        //this.$actions.append(this.$buttonSave.render());
+        this.$actions.append(this.$buttonSave.render());
         this.$wrapper.append(this.$total, this.$actions);
 
         this.setButtonOrderActions();
