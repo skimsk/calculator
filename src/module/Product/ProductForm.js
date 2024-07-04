@@ -90,13 +90,13 @@ export default class ProductForm extends Form {
 
         if (inputRAL !== undefined) {
             field.on('change', function(e) {
-                inputRAL.setDisabled(false);
+                inputRAL.setDisabled(true);
                 if (this.getValue() === 'ral') {
                     inputRAL.setDisabled(false);
   
                     // Bootstrap events accessibility fix:
-                    //const button = inputRAL.getButton().getElement();
-                    //button.dispatchEvent(new Event('click'));
+                    const button = inputRAL.getButton().getElement();
+                    button.dispatchEvent(new Event('click'));
                 }
             }) 
         }
@@ -164,9 +164,9 @@ export default class ProductForm extends Form {
     createInputRAL(config = {}) {
         const input = new InputRAL(config.key, '1000', '9023'); // Ключ, мин, макс
         input.setLabel(config.label);
-        input.setDisabled(true);
+        input.setDisabled(false);
         input.setValue('1000');
-        input.setVisible(config.visible);
+        // input.setVisible(config.visible);
 
         return input;
     }

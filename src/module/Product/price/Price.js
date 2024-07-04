@@ -90,18 +90,16 @@ export default class Price {
             // Получаем цену за выбранный тип крепления
             const fastingsPrice = this.getInputPrice('fastings').price;
     
-            // Добавляем цену за выбранный тип крепления
-            price += fastingsPrice;
-    
             // Учитываем выбранный комплект
             if (komplektSelected) {
                 switch (komplektSelected.value) {
                     case 'one':
                         // Стоимость уже учтена
+                        price += fastingsPrice;
                         break;
                     case 'half':
                         // Добавляем половину цены за тип крепления
-                        price += fastingsPrice / 2;
+                        price += fastingsPrice + (fastingsPrice / 2);
                         break;
                     case 'two':
                         // Добавляем удвоенную цену за тип крепления
@@ -110,6 +108,9 @@ export default class Price {
                     default:
                         break;
                 }
+            } else {
+                // Если комплект не выбран, только цена за тип крепления
+                price += fastingsPrice;
             }
         } else {
             // Если тип крепления не выбран, считаем цену комплекта по прайсу
