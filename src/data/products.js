@@ -139,6 +139,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -279,6 +280,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },   
                     ]
@@ -408,6 +410,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },  
                     ]
@@ -547,6 +550,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },  
                     ]
@@ -678,7 +682,8 @@ export default [
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
-                                {value: 'krest', label: 'Крестообразная'}
+                                {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -1029,6 +1034,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                     ]
@@ -1174,6 +1180,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -1472,6 +1479,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -1787,6 +1795,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -1912,6 +1921,7 @@ export default [
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {

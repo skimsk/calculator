@@ -10,7 +10,7 @@ class OrderTotal {
     constructor() {
         this.$wrapper = document.createElement('div');
         this.$buttonOrder = new Button('button_order').setText('Отправить в CRM').setIcon('icon-loader');
-        this.$buttonSave = new Button('button_save').setText('Сохранить файл')
+        this.$buttonSave = new Button('button_save').setText('Сохранить')
         this.$actions = document.createElement('div');
         this.$total = document.createElement('div');
 
@@ -74,7 +74,7 @@ class OrderTotal {
      */
     update(order) {
         let summary = `<ul class="order-total-debug">`;
-        summary += `<li>Итого сумма: <span>${order.totalPrice}</span> ₽</li>`;
+        summary += `<li>Итого: <span>${order.totalPrice}</span> ₽</li>`;
         summary += `</ul>`;  // Закрываем тег <ul>
         
         let summarydelivery = `<ul class="order-total-delivery">`;

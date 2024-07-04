@@ -20,6 +20,7 @@ import PlisseItalia from "./products/PlisseItalia.js";
 import PlisseRussia from "./products/PlisseRussia.js"
 import Ramochnaya32 from "./products/Ramochnaya32.js";
 import TrapeciyaStandart from "./products/TrapeciyaStandart.js";
+import Arochnaya from "./products/Arochnaya.js"
 
 const ProductKeys = {
     'Ramochnaya25': Ramochnaya25,
@@ -29,6 +30,7 @@ const ProductKeys = {
     'PlisseRussia': PlisseRussia,
     'Ramochnaya32': Ramochnaya32,
     'TrapeciyaStandart': TrapeciyaStandart,
+    'Arochnaya': Arochnaya,
 }
 
 const userRole = User.getRole();
@@ -81,10 +83,12 @@ function createOrderItem(form) {
     // Получение значения монтажных работ
     const montagePrice = parseFloat(formData.get('mogtagespes')?.value) || 0;
 
+    const pokraska = parseFloat(formData.get('rame_color')?.value) || 0;
+
     // Цена сетки с монтажом или без (считается сразу в ProductPrice)
     const productPrice = new ProductPrice(productKey, userRole, formData).calculate();
     // Итоговая цена с учётом стоимости монтажа
-    const totalPrice = productPrice + montagePrice;
+    const totalPrice = productPrice + montagePrice + pokraska;
 
     // KPI Монтажника
     const kpiInstaller = new KPIInstaller(productKey, formData, totalPrice).calculate();

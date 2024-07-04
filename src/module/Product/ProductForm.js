@@ -90,13 +90,13 @@ export default class ProductForm extends Form {
 
         if (inputRAL !== undefined) {
             field.on('change', function(e) {
-                inputRAL.setDisabled(true);
+                inputRAL.setDisabled(false);
                 if (this.getValue() === 'ral') {
                     inputRAL.setDisabled(false);
   
                     // Bootstrap events accessibility fix:
-                    const button = inputRAL.getButton().getElement();
-                    button.dispatchEvent(new Event('click'));
+                    //const button = inputRAL.getButton().getElement();
+                    //button.dispatchEvent(new Event('click'));
                 }
             }) 
         }
@@ -166,7 +166,7 @@ export default class ProductForm extends Form {
         input.setLabel(config.label);
         input.setDisabled(true);
         input.setValue('1000');
-        // input.setVisible(config.visible);
+        input.setVisible(config.visible);
 
         return input;
     }

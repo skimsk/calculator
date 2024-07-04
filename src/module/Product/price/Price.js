@@ -18,7 +18,6 @@ export default class Price {
      * Получение цены по имени поля формы
      * @param {string} inputKey 
      */
-    
     getInputPrice(inputKey) {
         const inputData = this.formData.get(inputKey);
         if (!inputData || !inputData.value) return { price: 0, min: 0 }
@@ -82,29 +81,79 @@ export default class Price {
     // Рассчет опций по умолчанию
     calcOptionsPrice() {
         let price = 0;
-        for (const input of this.formData.values()) {
-            switch (input.key) {
-                case 'corners':
-                case 'handles':
-                case 'fastings':
-                case 'komplekt':
-                case 'peremychka':
-                case 'plusprice':
-                case 'latche':
-                case 'hinges':
-                    price += this.getInputPrice(input.key).price;
-                break;
-                case 'remake':
-                    price += this.getInputPrice('remake').reduce((sum, item) => sum + item.price, 0);
-                    break;
+    
+        // Проверяем, есть ли выбранный тип крепления
+        const fastingsSelected = this.formData.get('fastings');
+        const komplektSelected = this.formData.get('komplekt');  // Получаем выбранный комплект
+    
+        if (fastingsSelected) {
+            // Получаем цену за выбранный тип крепления
+            const fastingsPrice = this.getInputPrice('fastings').price;
+    
+            // Добавляем цену за выбранный тип крепления
+            price += fastingsPrice;
+    
+            // Учитываем выбранный комплект
+            if (komplektSelected) {
+                switch (komplektSelected.value) {
+                    case 'one':
+                        // Стоимость уже учтена
+                        break;
+                    case 'half':
+                        // Добавляем половину цены за тип крепления
+                        const halfPrice = fastingsPrice / 2;
+                        price += halfPrice;
+                        break;
+                    case 'two':
+                        // Добавляем удвоенную цену за тип крепления
+                        const twoPrice = fastingsPrice * 2;
+                        price += twoPrice;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        } else {
+            // Если тип крепления не выбран, считаем цену комплекта по прайсу
+            const komplektPrice = this.getInputPrice('komplekt').price;
+            price += komplektPrice;
+    
+            // Логика для добавления других опций, если `fastings` не выбран
+            for (const input of this.formData.values()) {
+                const key = input.key;
+                const inputPrice = this.getInputPrice(key);
+    
+                switch (key) {
+                    case 'corners':
+                    case 'handles':
+                    case 'peremychka':
+                        price += inputPrice.price;
+                        break;
+                    case 'montage':
+                        price += this.getInputPrice('montage').price;
+                        break;
+                    case 'canvas':
+                    case 'canvas_color':
+                    case 'frame_color':
+                        // Эти параметры не участвуют в расчете стоимости, если у вас нет дополнительной логики для них
+                        break;
+                    case 'remake':
+                        const remakePrices = this.getInputPrice('remake').map(item => item.price);
+                        const totalRemakePrice = remakePrices.reduce((sum, item) => sum + item, 0);
+                        price += totalRemakePrice;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
-
+    
         // Debug
         if (this.debug === true) console.log(`calcOptionsPrice = ${price}`);
-
+    
         return price;
     }
+        
 
     // Рассчет цены на рельсы
     calcRailPrice() {

@@ -21,7 +21,7 @@ body {background-color: #eaeaea;}
 
 .icon {display: inline-block;width: 25px;height: 25px;}
 
-.logo {width: 250px; height: 85px; background: center center / cover no-repeat url("../images/logo.png");}
+.logo {width: 245px; height: 80px;margin-left: 10px;  background: center center / cover no-repeat url("../images/logo.png");}
 .logo-text{width: 70%;text-align: left;padding-top: 15px; }
 .app .content  {max-width: 870px;}
 .content {display: flex;padding: 10px 0px; align-items: center;justify-content: space-between;}
@@ -188,7 +188,7 @@ body {background-color: #eaeaea;}
 .form-order .form-group-deal_id {grid-column: 1/4;}
 .form-order .form-group-comment .form-control {min-height: 100px;}
 @media (max-width: 575px) {
-   .form-order {grid-template-columns: repeat(2, 1fr);}
+   .form-order {grid-template-columns: repeat(2, 1fr);gap: 10px;display: grid; align-items: baseline;}
    .form-order .form-group {display: flex;align-items: flex-end;flex-wrap: wrap;}
    .form-order .form-group-discount {grid-column: 1/3;}
    .form-order .form-group-comment,
@@ -218,6 +218,22 @@ body {background-color: #eaeaea;}
 .module-order-total .order-total-debug {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;} 
 .module-order-total .order-total-debug li {margin-right: 10px;}
 .module-order-total .order-total-debug span {font-size: 18px;font-weight: 700;color: #bb1616;}
+
+@media (max-width: 575px) {
+   .module-order-total .order-total {font-weight: 700;grid-template-columns: repeat(2, 1fr);display: grid;}
+   .module-order-total .order-total-delivery {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;}
+   .module-order-total .order-total-delivery li {margin-right: 10px;} 
+   .module-order-total .order-total-delivery span {font-size: 16px;font-weight: 500;color: #000;}
+   .module-order-total .order-total-discount {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;}
+   .module-order-total .order-total-discount li {margin-right: 10px;} 
+   .module-order-total .order-total-discount span {font-size: 16px;font-weight: 500;color: #000;}
+   .module-order-total .order-total-zakaz {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;}
+   .module-order-total .order-total-zakaz li {margin-right: 10px;} 
+   .module-order-total .order-total-zakaz span {font-size: 16px;font-weight: 500;color: #000;}
+   .module-order-total .order-total-debug {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;} 
+   .module-order-total .order-total-debug li {margin-right: 10px;}
+   .module-order-total .order-total-debug span {font-size: 18px;font-weight: 700;color: #bb1616;}
+}
 
 
 /**
