@@ -20,7 +20,6 @@ class OrderTotal {
         this.$buttonOrder.setClass('button button-order');
         this.$buttonSave.setClass('button button-save');
         /*this.$actions.append(this.$buttonOrder.render());*/
-        this.$actions.append(this.$buttonSave.render());
         this.$wrapper.append(this.$total, this.$actions);
 
         this.setButtonOrderActions();
