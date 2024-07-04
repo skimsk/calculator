@@ -101,13 +101,11 @@ export default class Price {
                         break;
                     case 'half':
                         // Добавляем половину цены за тип крепления
-                        const halfPrice = fastingsPrice / 2;
-                        price += halfPrice;
+                        price += fastingsPrice / 2;
                         break;
                     case 'two':
                         // Добавляем удвоенную цену за тип крепления
-                        const twoPrice = fastingsPrice * 2;
-                        price += twoPrice;
+                        price += fastingsPrice * 2;
                         break;
                     default:
                         break;
@@ -117,34 +115,26 @@ export default class Price {
             // Если тип крепления не выбран, считаем цену комплекта по прайсу
             const komplektPrice = this.getInputPrice('komplekt').price;
             price += komplektPrice;
+        }
     
-            // Логика для добавления других опций, если `fastings` не выбран
-            for (const input of this.formData.values()) {
-                const key = input.key;
-                const inputPrice = this.getInputPrice(key);
+        // Логика для добавления других опций
+        for (const input of this.formData.values()) {
+            const key = input.key;
+            const inputPrice = this.getInputPrice(key);
     
-                switch (key) {
-                    case 'corners':
-                    case 'handles':
-                    case 'peremychka':
-                        price += inputPrice.price;
-                        break;
-                    case 'montage':
-                        price += this.getInputPrice('montage').price;
-                        break;
-                    case 'canvas':
-                    case 'canvas_color':
-                    case 'frame_color':
-                        // Эти параметры не участвуют в расчете стоимости, если у вас нет дополнительной логики для них
-                        break;
-                    case 'remake':
-                        const remakePrices = this.getInputPrice('remake').map(item => item.price);
-                        const totalRemakePrice = remakePrices.reduce((sum, item) => sum + item, 0);
-                        price += totalRemakePrice;
-                        break;
-                    default:
-                        break;
-                }
+            switch (key) {
+                case 'corners':
+                case 'handles':
+                case 'peremychka':
+                case 'plusprice':
+                case 'hinges':
+                    price += inputPrice.price;
+                    break;
+                case 'remake':
+                    price += this.getInputPrice('remake').reduce((sum, item) => sum + item.price, 0);
+                    break;
+                default:
+                    break;
             }
         }
     
@@ -153,7 +143,7 @@ export default class Price {
     
         return price;
     }
-        
+    
 
     // Рассчет цены на рельсы
     calcRailPrice() {
