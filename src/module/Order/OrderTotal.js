@@ -74,19 +74,19 @@ class OrderTotal {
      */
     update(order) {
         let summary = `<ul class="order-total-debug">`;
-        summary += `<li>Итого: <span>${order.totalPrice}</span> ₽</li>`;
+        summary += `<li>Итого: <span>${order.totalPrice}</span>₽</li>`;
         summary += `</ul>`;  // Закрываем тег <ul>
         
         let summarydelivery = `<ul class="order-total-delivery">`;
-        summarydelivery += `<li>Доставка: <span>${order.totalDelivery}</span> ₽</li>`;
+        summarydelivery += `<li>Доставка: <span>${order.totalDelivery}</span>₽</li>`;
         summarydelivery += `</ul>`;  // Закрываем тег <ul>
 
         let summarydiscount = `<ul class="order-total-discount">`;
-        summarydiscount += `<li>Скидка: <span>${order.totalDis}</span> ₽</li>`;
+        summarydiscount += `<li>Скидка: <span>${order.totalDis}</span>₽</li>`;
         summarydiscount += `</ul>`;  // Закрываем тег <ul>
 
         let summaryZakaz = `<ul class="order-total-zakaz">`;
-        summaryZakaz += `<li>Сумма: <span>${order.totalZakaz}</span> ₽</li>`;
+        summaryZakaz += `<li>Сумма: <span>${order.totalZakaz}</span>₽</li>`;
         summaryZakaz += `</ul>`;  // Закрываем тег <ul>
         
         this.$total.innerHTML = summaryZakaz+ summarydelivery + summarydiscount + summary;
