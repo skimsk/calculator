@@ -11,6 +11,8 @@ import KPIInstaller from './kpi/KPIInstaller.js';
 import KPIAssembler from './kpi/KPIAssembler.js';
 import DTOProduct from '../../dto/DTOProduct.js';
 import Order from '../Order/Order.js';
+import Price from './price/Price.js';
+
 
 // Товары с индивидуальным поведением
 import Ramochnaya25 from "./products/Ramochnaya25.js";
@@ -34,6 +36,7 @@ const ProductKeys = {
 }
 
 const userRole = User.getRole();
+
 
 /**
  * Инициализация компонентов модуля
@@ -80,23 +83,45 @@ function createOrderItem(form) {
     const productKey = form.key;
     const formData = form.getFormData();
 
-    // Получение значения монтажных работ
-    const montagePrice = parseFloat(formData.get('mogtagespes')?.value) || 0;
-
-    const pokraska = parseFloat(formData.get('rame_color')?.value) || 0;
-
     // Цена сетки с монтажом или без (считается сразу в ProductPrice)
-    const productPrice = new ProductPrice(productKey, userRole, formData).calculate();
+    const productPriceInstance = new ProductPrice(productKey, userRole, formData);
+    const productPrice = productPriceInstance.calculate();
+    console.log('Цена продукции за 1 шт:', productPrice);
+
     // Итоговая цена с учётом стоимости монтажа
-    const totalPrice = productPrice + montagePrice + pokraska;
+    const totalPrice = productPrice;
+
+    // Получаем результаты расчетов
+    const priceResults = productPriceInstance.priceStrategy.getResults();
+
+    // Получаем отдельные значения из результатов
+    const canvasPrice = priceResults.CanvasPrice;
+    const ralPrice = priceResults.ralPrice;
+    const ralMinPrice = priceResults.ralMinPrice;
+    const MontagePrice = priceResults.MontagePrice;
+    const OptionsPrice = priceResults.OptionsPrice;
+
+
+    console.log('Цена за доп.покраску:', ralMinPrice);
+    
+    console.log('Цена за полотно:', canvasPrice);
+    console.log('Цена за покраску:', ralPrice);
+    console.log('Цена за монтаж', MontagePrice);
+    console.log('Цена за опции:', OptionsPrice);
 
     // KPI Монтажника
     const kpiInstaller = new KPIInstaller(productKey, formData, totalPrice).calculate();
+    console.log('KPI Монтажник:', kpiInstaller);
+
     // KPI Сборщика
     const kpiAssembler = new KPIAssembler(productKey, formData).calculate();
+    console.log('KPI сборщик:', kpiAssembler);
+
     // Распил
     const productSawing = new ProductSawing(productKey, formData).calculate();
+    console.log('Распил:', productSawing);
 
+    // Создаем DTOProduct объект с дополнительными результатами
     const product = new DTOProduct({
         id: new Date().getTime(), 
         name: createProductName(form, totalPrice),
@@ -108,11 +133,21 @@ function createOrderItem(form) {
             installer: Math.round(kpiInstaller),
             assembler: Math.round(kpiAssembler)
         },
-        sawing: productSawing
+        sawing: productSawing,
+        canvasPrice: Math.round(canvasPrice), // Добавляем цену за полотно
+        ralPrice: Math.round(ralPrice),   // Добавляем цену за раму
+        ralMinPrice: Math.round(ralMinPrice),  
+        MontagePrice: Math.round(MontagePrice),
+        OptionsPrice:  Math.round(OptionsPrice),
     });
+
+    console.log('Продукт:', product);
 
     return product;
 }
+
+
+
 
 
 

@@ -119,7 +119,7 @@ export default class ProductForm extends Form {
         if (User.getRole() === 'employee') {
             field.addOption('easy', 'Монтаж', true);
             field.addOption('hard', 'Сложный монтаж');
-            field.addOption('specific', 'Специфический монтаж');
+            field.addOption('specific', 'Дополнительные работы');
             field.addOption('off', 'Без монтажа');
     
             const inputSpesmontaz = this.getInput('mogtagespes'); // Поле ввода стоимости монтажа

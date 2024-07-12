@@ -22,8 +22,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       // Тип крепления
       fastings: [
@@ -84,8 +84,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -123,11 +123,11 @@ export default {
       // Цвет рамки
       frame_color: [
         { key: 'white', price: 0 },
-        { key: 'antracite', price: 1000 },
         { key: 'brown', price: 1000 },
+        { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -168,8 +168,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       // Тип крепления
       fastings: [
@@ -229,8 +229,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -266,8 +266,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -307,8 +307,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -348,8 +348,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       // Петли
       hinges: [
@@ -357,6 +357,7 @@ export default {
         { key: 's-dovodchikom', price: 4500 },
         { key: 'usilenye', price: 4500 },
       ],
+      //Шпингалеты
       latche: [
         { key: 'null', price: 0},
         { key: 'onelatche', price: 600 },
@@ -389,8 +390,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 2000 },
+        { key: 'ral.min', price: 2000 },
+        { key: 'ral', price: 6000 },
       ],
       montage: [
           { key: 'easy', price: 2500 },  
@@ -399,36 +400,36 @@ export default {
   },
   //Плиссе DMF / ДМФ
   PlisseRussia: {
-      opening: [
-          { key: 'odnostoronee', price: 27027},
-          { key: 'vstrechnoe', price: 35135 },
-          { key: 'reversivnoe', price: 35135 },
-          { key: 'verticalnoe', price: 27027 },
-      ],
-      // Цвет рамки
-      frame_color: [
-        { key: 'white', price: 0 },
-        { key: 'antracite', price: 1000 },
-        { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 2000 },
-      ],
-      montage: [
-          { key: 'easy', price: 2500 },  
-          { key: 'hard', price: 5000 },  
-      ]  
-  },
-  RulonnayaItalia: {
-    canvas: [
-      { key: 'fiberglassrollet', price: 11550, min: 11550 },
-      { key: 'antiporollet', price: 15015, min: 15015 },
+    opening: [
+      { key: 'odnostoronee', price: 27027},
+      { key: 'vstrechnoe', price: 35135 },
+      { key: 'reversivnoe', price: 35135 },
+      { key: 'verticalnoe', price: 27027 },
     ],
     // Цвет рамки
     frame_color: [
       { key: 'white', price: 0 },
-      { key: 'brown', price: 1000 },
-      { key: 'ral.min', price: 6000 },
-      { key: 'ral', price: 2000 },
+      { key: 'brown', price: 0 },
+      { key: 'ral.min', price: 2000 },
+      { key: 'ral', price: 6000 },
+    ],
+    //Монтаж
+    montage: [
+      { key: 'easy', price: 2500 },  
+      { key: 'hard', price: 5000 },  
+    ]  
+  },
+  RulonnayaItalia: {
+    canvas: [
+      { key: 'fiberglassrollet', price: 11550, min: 11550 },
+      { key: 'polltexrollet', price: 15015, min: 15015 },
+    ],
+    // Цвет рамки
+    frame_color: [
+      { key: 'white', price: 0 },
+      { key: 'brown', price: 0 },
+      { key: 'ral.min', price: 2000 },
+      { key: 'ral', price: 6000 },
     ],
     // Монтаж
     montage: [
@@ -457,8 +458,8 @@ export default {
         { key: 'brown', price: 0},
         { key: 'black', price: 1000 },
         { key: 'antracite', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       //Перемычки
       peremychka: [
@@ -501,8 +502,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       // Тип крепления
       fastings: [
@@ -565,8 +566,8 @@ export default {
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
       // Тип крепления
       fastings: [
@@ -627,97 +628,28 @@ export default {
         { key: 'metalmesh', price: 4588, min: 4588 },
         { key: 'resplion', price: 5874, min: 5874 }
       ],
-        // Цвет рамки
+      // Цвет рамки
       frame_color: [
         { key: 'white', price: 0 },
         { key: 'antracite', price: 1000 },
         { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
+        { key: 'ral.min', price: 1000 },
+        { key: 'ral', price: 6000 },
       ],
-      //тип крепления
-      fastings: [
+      remake: [
         { key: 'z-krepleniya-m', price: 450 },
         { key: 'z-krepleniya-p', price: 220 },
         { key: 'plungery', price: 900 },
-      ],
-      //ручки
-      handles: [
         { key: 'silikonovie', price: 0 },
         { key: 'metallicheskie', price: 220 },
-      ],
-      //комплект креплений
-      komplekt: [
-        { key: 'one', price: 0 },
-        { key: 'half', price: 220 },
-        { key: 'two', price: 440 },
-        ],
-        // Углы
-      corners: [
         { key: 'plastikovie', price: 0 },
-        { key: 'metallicheskie', price: 450 }
-      ],
-      // Ручки
-      handles: [
-        { key: 'silikonovie', price: 0 },
+        { key: 'metallicheskie', price: 450 },
         { key: 'metallicheskie', price: 220 },
-        { key: 'bezruchek', price: 0 }
+        { key: 'vnutrennie-zacepi', price: 660 },
       ],
     },
   },
   dealer: {
-    Perekat: {
-      canvas: [
-        { key: 'fiberglass', price: 1782, min: 1782 },
-        { key: 'petscreen', price: 3688, min: 3688 },
-        { key: 'maxivision', price: 3688, min: 3688 },
-        { key: 'micromesh', price: 3795, min: 3795 },
-        { key: 'antipyl', price: 3415, min: 3415 },
-        { key: 'polltex', price: 3415, min: 3415 },
-        { key: 'antibird', price: 3415, min: 3415 },
-        { key: 'sunlight', price: 3415, min: 3415 },
-        { key: 'diamond', price: 4039, min: 4039 },
-        { key: 'antipo', price: 4315, min: 4315 },
-        { key: 'metalmesh', price: 4588, min: 4588 },
-        { key: 'resplion', price: 5098, min: 5098 }
-      ],
-        // Цвет рамки
-      frame_color: [
-        { key: 'white', price: 0 },
-        { key: 'antracite', price: 1000 },
-        { key: 'black', price: 1000 },
-        { key: 'ral.min', price: 6000 },
-        { key: 'ral', price: 1000 },
-      ],
-      //тип крепления
-      fastings: [
-        { key: 'z-krepleniya-m', price: 450 },
-        { key: 'z-krepleniya-p', price: 220 },
-        { key: 'plungery', price: 900 },
-      ],
-      //ручки
-      handles: [
-        { key: 'silikonovie', price: 0 },
-        { key: 'metallicheskie', price: 220 },
-      ],
-      //комплект креплений
-      komplekt: [
-        { key: 'one', price: 0 },
-        { key: 'half', price: 220 },
-        { key: 'two', price: 440 },
-        ],
-        // Углы
-      corners: [
-        { key: 'plastikovie', price: 0 },
-        { key: 'metallicheskie', price: 450 }
-      ],
-      // Ручки
-      handles: [
-        { key: 'silikonovie', price: 0 },
-        { key: 'metallicheskie', price: 220 },
-        { key: 'bezruchek', price: 0 }
-      ],
-    },
-
+     
   },
 };

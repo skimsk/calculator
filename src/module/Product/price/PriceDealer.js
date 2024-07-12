@@ -50,7 +50,7 @@ export default class PriceDealer extends Price {
         return total;
     }
  
-    RulonnayaItalia() {
+    RolletnayaItalia() {
         let total = 0;
         total += this.calcCanvasFramePrice();
         return total;

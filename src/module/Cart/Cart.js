@@ -23,10 +23,13 @@ export default class Cart {
         return this;
     }
 
+    
+
     setItems(items) {
         localStorage.setItem(this.key, JSON.stringify(items));
         return this;
     }
+    
 
     setItem(id, item) {
         const items = this.getItems();

@@ -20,10 +20,11 @@ export default class PriceEmployee extends Price {
 
     Default() {
         let total = 0;
-        total += this.calcCanvasFramePrice();     
-        total += this.calcOptionsPrice();       
+        total += this.calcCanvasPrice();
+        total += this.calcRAL();
+        total += this.calcOptionsPrice();
         // Рассчет монтажа
-        total += this.calcMontage(total);      
+        total += this.calcMontage(total);
         return total;
     }
     
@@ -33,14 +34,16 @@ export default class PriceEmployee extends Price {
         priceM2 += this.getInputPrice('opening').price;
         priceM2 += this.getInputPrice('install').price;
         total = this.calcAreaPrice(priceM2, priceM2);
-        return total;
+        total += this.calcRAL();
+        total += this.calcMontage(total);
         return total;
     }
 
     PlisseItalia() {
         let total = 0, priceM2 = 0;
         priceM2 += this.getInputPrice('opening').price;
-        total = this.calcAreaPrice(priceM2, priceM2);                
+        total = this.calcAreaPrice(priceM2, priceM2);
+        total += this.calcRAL();                
         // Рассчет монтажа
         total += this.calcMontage(total);                   
         return total;
@@ -48,9 +51,10 @@ export default class PriceEmployee extends Price {
 
     RazdvignayaProvedal() {
         let total = 0;
-        total += this.calcCanvasFramePrice();
+        total += this.calcCanvasPrice();
         total += this.calcOptionsPrice();
         total += this.calcRailPrice();
+        total += this.calcRAL();
         // Рассчет монтажа
         total += this.calcMontage(total);
         return total;
@@ -58,17 +62,19 @@ export default class PriceEmployee extends Price {
 
     RulonnayaPolsha() {
         let total = 0;
-        total += this.calcCanvasFramePrice();
+        total += this.calcCanvasPrice();
         total += this.calcOptionsPrice();
         total += this.calcRailPriceSlidors();
+        total += this.calcRAL();
         // Рассчет монтажа
         total += this.calcMontage(total);
         return total;
     }
  
-    RulonnayaItalia() {
+    RolletnayaItalia() {
         let total = 0;
-        total += this.calcCanvasFramePrice();
+        total += this.calcCanvasPrice();
+        total += this.calcRAL();
         // Рассчет монтажа
         total += this.calcMontage(total);
         return total;

@@ -13,7 +13,7 @@ class CartProducts extends Cart {
     totalQuantity() {
         return this.getItems().reduce((acc, item) => acc + item.quantity, 0);
     }
-    
+
     totalKPIInstaller() {
         return this.getItems().reduce((acc, item) => acc + (item.kpi.installer * item.quantity), 0);
     }
@@ -21,8 +21,6 @@ class CartProducts extends Cart {
     totalKPIAssembler() {
         return this.getItems().reduce((acc, item) => acc + (item.kpi.assembler * item.quantity), 0);
     }
-    
-
 }
 
 export default CartProducts;

@@ -103,11 +103,11 @@ export default [
                             type: 'radio',
                             label: 'Тип крепления',
                             items: [
-                                {value: 'z-krepleniya-m', label: 'Z-образное (металл)', checked: true},
+                                {value: 'z-krepleniya-m', label: 'Z-образное (металл)'},
                                 {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
                                 {value: 'vnutrennie-zacepi', label: 'Внутренние зацепы'},
                                 {value: 'plungery', label: 'Плунжеры'},
-                                {value: 'bezkrepleniya', label: 'Без креплений'},
+                                {value: 'bezkrepleniya', label: 'Без креплений', checked: true},
                             ]
                         },
                         {
@@ -125,8 +125,8 @@ export default [
                             type: 'radio',
                             label: 'Углы',
                             items: [
-                                {value: 'plastikovie', label: 'Пластиковые', checked: true},
-                                {value: 'metallicheskie', label: 'Металлические'},
+                                {value: 'plastikovie', label: 'Пластиковые'},
+                                {value: 'metallicheskie', label: 'Металлические', checked: true},
                             ]
                         },
                         {
@@ -134,12 +134,12 @@ export default [
                             type: 'radio',
                             label: 'Количество перемычек',
                             items: [
-                                {value: 'one', label: '1', checked: true},
+                                {value: 'one', label: '1'},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
-                                {value: 'null', label: 'Без перемычек'},
+                                {value: 'null', label: 'Без перемычек', checked: true},
                             ]
                         },
                         {
@@ -147,9 +147,9 @@ export default [
                             type: 'radio',
                             label: 'Ручки',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
+                                {value: 'metallicheskie', label: 'Металлические'},
                                 {value: 'silikonovie', label: 'Силиконовые'},
-                                {value: 'bezruchek', label: 'Без ручек'},
+                                {value: 'bezruchek', label: 'Без ручек', checked: true},
                             ]
                         },
                     ]
@@ -563,7 +563,6 @@ export default [
             ]
         }
     },
-
     // Дверная 42мм
     {
         key: 'Dvernaya42',
@@ -706,7 +705,6 @@ export default [
             ]
         }
     },
-
     // Плиссе22 (Италия)
     {
         key: 'PlisseItalia',
@@ -824,7 +822,6 @@ export default [
             ]
         }
     },
-
     {
         key: 'RulonnayaItalia',
         title: 'Роллетная KLIP40 (Италия)',
@@ -863,8 +860,8 @@ export default [
                             type: 'select',
                             label: 'Полотно',
                             items: [
-                                {value: 'fiberglassrollet', label: 'Стандарт "Fiberglass"', selected: true},
-                                {value: 'antiporollet', label: 'Антипыль "Antipo" (Италия)'}
+                                {value: 'fiberglassrollet', label: 'Стандарт "Fiberglass" (Италия)', selected: true},
+                                {value: 'polltexrollet', label: 'Антикошка "Pet Screen" (Италия)'},
                             ]
                         },
                         {
@@ -1408,7 +1405,6 @@ export default [
                             unit: 'мм.',
                             required: true,
                         },
-                        /*
                         {
                             key: 'height_left',
                             type: 'number',
@@ -1430,8 +1426,7 @@ export default [
                             max: '2500',
                             step: '1',
                             unit: 'мм.',
-                        },
-                        */
+                        },   
                     ]
                 },
                 {
@@ -1644,8 +1639,8 @@ export default [
                             type: 'radio',
                             label: 'Углы',
                             items: [
-                                {value: 'metallicheskie', label: 'Металлические', checked: true},
                                 {value: 'plastikovie', label: 'Пластиковые'},
+                                {value: 'metallicheskie', label: 'Металлические', checked: true},
                             ]
                         },
                         {

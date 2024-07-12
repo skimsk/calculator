@@ -49,6 +49,13 @@ export default class KPIInstaller {
         if (kpiData) kpi += Math.round(this.productPrice * kpiData.percent / 100);
         return kpi;
     }
+    
+    RolletnayaItalia() {
+        let kpi = 0;
+        const kpiData = this.kpiData.find(item => item.key === 'easy');
+        if (kpiData) kpi += Math.round(this.productPrice * kpiData.percent / 100);
+        return kpi;
+    }
 
     RamochnayaAlumSN() {
         let kpi = 0;

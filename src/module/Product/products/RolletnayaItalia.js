@@ -1,9 +1,8 @@
 import Polotna from '../../../data/polotna.js';  // Убедитесь, что путь корректен
 import ProductForm from "../ProductForm.js";
 
-export default class RulonnayaItalia extends ProductForm {
+export default class RolletnayaItalia extends ProductForm {
 
-    
     constructor(config = {}) {
         super(config);
     }

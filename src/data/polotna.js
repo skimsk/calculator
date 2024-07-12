@@ -6,13 +6,6 @@ export default {
     fiberglassplisse: [
         {value: 'gray', label: 'Серый'},
     ],
-    fiberglassrollet: [
-        {value: 'gray', label: 'Серый'},
-    ],
-    antiporollet: [
-        {value: 'gray', label: 'Серый'},
-        {value: 'black', label: 'Чёрный'},
-    ],
     petscreen: [
         {value: 'blacksun', label: 'Белый'},
         {value: 'gray', label: 'Серый'},
@@ -54,6 +47,13 @@ export default {
     ],
     antipo: [
         {value: 'lightmetal', label: 'Серый'},
+        {value: 'black', label: 'Чёрный'},
+    ],
+    fiberglassrollet: [
+        {value: 'gray', label: 'Серый'},
+    ],
+    polltexrollet: [
+        {value: 'gray', label: 'Серый'},
         {value: 'black', label: 'Чёрный'},
     ],
 }

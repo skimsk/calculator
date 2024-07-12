@@ -3,14 +3,15 @@ import Button from "../../components/buttons/Button.js";
 import Order from "./Order.js";
 import OrderForm from './OrderForm.js';
 import DTOOrderBitrix from '../../dto/DTOOrderBitrix.js';
-
+import OrderTableExtras from './OrderTableExtras.js';
+import OrderTableProducts from './OrderTableProducts.js'; // Импортируем ваш объект с таблицей
 
 class OrderTotal {
 
     constructor() {
         this.$wrapper = document.createElement('div');
         this.$buttonOrder = new Button('button_order').setText('Отправить в CRM').setIcon('icon-loader');
-        this.$buttonSave = new Button('button_save').setText('Сохранить')
+        this.$buttonSave = new Button('button_save').setText('Сохранить');
         this.$actions = document.createElement('div');
         this.$total = document.createElement('div');
 
@@ -19,7 +20,7 @@ class OrderTotal {
         this.$actions.className = 'order-actions';
         this.$buttonOrder.setClass('button button-order');
         this.$buttonSave.setClass('button button-save');
-        /*this.$actions.append(this.$buttonOrder.render());*/
+        //this.$actions.append(this.$buttonOrder.render());
         this.$wrapper.append(this.$total, this.$actions);
 
         this.setButtonOrderActions();
@@ -32,8 +33,6 @@ class OrderTotal {
             }
         })
     }
-
-
 
     /**
      * Отправка заказа в CRM Bitrix24
@@ -67,13 +66,17 @@ class OrderTotal {
         }).catch(error => console.log(error));
     }
 
-
     /**
      * Функция отрабатывающая на изменение данных в заказе
      */
     update(order) {
+
+        // Добавляем сумму скидок и итого из OrderTableExtras
+        const extrasDiscount = OrderTableExtras.calculateTotalDiscount(order.getExtras());
+        const extrasTotalPrice = OrderTableExtras.calculateTotalPrice(order.getExtras());
+
         let summary = `<ul class="order-total-debug">`;
-        summary += `<li>Итого: <span>${order.totalPrice}</span>₽</li>`;
+        summary += `<li>Итого: <span>${(order.totalPriceWithDiscount + extrasTotalPrice - extrasDiscount + order.totalDelivery + order.totalDopuslugi).toFixed(0)}</span>₽</li>`;
         summary += `</ul>`;  // Закрываем тег <ul>
         
         let summarydelivery = `<ul class="order-total-delivery">`;
@@ -81,30 +84,36 @@ class OrderTotal {
         summarydelivery += `</ul>`;  // Закрываем тег <ul>
 
         let summarydiscount = `<ul class="order-total-discount">`;
-        summarydiscount += `<li>Скидка: <span>${order.totalDis}</span>₽</li>`;
+        summarydiscount += `<li>Скидка: <span>${(order.totalDiscount + extrasDiscount).toFixed(0)}</span>₽</li>`;
         summarydiscount += `</ul>`;  // Закрываем тег <ul>
 
+        let summarytotal = `<ul class="order-total-discount">`;
+        summarytotal += `<li>Со скидкой: <span>${(order.totalPriceWithDiscount + extrasTotalPrice).toFixed(0)}</span>₽</li>`;
+        summarytotal += `</ul>`;  // Закрываем тег <ul>
+
+        let summarytotalDop = `<ul class="order-total-discount">`;
+        summarytotalDop += `<li>Доп.Услуги: <span>${order.totalDopuslugi}</span>₽</li>`;
+        summarytotalDop += `</ul>`;  // Закрываем тег <ul>
+
         let summaryZakaz = `<ul class="order-total-zakaz">`;
-        summaryZakaz += `<li>Сумма: <span>${order.totalZakaz}</span>₽</li>`;
+        summaryZakaz += `<li>Сумма: <span>${(order.totalPriceWithoutDiscount + extrasTotalPrice + extrasDiscount).toFixed(0)}</span>₽</li>`;
         summaryZakaz += `</ul>`;  // Закрываем тег <ul>
         
-        this.$total.innerHTML = summaryZakaz+ summarydelivery + summarydiscount + summary;
+        this.$total.innerHTML = summaryZakaz + summarydiscount + summarytotal + summarydelivery + summarytotalDop + summary;
+
+        // Обновляем таблицу продуктов
+        OrderTableProducts.update(order);
     }
 
     render() {
-        // this.$actions.append(this.$buttonSave.render(), this.$buttonOrder.render());
+        //this.$actions.append(this.$buttonSave.render());
+        /*
+        this.$buttonSave.on('click', () => {
+            OrderTableProducts.saveAsPDF();  // Вызываем метод сохранения PDF
+        });
+        */
         return this.$wrapper;
     }
-        /*
-        if (order.getUserRole() === 'employee') {
-            summary += `<li>KPI.Монт: <span>${order.kpi.installer}</span> ₽ </li>`;
-        }
-        summary += `</ul>`;
-        */
-        // console.log(order.kpi);
 }
-
-
-
 
 export default new OrderTotal();

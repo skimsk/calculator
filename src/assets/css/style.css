@@ -47,6 +47,11 @@ body {background-color: #eaeaea;}
    .table tbody tr td.td-3 {padding-top: 5px;padding-bottom: 5px;}
    .table tbody tr td.td-4 {padding-top: 5px;padding-bottom: 5px;justify-content: center;}
    .table tbody tr td.td-5 {padding-top: 5px;padding-bottom: 5px;justify-content: flex-end;}
+   .table tbody tr td.td-6 {background-color: #eaeaea;padding-top: 5px;padding-bottom: 5px;justify-content: flex-end;}
+   .table tbody tr td.td-7 {padding-top: 5px;padding-bottom: 5px;}
+   /* CSS для скрытия столбца скидки */
+
+   
 }
 
 /* Tabs */
@@ -84,7 +89,7 @@ body {background-color: #eaeaea;}
 .input-quantity input,
 .input-quantity button {text-align: center;border:none;display: inline-flex;align-items: center;justify-content: center;}
 .input-quantity input {height: 37px;background: #fff;font-size: 15px; padding: 10px;border-radius: 0;border-top:1px solid #e0e0e0;;border-bottom:1px solid #e0e0e0;}
-.input-quantity button {min-width: 37px;height: 37px;color: #fff;background-color: #00a550;display: flex;align-items: center;}
+.input-quantity button {min-width: 37px;height: 37px;color: #fff;background-color: #6c757d;display: flex;align-items: center;}
 .input-quantity button:before {display: inline-block;content: "";width: 100%;font-weight: 400;font-family: Arial, sans-serif;text-align: center;line-height: 100%;}
 .input-quantity button:hover {background-color: #00a550;color: #fff;}
 .input-quantity .iq-minus {border-radius: 0;}
@@ -174,7 +179,10 @@ body {background-color: #eaeaea;}
 .table-order thead .th-4 {width: 15%;font-size: 14px;font-weight: 600;}
 .table-order thead .th-5 {width: 5%;}
 .table-order tbody .td-2 {text-align: left;}
-.table-order tbody .td-4 {font-size: 14px;font-weight: 600;}
+.table-order tbody .td-4 {font-size: 14px;font-weight: 500;}
+.table-order tbody .td-5 {font-size: 14px;font-weight: 500;}
+.table-order tbody .td-6 {font-size: 14px;font-weight: 500;}
+.table-order tbody .td-7 {font-size: 14px;font-weight: 500;}
 .table-order td[colspan] {font-weight: 600; font-size: 16px; text-align: center;background-color: #fff;}
 .table-order .input-quantity input,
 .table-order .input-quantity button {height: 25px;}
@@ -220,7 +228,7 @@ body {background-color: #eaeaea;}
 .module-order-total .order-total-debug span {font-size: 18px;font-weight: 700;color: #bb1616;}
 
 @media (max-width: 575px) {
-   .module-order-total .order-total {font-weight: 700;grid-template-columns: repeat(2, 1fr);display: flex;}
+   .module-order-total .order-total {font-weight: 700;grid-template-columns: repeat(2, 1fr);display: flex;align-items: baseline;flex-direction: row;flex-wrap: wrap;align-content: center;}
    .module-order-total .order-total-delivery {font-weight: normal; display: flex;list-style: none;font-size: 14px;margin: 0;padding: 0;}
    .module-order-total .order-total-delivery li {margin-right: 10px;} 
    .module-order-total .order-total-delivery span {font-size: 16px;font-weight: 500;color: #000;}
@@ -268,6 +276,8 @@ body {background-color: #eaeaea;}
 .table-extras .input-quantity button {min-width: 25px;}
 .table-extras .button-order {background: #00a550;color: #fff; box-shadow: none !important;padding: 3px 10px;border-radius: 3px; height: auto;}
 .table-extras .button-order.active {background: #cfb97b;}
+
+
 @media (max-width: 575px) {
    .table-extras tbody tr {background-color: #ebebeb;}
 }

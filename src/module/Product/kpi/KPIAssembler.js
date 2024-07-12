@@ -38,6 +38,15 @@ export default class KPIAssembler {
         return kpi;
     }
 
+    RolletnayaItalia() {
+        let kpi = 0;
+        const canvas = this.findItem('canvas', 'all');
+        if (!canvas || !canvas.price) return 0;
+        const areaKPI = this.calcAreaPrice(canvas.price);
+        kpi += (areaKPI <= canvas.price) ? canvas.price : areaKPI;
+        return kpi;
+    }
+
     RulonnayaItalia() {
         let kpi = 0;
         const canvas = this.findItem('canvas', 'all');

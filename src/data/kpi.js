@@ -68,6 +68,11 @@ export default {
             { key: 'hard', fix: 0, percent: 18 },
             { key: 'off', fix: 0, percent: 5 },
         ],
+        RolletnayaItalia: [
+            { key: 'easy', fix: 0, percent: 15 },
+            { key: 'hard', fix: 0, percent: 18 },
+            { key: 'off', fix: 0, percent: 5 },
+        ],
         PlisseRussia: [
             { key: 'easy', fix: 0, percent: 10 },
             { key: 'hard', fix: 0, percent: 13 },

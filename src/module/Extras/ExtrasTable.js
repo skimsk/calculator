@@ -5,12 +5,11 @@ import Table from "../../components/Table.js";
 import Button from "../../components/buttons/Button.js";
 import InputQuantity from "../../components/form/InputQuantity.js";
 
-
 class ExtrasTable extends Table {
 
     constructor() {
         super('extras');
-        this.thead(['#', 'Наименование', 'Кол-во', 'Цена, руб.', '#']);
+        this.thead(['№', 'Наименование', 'Кол-во', 'Цена, руб.', '', '']);
 
         // Загружаем таблицу
         this.setRowsFromData();
@@ -43,11 +42,18 @@ class ExtrasTable extends Table {
             ButtonOrder.addClass('active').setText('Изменить');
         });
 
+        let discountAmountPerUnit = 0;
+        if (Order.discount) {
+            discountAmountPerUnit = item.price * (Order.discount / 100);
+        }
+        const discountAmount = discountAmountPerUnit;
+
         return [
             item.id,
             item.name, 
             ItemQuantity.render(), 
-            item.price + ' ₽', 
+            `${item.price} ₽`, 
+            `${discountAmount.toFixed(0)} ₽`,  // Отображаем скидку
             ButtonOrder.render()
         ];
     }
@@ -55,7 +61,7 @@ class ExtrasTable extends Table {
     createItemQuantity(item) {
         const input = new InputQuantity('input-qty', 1)
         input.setLabel(item.unit);
-        input.setId('input-qty-'+item.id);
+        input.setId(`input-qty-${item.id}`);
         return input;
     }
 
@@ -66,18 +72,9 @@ class ExtrasTable extends Table {
         return button;
     }
 
-    
-
-    /**
-     * Функция отрабатывающая на изменение данных в заказе
-     */
     update(order) {
-        // Обновляем таблицу
         this.setRowsFromData();
-        // console.log('Extras Table updated');
     }
-
-
 }
 
 export default new ExtrasTable();

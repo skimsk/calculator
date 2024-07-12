@@ -9,7 +9,6 @@ export default class ProductPrice {
             throw new Error(`ProductPrice[constructor] Invalid PriceData ${productKey}`);
         }
 
-        this.productKey = productKey;  // Добавляем productKey в класс
         const priceData = PriceData[userRole][productKey];
 
         if (userRole === 'employee') {
@@ -25,8 +24,7 @@ export default class ProductPrice {
         return this.priceStrategy.calculate();
     }
 
-    calcTotalPrice(order) {
-        // Передаем productKey из текущего объекта ProductPrice
-        return order.calcTotalPrice(this.productKey);
+    getResults() {
+        return this.priceStrategy.getResults();
     }
 }

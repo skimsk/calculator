@@ -23,7 +23,7 @@ class Order {
         this.setDefaults();
     }
 
-
+    
     /**
      * Москитные сетки
      */
@@ -44,6 +44,19 @@ class Order {
 
     getProducts() {
         return this.#cartProducts.getItems();       
+    }
+
+    getTotalDiscount() {
+        return this.products.reduce((total, product) => total + (product.totalDiscount || 0), 0);
+    }
+
+    // Добавляем метод для получения результатов расчета
+    getProductResults(id) {
+        const product = this.#cartProducts.getItem(id);
+        if (product && product.priceStrategy) {
+            return product.priceStrategy.getResults();  // Возвращаем результаты расчета
+        }
+        return null;
     }
 
     
@@ -140,6 +153,7 @@ class Order {
     calcDiscount(price = 0) {
         return Math.round(price - (price * this.discount / 100)); 
     }
+    
 
     /**
      * Метод для расчета суммы скидки
@@ -150,10 +164,14 @@ class Order {
     }
 
     calcBeznal(price = 0) {
-        return Math.round(price + (price * this.beznal / 100)); 
+        console.log('проверка', price)
+        return Math.round(price + (price * this.beznal / 100));
     }
+    
 
     calcNdc(price = 0) {
+        ndcprice = this.ndc,
+        console.log('НДС', ndcprice)
         return Math.round(price + (price * this.ndc / 100)); 
     }
 
@@ -174,7 +192,7 @@ class Order {
 
     // Рассчет покраски по RAL
     calcRAL() {
-        let total = 0;
+        let pokraska = 0;
         if (this.ral === true) {
             // Получаем данные для RAL из импортированных данных
             const ral = priceData.employee.Ramochnaya25.frame_color.find(item => item.key === 'ral');
@@ -185,13 +203,12 @@ class Order {
     
             // Рассчитываем стоимость в зависимости от количества товаров
             if (quantity <= 2) {
-                total += ralMin.price;  // Минимальная стоимость
+                pokraska += ralMin.price;  // Минимальная стоимость
             } else if (quantity > 2) {
-                total += ralMin.price + ral.price * (quantity - 2);  // Минимальная стоимость плюс стоимость за дополнительное количество
+                pokraska += ralMin.price + ral.price * (quantity - 2);  // Минимальная стоимость плюс стоимость за дополнительное количество
             }
         }
-    
-        return total;
+        return pokraska;
     }
 
     // Рассчет суммарной цены на все товары с учетом скидки и доставки
@@ -307,19 +324,25 @@ class Order {
             // Сумма покраски
             this.totalRAL = this.calcRAL();
 
-            this.totalBeznal = this.calcBeznal();
-
             // Сумма доставки
-            this.totalDelivery = this.calcDelivery() + this.calcSpecialDelivery() + this.calcCdek() + this.calcDeliveryCdek();
+            this.totalDelivery = this.calcDelivery() + this.calcCdek() + this.calcDeliveryCdek();
+            
+            //Доп услуги
+            this.totalDopuslugi =this.calcSpecialDelivery();
 
             // Итоговая сумма до применения скидки
-            let totalBeforeDiscount = this.totalZakaz + this.totalRAL + this.totalDelivery + this.totalBeznal;
+            let totalBeforeDiscount = this.totalZakaz;
 
-            // Сумма скидки
+            
+
+            // Cкидка
             this.totalDis = this.getDiscountAmount(totalBeforeDiscount);
+
+            //Сумма с учетом скидки
+            this.totalPriceDis = this.calcDiscount(totalBeforeDiscount);
             
             // Итоговая цена с учетом скидки
-            this.totalPrice = this.calcDiscount(totalBeforeDiscount);
+            this.totalPrice = this.calcDiscount(totalBeforeDiscount) + this.totalDelivery;
             
             // Проверка минимальной суммы заказа и добавление стоимости спецтранспорта и доставки при необходимости
             let minOrderAmount = 5000;
@@ -330,6 +353,7 @@ class Order {
                 this.totalPrice = minOrderAmount;
                 this.totalPrice += this.calcSpecialDelivery();
                 this.totalPrice += this.calcDeliveryCdek();
+                this.totalPrice += this.calcBeznal();
             }
         }
 

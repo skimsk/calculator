@@ -31,7 +31,6 @@ class OrderForm extends Form {
                 /*this.addField(this.inputCustomerPhone());*/
                 /*this.addField(this.inputCustomerPickup());*/
                 this.addField(this.inputBeznal());
-                this.addField(this.inputNdc());
                 this.addField(this.inputCdek());
                 this.addField(this.inputDiscount());
                 this.addField(this.inputComment());
@@ -102,7 +101,7 @@ class OrderForm extends Form {
     //Доставка + спец.транспорт
     inputDeliveryCustom() {
         const input = new InputCount('delivery_custom', 0);
-        input.setLabel('Доставка cпецтранспорт');
+        input.setLabel('Дополнительные услуги');
         input.setDefault('0');
 
         input.on('change', function() {
@@ -224,33 +223,18 @@ class OrderForm extends Form {
         return input;
     }
     
-
+    
     // Безнал:
     inputBeznal() {
         const input = new Radio('beznal');
-        input.setLabel('Безнал (Без НДС)');
+        input.setLabel('Безнал / Счёт');
         input.addItem('0', 'Нет', true);
-        input.addItem('10', 'Да');
+        input.addItem('10', 'Без НДС +10%');
+        input.addItem('20', 'с НДС +20%');
         input.setDefault('0');
 
         input.on('change', function() {
             Order.setBeznal(this.getValue());
-        })
-
-        this.addInput(input);
-        return input;
-    }
-
-    // с НДС:
-    inputNdc() {
-        const input = new Radio('ndc');
-        input.setLabel('Безнал c (НДС 20%)');
-        input.addItem('0', 'Нет', true);
-        input.addItem('20', 'Да');
-        input.setDefault('0');
-
-        input.on('change', function() {
-            Order.setNdc(this.getValue());
         })
 
         this.addInput(input);
