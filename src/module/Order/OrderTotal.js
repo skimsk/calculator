@@ -106,14 +106,14 @@ class OrderTotal {
     }
 
     render() {
-        //this.$actions.append(this.$buttonSave.render());
-        /*
-        this.$buttonSave.on('click', () => {
-            OrderTableProducts.saveAsPDF();  // Вызываем метод сохранения PDF
+        this.$actions.append(this.$buttonSave.render());
+        this.$buttonSave.on('click', (event) => {
+            event.preventDefault();  // Prevent default action to avoid page refresh
+            OrderTableExtras.saveAsPDF();
         });
-        */
+    
         return this.$wrapper;
-    }
+    }    
 }
 
 export default new OrderTotal();

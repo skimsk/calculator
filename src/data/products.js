@@ -104,10 +104,10 @@ export default [
                             label: 'Тип крепления',
                             items: [
                                 {value: 'z-krepleniya-m', label: 'Z-образное (металл)'},
-                                {value: 'z-krepleniya-p', label: 'Z-образное (пластик)'},
+                                {value: 'z-krepleniya-p', label: 'Z-образное (пластик)', checked: true},
                                 {value: 'vnutrennie-zacepi', label: 'Внутренние зацепы'},
                                 {value: 'plungery', label: 'Плунжеры'},
-                                {value: 'bezkrepleniya', label: 'Без креплений', checked: true},
+                                {value: 'bezkrepleniya', label: 'Без креплений'},
                             ]
                         },
                         {
@@ -134,12 +134,12 @@ export default [
                             type: 'radio',
                             label: 'Количество перемычек',
                             items: [
-                                {value: 'one', label: '1'},
+                                {value: 'one', label: '1', checked: true},
                                 {value: 'two', label: '2'},
                                 {value: 'three', label: '3'},
                                 {value: 'four', label: '4'},
                                 {value: 'krest', label: 'Крестообразная'},
-                                {value: 'null', label: 'Без перемычек', checked: true},
+                                {value: 'null', label: 'Без перемычек'},
                             ]
                         },
                         {
@@ -148,8 +148,8 @@ export default [
                             label: 'Ручки',
                             items: [
                                 {value: 'metallicheskie', label: 'Металлические'},
-                                {value: 'silikonovie', label: 'Силиконовые'},
-                                {value: 'bezruchek', label: 'Без ручек', checked: true},
+                                {value: 'silikonovie', label: 'Силиконовые', checked: true},
+                                {value: 'bezruchek', label: 'Без ручек'},
                             ]
                         },
                     ]

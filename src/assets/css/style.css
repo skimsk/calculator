@@ -23,7 +23,7 @@ body {background-color: #eaeaea;}
 
 .logo {width: 245px; height: 80px;margin-left: 10px;  background: center center / cover no-repeat url("../images/logo.png");}
 .logo-text{width: 70%;text-align: left;padding-top: 15px; }
-.app .content  {max-width: 870px;}
+.app .content  {max-width: 960px;}
 .content {display: flex;padding: 10px 0px; align-items: center;justify-content: space-between;}
 .hidden {
    display: none;
@@ -31,7 +31,7 @@ body {background-color: #eaeaea;}
 
 
 /* Application */
-.app .container {max-width: 870px;}
+.app .container {max-width: 960px;}
 .app > .container {padding-top: 0px;}
 
 /* Table */
@@ -49,14 +49,11 @@ body {background-color: #eaeaea;}
    .table tbody tr td.td-5 {padding-top: 5px;padding-bottom: 5px;justify-content: flex-end;}
    .table tbody tr td.td-6 {background-color: #eaeaea;padding-top: 5px;padding-bottom: 5px;justify-content: flex-end;}
    .table tbody tr td.td-7 {padding-top: 5px;padding-bottom: 5px;}
-   /* CSS для скрытия столбца скидки */
-
-   
+   /* CSS для скрытия столбца скидки */ 
 }
 
 /* Tabs */
 .nav-tabs .nav-link {color: #333;}
-
 
 /* Form */
 .form .form-select,
