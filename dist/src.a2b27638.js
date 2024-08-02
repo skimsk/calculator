@@ -299,7 +299,7 @@ var _default = exports.default = [
         name: 'width',
         label: 'Ширина',
         value: '',
-        min: '200',
+        min: '60',
         max: '2000',
         step: '1',
         unit: 'мм.',
@@ -310,7 +310,7 @@ var _default = exports.default = [
         name: 'height',
         label: 'Высота',
         value: '',
-        min: '200',
+        min: '60',
         max: '3000',
         step: '1',
         unit: 'мм.',
@@ -326,11 +326,11 @@ var _default = exports.default = [
         label: 'Тип крепления',
         items: [{
           value: 'z-krepleniya-m',
-          label: 'Z-образное (металл)',
-          checked: true
+          label: 'Z-образное (металл)'
         }, {
           value: 'z-krepleniya-p',
-          label: 'Z-образное (пластик)'
+          label: 'Z-образное (пластик)',
+          checked: true
         }, {
           value: 'vnutrennie-zacepi',
           label: 'Внутренние зацепы'
@@ -362,11 +362,11 @@ var _default = exports.default = [
         label: 'Углы',
         items: [{
           value: 'plastikovie',
-          label: 'Пластиковые',
-          checked: true
+          label: 'Пластиковые'
         }, {
           value: 'metallicheskie',
-          label: 'Металлические'
+          label: 'Металлические',
+          checked: true
         }]
       }, {
         key: 'peremychka',
@@ -388,17 +388,20 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
         key: 'handles',
         type: 'radio',
         label: 'Ручки',
         items: [{
-          value: 'silikonovie',
-          label: 'Силиконовые'
-        }, {
           value: 'metallicheskie',
-          label: 'Металлические',
+          label: 'Металлические'
+        }, {
+          value: 'silikonovie',
+          label: 'Силиконовые',
           checked: true
         }, {
           value: 'bezruchek',
@@ -562,6 +565,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }]
     }, {
@@ -717,6 +723,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }]
     }, {
@@ -880,6 +889,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }]
     }, {
@@ -1009,7 +1021,7 @@ var _default = exports.default = [
         type: 'radio',
         label: 'Петли',
         items: [{
-          value: 'metallicheskie',
+          value: 'bez-dovodchika',
           label: 'Без доводчика',
           checked: true
         }, {
@@ -1039,9 +1051,12 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
-        key: 'latches',
+        key: 'latche',
         type: 'radio',
         label: 'Кол-во шпингалетов',
         items: [{
@@ -1049,10 +1064,10 @@ var _default = exports.default = [
           label: '0',
           checked: true
         }, {
-          value: 'one',
+          value: 'onelatche',
           label: '1'
         }, {
-          value: 'two',
+          value: 'twolatche',
           label: '2'
         }]
       }]
@@ -1063,7 +1078,7 @@ var _default = exports.default = [
     }]
   }
 },
-// Плиссе (Италия)
+// Плиссе22 (Италия)
 {
   key: 'PlisseItalia',
   title: 'PLISSE22 (Италия)',
@@ -1174,11 +1189,11 @@ var _default = exports.default = [
       label: 'Тип монтажа',
       items: [{
         value: 'sobran',
-        label: 'В сборке',
+        label: 'В собранном виде',
         checked: true
       }, {
         value: 'razobran',
-        label: 'Без сборки'
+        label: 'В разобранном виде'
       }]
     }, {
       key: 'montage',
@@ -1225,11 +1240,11 @@ var _default = exports.default = [
         label: 'Полотно',
         items: [{
           value: 'fiberglassrollet',
-          label: 'Стандарт "Fiberglass"',
+          label: 'Стандарт "Fiberglass" (Италия)',
           selected: true
         }, {
-          value: 'antiporollet',
-          label: 'Антипыль "Antipo" (Италия)'
+          value: 'polltexrollet',
+          label: 'Антикошка "Pet Screen" (Италия)'
         }]
       }, {
         key: 'canvas_color',
@@ -1247,7 +1262,7 @@ var _default = exports.default = [
         label: 'Ширина',
         value: '',
         min: '200',
-        max: '2000',
+        max: '1600',
         step: '1',
         unit: 'мм.',
         required: true
@@ -1258,7 +1273,7 @@ var _default = exports.default = [
         label: 'Высота',
         value: '',
         min: '200',
-        max: '3000',
+        max: '2500',
         step: '1',
         unit: 'мм.',
         required: true
@@ -1292,6 +1307,12 @@ var _default = exports.default = [
         }, {
           value: 'brown',
           label: 'Коричневый (8017)'
+        }, {
+          value: 'antracite',
+          label: 'Антрацит (7016)'
+        }, {
+          value: 'black',
+          label: 'Черный (9005)'
         }, {
           value: 'ral',
           label: 'Покраска в RAL'
@@ -1414,6 +1435,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }]
     }, {
@@ -1445,12 +1469,6 @@ var _default = exports.default = [
         }, {
           value: 'brown',
           label: 'Коричневый (8017)'
-        }, {
-          value: 'antracite',
-          label: 'Антрацит (7016)'
-        }, {
-          value: 'black',
-          label: 'Черный (9005)'
         }, {
           value: 'ral',
           label: 'Покраска в RAL'
@@ -1547,15 +1565,6 @@ var _default = exports.default = [
           label: 'Z-образное (металл)',
           checked: true
         }, {
-          value: 'z-krepleniya-p',
-          label: 'Z-образное (пластик)'
-        }, {
-          value: 'vnutrennie-zacepi',
-          label: 'Внутренние зацепы'
-        }, {
-          value: 'plungery',
-          label: 'Плунжеры'
-        }, {
           value: 'bezkrepleniya',
           label: 'Без креплений'
         }]
@@ -1579,12 +1588,9 @@ var _default = exports.default = [
         type: 'radio',
         label: 'Углы',
         items: [{
-          value: 'plastikovie',
-          label: 'Пластиковые',
-          checked: true
-        }, {
           value: 'metallicheskie',
-          label: 'Металлические'
+          label: 'Металлические',
+          checked: true
         }]
       }, {
         key: 'peremychka',
@@ -1606,21 +1612,18 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
         key: 'handles',
         type: 'radio',
         label: 'Ручки',
         items: [{
-          value: 'silikonovie',
-          label: 'Силиконовые'
-        }, {
           value: 'metallicheskie',
           label: 'Металлические',
           checked: true
-        }, {
-          value: 'bezruchek',
-          label: 'Без ручек'
         }]
       }]
     }, {
@@ -1738,11 +1741,8 @@ var _default = exports.default = [
       label: 'Тип монтажа',
       items: [{
         value: 'sobran',
-        label: 'В сборке',
+        label: 'В собранном виде',
         checked: true
-      }, {
-        value: 'razobran',
-        label: 'Без сборки'
       }]
     }, {
       key: 'montage',
@@ -1851,6 +1851,17 @@ var _default = exports.default = [
         unit: 'мм.',
         required: true
       }, {
+        key: 'height',
+        type: 'number',
+        name: 'height',
+        label: 'Высота прямоугольной части',
+        value: '',
+        min: '200',
+        max: '2500',
+        step: '1',
+        unit: 'мм.',
+        required: true
+      }, {
         key: 'height_left',
         type: 'number',
         name: 'height_left',
@@ -1913,12 +1924,12 @@ var _default = exports.default = [
         type: 'radio',
         label: 'Углы',
         items: [{
-          value: 'metallicheskie',
-          label: 'Металлические',
+          value: 'plastikovie',
+          label: 'Пластиковые',
           checked: true
         }, {
-          value: 'plastikovie',
-          label: 'Пластиковые'
+          value: 'metallicheskie',
+          label: 'Металлические'
         }]
       }, {
         key: 'peremychka',
@@ -1940,6 +1951,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
         key: 'handles',
@@ -1994,6 +2008,9 @@ var _default = exports.default = [
         }, {
           value: 'antracite',
           label: 'Антрацит (7016)'
+        }, {
+          value: 'black',
+          label: 'Черный (9005)'
         }, {
           value: 'ral',
           label: 'Покраска в RAL'
@@ -2130,12 +2147,12 @@ var _default = exports.default = [
         type: 'radio',
         label: 'Углы',
         items: [{
+          value: 'plastikovie',
+          label: 'Пластиковые'
+        }, {
           value: 'metallicheskie',
           label: 'Металлические',
           checked: true
-        }, {
-          value: 'plastikovie',
-          label: 'Пластиковые'
         }]
       }, {
         key: 'handles',
@@ -2309,6 +2326,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
         key: 'plusprice',
@@ -2452,6 +2472,9 @@ var _default = exports.default = [
         }, {
           value: 'krest',
           label: 'Крестообразная'
+        }, {
+          value: 'null',
+          label: 'Без перемычек'
         }]
       }, {
         key: 'plusprice',
@@ -2471,11 +2494,11 @@ var _default = exports.default = [
 },
 // Перекат
 {
-  key: 'Perekatka',
+  key: 'Perekat',
   title: 'Перекат',
   // selected: true,
   form: {
-    name: 'Perekatka',
+    name: 'Perekat',
     fields: [{
       key: 'frame',
       type: 'group',
@@ -2605,20 +2628,6 @@ var _default = exports.default = [
       }, {
         value: 'fetr',
         label: 'Фетр'
-      }]
-    }, {
-      key: 'komplekt',
-      type: 'radio',
-      label: 'Комплект креплений',
-      items: [{
-        value: 'one',
-        label: '1'
-      }, {
-        value: 'half',
-        label: '1,5'
-      }, {
-        value: 'two',
-        label: '2'
       }]
     }]
   }
@@ -3403,10 +3412,6 @@ var _default = exports.default = {
     value: 'gray',
     label: 'Серый'
   }],
-  fiberglassrollet: [{
-    value: 'gray',
-    label: 'Серый'
-  }],
   petscreen: [{
     value: 'blacksun',
     label: 'Белый'
@@ -3471,6 +3476,17 @@ var _default = exports.default = {
   }],
   antipo: [{
     value: 'lightmetal',
+    label: 'Серый'
+  }, {
+    value: 'black',
+    label: 'Чёрный'
+  }],
+  fiberglassrollet: [{
+    value: 'gray',
+    label: 'Серый'
+  }],
+  polltexrollet: [{
+    value: 'gray',
     label: 'Серый'
   }, {
     value: 'black',
@@ -5412,7 +5428,7 @@ var ProductForm = exports.default = /*#__PURE__*/function (_Form) {
       if (_User.default.getRole() === 'employee') {
         field.addOption('easy', 'Монтаж', true);
         field.addOption('hard', 'Сложный монтаж');
-        field.addOption('specific', 'Специфический монтаж');
+        field.addOption('specific', 'Дополнительные работы');
         field.addOption('off', 'Без монтажа');
         var inputSpesmontaz = this.getInput('mogtagespes'); // Поле ввода стоимости монтажа
 
@@ -5721,13 +5737,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 var _default = exports.default = {
   // Монтажник
   employee: {
+    //Рамочная 25мм
     Ramochnaya25: {
       canvas: [{
         key: 'fiberglass',
@@ -5759,24 +5772,24 @@ var _default = exports.default = {
         min: 6527
       }, {
         key: 'sunlight',
-        price: 1900,
-        min: 1500
-      }, {
-        key: 'diamond',
         price: 4929,
         min: 4929
       }, {
-        key: 'antipo',
-        price: 5795,
-        min: 5795
-      }, {
-        key: 'metalmesh',
+        key: 'diamond',
         price: 4488,
         min: 4488
       }, {
-        key: 'resplion',
+        key: 'antipo',
+        price: 4795,
+        min: 4795
+      }, {
+        key: 'metalmesh',
         price: 5098,
         min: 5098
+      }, {
+        key: 'resplion',
+        price: 6527,
+        min: 6527
       }],
       // Цвет рамки
       frame_color: [{
@@ -5790,10 +5803,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       // Тип крепления
       fastings: [{
@@ -5851,10 +5864,10 @@ var _default = exports.default = {
       //комплект креплений
       komplekt: [{
         key: 'one',
-        price: 0
+        price: 220
       }, {
         key: 'half',
-        price: 110
+        price: 330
       }, {
         key: 'two',
         price: 440
@@ -5907,8 +5920,8 @@ var _default = exports.default = {
         min: 6196
       }, {
         key: 'antipo',
-        price: 7920,
-        min: 7920
+        price: 6920,
+        min: 6920
       }, {
         key: 'metalmesh',
         price: 7196,
@@ -5922,11 +5935,14 @@ var _default = exports.default = {
         key: 'antracite',
         price: 1000
       }, {
+        key: 'black',
+        price: 1000
+      }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -5934,13 +5950,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -5950,10 +5966,10 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'half',
-        price: 675
+        price: 500
       }, {
         key: 'two',
-        price: 900
+        price: 1000
       }],
       // Монтаж
       montage: [{
@@ -6003,8 +6019,8 @@ var _default = exports.default = {
         min: 10596
       }, {
         key: 'antipo',
-        price: 12320,
-        min: 12320
+        price: 11320,
+        min: 11320
       }, {
         key: 'metalmesh',
         price: 11596,
@@ -6015,6 +6031,9 @@ var _default = exports.default = {
         key: 'white',
         price: 0
       }, {
+        key: 'brown',
+        price: 1000
+      }, {
         key: 'antracite',
         price: 1000
       }, {
@@ -6022,10 +6041,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -6044,15 +6063,13 @@ var _default = exports.default = {
         key: 'krest',
         price: 2200
       }],
+      //Комплект креплений
       komplekt: [{
         key: 'one',
         price: 0
       }, {
         key: 'half',
-        price: 675
-      }, {
-        key: 'two',
-        price: 900
+        price: 500
       }],
       // Монтаж
       montage: [{
@@ -6063,6 +6080,7 @@ var _default = exports.default = {
         price: 1600
       }]
     },
+    //Рамочная 32мм
     Ramochnaya32: {
       canvas: [{
         key: 'fiberglass',
@@ -6102,8 +6120,8 @@ var _default = exports.default = {
         min: 6488
       }, {
         key: 'antipo',
-        price: 7795,
-        min: 7795
+        price: 6795,
+        min: 6795
       }, {
         key: 'metalmesh',
         price: 7098,
@@ -6121,10 +6139,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       // Тип крепления
       fastings: [{
@@ -6238,8 +6256,8 @@ var _default = exports.default = {
         min: 7369
       }, {
         key: 'antipo',
-        price: 9093,
-        min: 9093
+        price: 8093,
+        min: 8093
       }, {
         key: 'metalmesh',
         price: 8369,
@@ -6257,10 +6275,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -6292,44 +6310,48 @@ var _default = exports.default = {
     Dvernaya32: {
       canvas: [{
         key: 'fiberglass',
-        price: 5023,
-        min: 5023
+        price: 1980,
+        min: 1980
       }, {
         key: 'petscreen',
-        price: 7369,
-        min: 7369
+        price: 4098,
+        min: 4098
       }, {
         key: 'maxivision',
-        price: 7369,
-        min: 7369
+        price: 4098,
+        min: 4098
       }, {
         key: 'micromesh',
-        price: 7093,
-        min: 7093
+        price: 3795,
+        min: 3795
       }, {
         key: 'antipyl',
-        price: 7093,
-        min: 7093
+        price: 3795,
+        min: 3795
       }, {
         key: 'polltex',
-        price: 8059,
-        min: 8059
+        price: 4857,
+        min: 4857
       }, {
-        key: 'resplion',
-        price: 9577,
-        min: 9577
+        key: 'antibird',
+        price: 6527,
+        min: 6527
       }, {
         key: 'sunlight',
-        price: 8059,
-        min: 8059
+        price: 4929,
+        min: 4929
+      }, {
+        key: 'diamond',
+        price: 4488,
+        min: 4488
       }, {
         key: 'antipo',
-        price: 9093,
-        min: 9093
+        price: 4795,
+        min: 4795
       }, {
-        key: 'metalmesh',
-        price: 8369,
-        min: 8369
+        key: 'resplion',
+        price: 6527,
+        min: 6527
       }],
       // Цвет рамки
       frame_color: [{
@@ -6343,10 +6365,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -6410,24 +6432,24 @@ var _default = exports.default = {
         min: 6527
       }, {
         key: 'sunlight',
-        price: 1900,
-        min: 1500
-      }, {
-        key: 'diamond',
         price: 4929,
         min: 4929
       }, {
-        key: 'antipo',
-        price: 5795,
-        min: 5795
-      }, {
-        key: 'metalmesh',
+        key: 'diamond',
         price: 4488,
         min: 4488
       }, {
-        key: 'resplion',
+        key: 'antipo',
+        price: 4795,
+        min: 4795
+      }, {
+        key: 'metalmesh',
         price: 5098,
         min: 5098
+      }, {
+        key: 'resplion',
+        price: 6527,
+        min: 6527
       }],
       // Цвет рамки
       frame_color: [{
@@ -6441,10 +6463,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -6476,55 +6498,52 @@ var _default = exports.default = {
         price: 15000
       }]
     },
+    //Дверная 42
     Dvernaya42: {
       canvas: [{
         key: 'fiberglass',
-        price: 1980,
-        min: 1980
+        price: 6142,
+        min: 6142
       }, {
         key: 'petscreen',
-        price: 4098,
-        min: 4098
+        price: 8488,
+        min: 8488
       }, {
         key: 'maxivision',
-        price: 4098,
-        min: 4098
+        price: 8488,
+        min: 8488
       }, {
         key: 'micromesh',
-        price: 3795,
-        min: 3795
+        price: 8212,
+        min: 8212
       }, {
         key: 'antipyl',
-        price: 3795,
-        min: 3795
+        price: 8212,
+        min: 8212
       }, {
         key: 'polltex',
-        price: 4857,
-        min: 4857
-      }, {
-        key: 'antibird',
-        price: 6527,
-        min: 6527
-      }, {
-        key: 'sunlight',
-        price: 1900,
-        min: 1500
-      }, {
-        key: 'diamond',
-        price: 4929,
-        min: 4929
-      }, {
-        key: 'antipo',
-        price: 5795,
-        min: 5795
-      }, {
-        key: 'metalmesh',
-        price: 4488,
-        min: 4488
+        price: 9178,
+        min: 9178
       }, {
         key: 'resplion',
-        price: 5098,
-        min: 5098
+        price: 10696,
+        min: 10696
+      }, {
+        key: 'sunlight',
+        price: 9178,
+        min: 9178
+      }, {
+        key: 'diamond',
+        price: 8488,
+        min: 8488
+      }, {
+        key: 'antipo',
+        price: 9212,
+        min: 9212
+      }, {
+        key: 'metalmesh',
+        price: 9488,
+        min: 9488
       }],
       // Цвет рамки
       frame_color: [{
@@ -6538,10 +6557,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       // Петли
       hinges: [{
@@ -6554,14 +6573,15 @@ var _default = exports.default = {
         key: 'usilenye',
         price: 4500
       }],
-      latches: [{
+      //Шпингалеты
+      latche: [{
         key: 'null',
         price: 0
       }, {
-        key: 'one',
+        key: 'onelatche',
         price: 600
       }, {
-        key: 'two',
+        key: 'twolatche',
         price: 1200
       }],
       //Перемычки
@@ -6570,13 +6590,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6590,6 +6610,7 @@ var _default = exports.default = {
         price: 2200
       }]
     },
+    //Плиссе22 италия
     PlisseItalia: {
       opening: [{
         key: 'odnostoronee',
@@ -6616,10 +6637,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 2000
       }, {
         key: 'ral',
-        price: 2000
+        price: 6000
       }],
       montage: [{
         key: 'easy',
@@ -6649,18 +6670,16 @@ var _default = exports.default = {
         key: 'white',
         price: 0
       }, {
-        key: 'antracite',
-        price: 1000
-      }, {
-        key: 'black',
-        price: 1000
+        key: 'brown',
+        price: 0
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 2000
       }, {
         key: 'ral',
-        price: 2000
+        price: 6000
       }],
+      //Монтаж
       montage: [{
         key: 'easy',
         price: 2500
@@ -6675,7 +6694,7 @@ var _default = exports.default = {
         price: 11550,
         min: 11550
       }, {
-        key: 'antiporollet',
+        key: 'polltexrollet',
         price: 15015,
         min: 15015
       }],
@@ -6685,13 +6704,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'brown',
-        price: 1000
+        price: 0
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 2000
       }, {
         key: 'ral',
-        price: 2000
+        price: 6000
       }],
       // Монтаж
       montage: [{
@@ -6754,14 +6773,20 @@ var _default = exports.default = {
         key: 'white',
         price: 0
       }, {
+        key: 'brown',
+        price: 0
+      }, {
+        key: 'black',
+        price: 1000
+      }, {
         key: 'antracite',
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       //Перемычки
       peremychka: [{
@@ -6769,13 +6794,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6786,10 +6811,10 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'half',
-        price: 110
+        price: 225
       }, {
         key: 'two',
-        price: 440
+        price: 450
       }],
       // Монтаж
       montage: [{
@@ -6800,6 +6825,7 @@ var _default = exports.default = {
         price: 1200
       }]
     },
+    //Трапеция 25мм
     TrapeciyaStandart: {
       canvas: [{
         key: 'fiberglass',
@@ -6831,24 +6857,24 @@ var _default = exports.default = {
         min: 6527
       }, {
         key: 'sunlight',
-        price: 1900,
-        min: 1500
-      }, {
-        key: 'diamond',
         price: 4929,
         min: 4929
       }, {
-        key: 'antipo',
-        price: 5795,
-        min: 5795
-      }, {
-        key: 'metalmesh',
+        key: 'diamond',
         price: 4488,
         min: 4488
       }, {
-        key: 'resplion',
+        key: 'antipo',
+        price: 4795,
+        min: 4795
+      }, {
+        key: 'metalmesh',
         price: 5098,
         min: 5098
+      }, {
+        key: 'resplion',
+        price: 6527,
+        min: 6527
       }],
       // Цвет рамки
       frame_color: [{
@@ -6862,10 +6888,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       // Тип крепления
       fastings: [{
@@ -6910,13 +6936,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -6972,24 +6998,24 @@ var _default = exports.default = {
         min: 6527
       }, {
         key: 'sunlight',
-        price: 1900,
-        min: 1500
-      }, {
-        key: 'diamond',
         price: 4929,
         min: 4929
       }, {
-        key: 'antipo',
-        price: 5795,
-        min: 5795
-      }, {
-        key: 'metalmesh',
+        key: 'diamond',
         price: 4488,
         min: 4488
       }, {
-        key: 'resplion',
+        key: 'antipo',
+        price: 4795,
+        min: 4795
+      }, {
+        key: 'metalmesh',
         price: 5098,
         min: 5098
+      }, {
+        key: 'resplion',
+        price: 6527,
+        min: 6527
       }],
       // Цвет рамки
       frame_color: [{
@@ -7003,10 +7029,10 @@ var _default = exports.default = {
         price: 1000
       }, {
         key: 'ral.min',
-        price: 6000
+        price: 1000
       }, {
         key: 'ral',
-        price: 1000
+        price: 6000
       }],
       // Тип крепления
       fastings: [{
@@ -7047,13 +7073,13 @@ var _default = exports.default = {
         price: 0
       }, {
         key: 'two',
-        price: 440
+        price: 220
       }, {
         key: 'three',
-        price: 660
+        price: 440
       }, {
         key: 'four',
-        price: 880
+        price: 660
       }, {
         key: 'krest',
         price: 2200
@@ -7081,123 +7107,109 @@ var _default = exports.default = {
         key: 'hard',
         price: 1200
       }]
+    },
+    Perekat: {
+      min: [{
+        key: 'minprice',
+        price: 0
+      }],
+      canvas: [{
+        key: 'fiberglass',
+        price: 1782,
+        min: 1782
+      }, {
+        key: 'petscreen',
+        price: 3688,
+        min: 3688
+      }, {
+        key: 'maxivision',
+        price: 3688,
+        min: 3688
+      }, {
+        key: 'micromesh',
+        price: 3415,
+        min: 3415
+      }, {
+        key: 'antipyl',
+        price: 3415,
+        min: 3415
+      }, {
+        key: 'polltex',
+        price: 4371,
+        min: 4371
+      }, {
+        key: 'antibird',
+        price: 5874,
+        min: 5874
+      }, {
+        key: 'sunlight',
+        price: 4436,
+        min: 4436
+      }, {
+        key: 'diamond',
+        price: 4039,
+        min: 4039
+      }, {
+        key: 'antipo',
+        price: 4315,
+        min: 4315
+      }, {
+        key: 'metalmesh',
+        price: 4588,
+        min: 4588
+      }, {
+        key: 'resplion',
+        price: 5874,
+        min: 5874
+      }],
+      // Цвет рамки
+      frame_color: [{
+        key: 'white',
+        price: 0
+      }, {
+        key: 'antracite',
+        price: 1000
+      }, {
+        key: 'black',
+        price: 1000
+      }, {
+        key: 'ral.min',
+        price: 1000
+      }, {
+        key: 'ral',
+        price: 6000
+      }],
+      remake: [{
+        key: 'z-krepleniya-m',
+        price: 450
+      }, {
+        key: 'z-krepleniya-p',
+        price: 220
+      }, {
+        key: 'plungery',
+        price: 900
+      }, {
+        key: 'silikonovie',
+        price: 0
+      }, {
+        key: 'metallicheskie',
+        price: 220
+      }, {
+        key: 'plastikovie',
+        price: 0
+      }, {
+        key: 'metallicheskie',
+        price: 450
+      }, {
+        key: 'metallicheskie',
+        price: 220
+      }, {
+        key: 'vnutrennie-zacepi',
+        price: 660
+      }]
     }
   },
-  Perekatka: _defineProperty({
-    canvas: [{
-      key: 'fiberglass',
-      price: 1782,
-      min: 1782
-    }, {
-      key: 'petscreen',
-      price: 3688,
-      min: 3688
-    }, {
-      key: 'maxivision',
-      price: 3688,
-      min: 3688
-    }, {
-      key: 'micromesh',
-      price: 3795,
-      min: 3795
-    }, {
-      key: 'antipyl',
-      price: 3415,
-      min: 3415
-    }, {
-      key: 'polltex',
-      price: 3415,
-      min: 3415
-    }, {
-      key: 'antibird',
-      price: 3415,
-      min: 3415
-    }, {
-      key: 'sunlight',
-      price: 3415,
-      min: 3415
-    }, {
-      key: 'diamond',
-      price: 4039,
-      min: 4039
-    }, {
-      key: 'antipo',
-      price: 4315,
-      min: 4315
-    }, {
-      key: 'metalmesh',
-      price: 4588,
-      min: 4588
-    }, {
-      key: 'resplion',
-      price: 5098,
-      min: 5098
-    }],
-    // Цвет рамки
-    frame_color: [{
-      key: 'white',
-      price: 0
-    }, {
-      key: 'antracite',
-      price: 1000
-    }, {
-      key: 'black',
-      price: 1000
-    }, {
-      key: 'ral.min',
-      price: 6000
-    }, {
-      key: 'ral',
-      price: 1000
-    }],
-    //тип крепления
-    fastings: [{
-      key: 'z-krepleniya-m',
-      price: 450
-    }, {
-      key: 'z-krepleniya-p',
-      price: 220
-    }, {
-      key: 'plungery',
-      price: 900
-    }],
-    //ручки
-    handles: [{
-      key: 'silikonovie',
-      price: 0
-    }, {
-      key: 'metallicheskie',
-      price: 220
-    }],
-    //комплект креплений
-    komplekt: [{
-      key: 'one',
-      price: 0
-    }, {
-      key: 'half',
-      price: 220
-    }, {
-      key: 'two',
-      price: 440
-    }],
-    // Углы
-    corners: [{
-      key: 'plastikovie',
-      price: 0
-    }, {
-      key: 'metallicheskie',
-      price: 450
-    }]
-  }, "handles", [{
-    key: 'silikonovie',
-    price: 0
-  }, {
-    key: 'metallicheskie',
-    price: 220
-  }, {
-    key: 'bezruchek',
-    price: 0
-  }])
+  dealer: {}
 };
 },{}],"src/module/Product/price/Price.js":[function(require,module,exports) {
 "use strict";
@@ -7208,7 +7220,11 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -7223,7 +7239,12 @@ var Price = exports.default = /*#__PURE__*/function () {
     _classCallCheck(this, Price);
     this.formData = formData;
     this.priceData = priceData;
-    this.debug = false;
+    this.debug = true;
+    this.CanvasPrice = 0;
+    this.OptionsPrice = 0;
+    this.Montage = 0;
+    this.ralPrice = 0;
+    this.ralMinPrice = 0;
   }
 
   // Основная функция для рассчета цены
@@ -7246,6 +7267,8 @@ var Price = exports.default = /*#__PURE__*/function () {
         price: 0,
         min: 0
       };
+
+      // Обработка массива значений
       if (Array.isArray(inputData.value)) {
         return inputData.value.map(function (item) {
           return _objectSpread(_objectSpread({}, {
@@ -7254,6 +7277,8 @@ var Price = exports.default = /*#__PURE__*/function () {
           }), _this.findPrice(inputKey, item.value));
         });
       }
+
+      // Обработка одиночного значения
       return _objectSpread(_objectSpread({}, {
         price: 0,
         min: 0
@@ -7312,41 +7337,136 @@ var Price = exports.default = /*#__PURE__*/function () {
       if (this.debug === true) console.log("calcCanvasFramePrice = ".concat(price));
       return price;
     }
+  }, {
+    key: "calcCanvasPrice",
+    value: function calcCanvasPrice() {
+      var prices = this.getInputPrice('canvas');
+
+      // Если это массив, суммируем все цены
+      var priceM2 = Array.isArray(prices) ? prices.reduce(function (acc, item) {
+        return acc + item.price;
+      }, 0) : prices.price;
+      var priceM2Min = Array.isArray(prices) ? Math.min.apply(Math, _toConsumableArray(prices.map(function (item) {
+        return item.min;
+      }))) : prices.min;
+
+      // Цена за полотно
+      var CanvasPrice = this.calcAreaPrice(priceM2);
+
+      // Если цена получилась меньше минимальной
+      if (CanvasPrice < priceM2Min) CanvasPrice = priceM2Min;
+
+      // Сохраняем результат
+      this.CanvasPrice = CanvasPrice;
+      if (this.debug === true) console.log("\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u0446\u0435\u043D\u0430 = ".concat(CanvasPrice));
+      return CanvasPrice;
+    }
+  }, {
+    key: "calcRAL",
+    value: function calcRAL() {
+      // Получаем массив цен по ключу 'frame_color'
+      var frameColors = this.getInputPrice('frame_color');
+
+      // Если frameColors является массивом, суммируем все цены
+      var framePrice = Array.isArray(frameColors) ? frameColors.reduce(function (acc, item) {
+        return acc + item.price;
+      }, 0) : frameColors.price;
+
+      // Сохраняем значение ralMinPrice без проверки на массив
+      var ralMinPrice = this.findPrice('frame_color', 'ral.min');
+      this.ralMinPrice = ralMinPrice ? ralMinPrice.price : 0; // Присваиваем только значение цены или 0
+
+      // Получаем цену покраски RAL
+      var ralPriceObj = this.findPrice('frame_color', 'ral');
+      this.ralPrice = ralPriceObj ? ralPriceObj.price : 0; // Присваиваем только значение цены или 0
+
+      if (this.debug === true) {
+        console.log("\u0426\u0435\u043D\u0430 \u043F\u043E\u043A\u0440\u0430\u0441\u043A\u0438 \u0432 RAL: ".concat(this.ralPrice ? this.ralPrice : 'Не найдено'));
+        console.log("\u0426\u0435\u043D\u0430 \u0434\u043E\u043F.\u043F\u043E\u043A\u0440\u0430\u0441\u043A\u0438: ".concat(this.ralMinPrice ? this.ralMinPrice : 'Не найдено'));
+      }
+
+      // Возвращаем итоговую цену с учетом RAL
+      return framePrice;
+    }
 
     // Рассчет опций по умолчанию
   }, {
     key: "calcOptionsPrice",
     value: function calcOptionsPrice() {
       var price = 0;
+
+      // Проверяем, есть ли выбранный тип крепления
+      var fastingsSelected = this.formData.get('fastings');
+      var komplektSelected = this.formData.get('komplekt'); // Получаем выбранный комплект
+
+      if (fastingsSelected) {
+        // Получаем цену за выбранный тип крепления
+        var fastingsPrice = this.getInputPrice('fastings').price;
+
+        // Учитываем выбранный комплект
+        if (komplektSelected) {
+          switch (komplektSelected.value) {
+            case 'one':
+              // Стоимость уже учтена
+              price += fastingsPrice;
+              break;
+            case 'half':
+              // Добавляем половину цены за тип крепления
+              price += fastingsPrice + fastingsPrice / 2;
+              break;
+            case 'two':
+              // Добавляем удвоенную цену за тип крепления
+              price += fastingsPrice * 2;
+              break;
+            default:
+              break;
+          }
+        } else {
+          // Если комплект не выбран, только цена за тип крепления
+          price += fastingsPrice;
+        }
+      } else {
+        // Если тип крепления не выбран, считаем цену комплекта по прайсу
+        var komplektPrice = this.getInputPrice('komplekt').price;
+        price += komplektPrice;
+      }
+
+      // Логика для добавления других опций
       var _iterator = _createForOfIteratorHelper(this.formData.values()),
         _step;
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var input = _step.value;
-          switch (input.key) {
+          var key = input.key;
+          var inputPrice = this.getInputPrice(key);
+          switch (key) {
             case 'corners':
             case 'handles':
-            case 'fastings':
-            case 'komplekt':
             case 'peremychka':
             case 'plusprice':
+            case 'latche':
             case 'hinges':
-              price += this.getInputPrice(input.key).price;
+              price += inputPrice.price;
               break;
             case 'remake':
               price += this.getInputPrice('remake').reduce(function (sum, item) {
                 return sum + item.price;
               }, 0);
               break;
+            default:
+              break;
           }
         }
 
-        // Debug
+        // Сохраняем результат
       } catch (err) {
         _iterator.e(err);
       } finally {
         _iterator.f();
       }
+      this.OptionsPrice = price;
+
+      // Debug
       if (this.debug === true) console.log("calcOptionsPrice = ".concat(price));
       return price;
     }
@@ -7426,6 +7546,9 @@ var Price = exports.default = /*#__PURE__*/function () {
         }
       }
 
+      // Сохраняем результат
+      this.MontagePrice = total;
+
       // Debug
       if (this.debug === true) console.log("calcMontage = ".concat(total));
       return total;
@@ -7456,6 +7579,24 @@ var Price = exports.default = /*#__PURE__*/function () {
       var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
       var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
       if (this.debug) console.log("".concat(text, " = ").concat(value));
+    }
+  }, {
+    key: "addResult",
+    value: function addResult(key, value) {
+      this.results[key] = value;
+    }
+
+    // Метод для возврата всех результатов
+  }, {
+    key: "getResults",
+    value: function getResults() {
+      return {
+        CanvasPrice: this.CanvasPrice,
+        OptionsPrice: this.OptionsPrice,
+        MontagePrice: this.MontagePrice,
+        ralPrice: this.ralPrice,
+        ralMinPrice: this.ralMinPrice
+      };
     }
   }]);
 }();
@@ -7538,8 +7679,8 @@ var PriceDealer = exports.default = /*#__PURE__*/function (_Price) {
       return total;
     }
   }, {
-    key: "RulonnayaItalia",
-    value: function RulonnayaItalia() {
+    key: "RolletnayaItalia",
+    value: function RolletnayaItalia() {
       var total = 0;
       total += this.calcCanvasFramePrice();
       return total;
@@ -7599,7 +7740,8 @@ var PriceEmployee = exports.default = /*#__PURE__*/function (_Price) {
     key: "Default",
     value: function Default() {
       var total = 0;
-      total += this.calcCanvasFramePrice();
+      total += this.calcCanvasPrice();
+      total += this.calcRAL();
       total += this.calcOptionsPrice();
       // Рассчет монтажа
       total += this.calcMontage(total);
@@ -7613,7 +7755,8 @@ var PriceEmployee = exports.default = /*#__PURE__*/function (_Price) {
       priceM2 += this.getInputPrice('opening').price;
       priceM2 += this.getInputPrice('install').price;
       total = this.calcAreaPrice(priceM2, priceM2);
-      return total;
+      total += this.calcRAL();
+      total += this.calcMontage(total);
       return total;
     }
   }, {
@@ -7623,6 +7766,7 @@ var PriceEmployee = exports.default = /*#__PURE__*/function (_Price) {
         priceM2 = 0;
       priceM2 += this.getInputPrice('opening').price;
       total = this.calcAreaPrice(priceM2, priceM2);
+      total += this.calcRAL();
       // Рассчет монтажа
       total += this.calcMontage(total);
       return total;
@@ -7631,9 +7775,10 @@ var PriceEmployee = exports.default = /*#__PURE__*/function (_Price) {
     key: "RazdvignayaProvedal",
     value: function RazdvignayaProvedal() {
       var total = 0;
-      total += this.calcCanvasFramePrice();
+      total += this.calcCanvasPrice();
       total += this.calcOptionsPrice();
       total += this.calcRailPrice();
+      total += this.calcRAL();
       // Рассчет монтажа
       total += this.calcMontage(total);
       return total;
@@ -7642,18 +7787,20 @@ var PriceEmployee = exports.default = /*#__PURE__*/function (_Price) {
     key: "RulonnayaPolsha",
     value: function RulonnayaPolsha() {
       var total = 0;
-      total += this.calcCanvasFramePrice();
+      total += this.calcCanvasPrice();
       total += this.calcOptionsPrice();
       total += this.calcRailPriceSlidors();
+      total += this.calcRAL();
       // Рассчет монтажа
       total += this.calcMontage(total);
       return total;
     }
   }, {
-    key: "RulonnayaItalia",
-    value: function RulonnayaItalia() {
+    key: "RolletnayaItalia",
+    value: function RolletnayaItalia() {
       var total = 0;
-      total += this.calcCanvasFramePrice();
+      total += this.calcCanvasPrice();
+      total += this.calcRAL();
       // Рассчет монтажа
       total += this.calcMontage(total);
       return total;
@@ -7696,6 +7843,11 @@ var ProductPrice = exports.default = /*#__PURE__*/function () {
     key: "calculate",
     value: function calculate() {
       return this.priceStrategy.calculate();
+    }
+  }, {
+    key: "getResults",
+    value: function getResults() {
+      return this.priceStrategy.getResults();
     }
   }]);
 }();
@@ -7897,7 +8049,7 @@ var _default = exports.default = {
     key: 'impost',
     value: 0
   }],
-  Perekatka: [{
+  Perekat: [{
     key: 'width',
     value: 0
   }, {
@@ -8135,6 +8287,19 @@ var _default = exports.default = {
       fix: 0,
       percent: 5
     }],
+    RolletnayaItalia: [{
+      key: 'easy',
+      fix: 0,
+      percent: 15
+    }, {
+      key: 'hard',
+      fix: 0,
+      percent: 18
+    }, {
+      key: 'off',
+      fix: 0,
+      percent: 5
+    }],
     PlisseRussia: [{
       key: 'easy',
       fix: 0,
@@ -8200,7 +8365,7 @@ var _default = exports.default = {
       fix: 0,
       percent: 10
     }],
-    Perekatka: [{
+    Perekat: [{
       key: 'easy',
       fix: 250,
       percent: 10
@@ -8723,7 +8888,7 @@ var _default = exports.default = {
         price: 750
       }]
     },
-    Perekatka: {
+    Perekat: {
       canvas: [{
         key: 'fiberglass',
         price: 60
@@ -8851,6 +9016,16 @@ var KPIInstaller = exports.default = /*#__PURE__*/function () {
       return kpi;
     }
   }, {
+    key: "RolletnayaItalia",
+    value: function RolletnayaItalia() {
+      var kpi = 0;
+      var kpiData = this.kpiData.find(function (item) {
+        return item.key === 'easy';
+      });
+      if (kpiData) kpi += Math.round(this.productPrice * kpiData.percent / 100);
+      return kpi;
+    }
+  }, {
     key: "RamochnayaAlumSN",
     value: function RamochnayaAlumSN() {
       var kpi = 0;
@@ -8933,6 +9108,16 @@ var KPIAssembler = exports.default = /*#__PURE__*/function () {
   }, {
     key: "RulonnayaPolsha",
     value: function RulonnayaPolsha() {
+      var kpi = 0;
+      var canvas = this.findItem('canvas', 'all');
+      if (!canvas || !canvas.price) return 0;
+      var areaKPI = this.calcAreaPrice(canvas.price);
+      kpi += areaKPI <= canvas.price ? canvas.price : areaKPI;
+      return kpi;
+    }
+  }, {
+    key: "RolletnayaItalia",
+    value: function RolletnayaItalia() {
       var kpi = 0;
       var canvas = this.findItem('canvas', 'all');
       if (!canvas || !canvas.price) return 0;
@@ -9112,6 +9297,11 @@ var DTOProduct = exports.default = /*#__PURE__*/_createClass(function DTOProduct
     height: 0,
     impost: 0
   }, data.sawing);
+  this.canvasPrice = data.canvasPrice;
+  this.ralPrice = data.ralPrice;
+  this.ralMinPrice = data.ralMinPrice;
+  this.OptionsPrice = data.OptionsPrice;
+  this.MontagePrice = data.MontagePrice;
 });
 },{}],"src/module/Cart/Cart.js":[function(require,module,exports) {
 "use strict";
@@ -9417,6 +9607,24 @@ var Order = /*#__PURE__*/function () {
     value: function getProducts() {
       return _classPrivateFieldGet(_cartProducts, this).getItems();
     }
+  }, {
+    key: "getTotalDiscount",
+    value: function getTotalDiscount() {
+      return this.products.reduce(function (total, product) {
+        return total + (product.totalDiscount || 0);
+      }, 0);
+    }
+
+    // Добавляем метод для получения результатов расчета
+  }, {
+    key: "getProductResults",
+    value: function getProductResults(id) {
+      var product = _classPrivateFieldGet(_cartProducts, this).getItem(id);
+      if (product && product.priceStrategy) {
+        return product.priceStrategy.getResults(); // Возвращаем результаты расчета
+      }
+      return null;
+    }
 
     /**
      * Комплектующие
@@ -9531,16 +9739,29 @@ var Order = /*#__PURE__*/function () {
       var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       return Math.round(price - price * this.discount / 100);
     }
+
+    /**
+     * Метод для расчета суммы скидки
+     */
+  }, {
+    key: "getDiscountAmount",
+    value: function getDiscountAmount() {
+      var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      var discountedPrice = this.calcDiscount(price);
+      return price - discountedPrice;
+    }
   }, {
     key: "calcBeznal",
     value: function calcBeznal() {
       var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      console.log('проверка', price);
       return Math.round(price + price * this.beznal / 100);
     }
   }, {
     key: "calcNdc",
     value: function calcNdc() {
       var price = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      ndcprice = this.ndc, console.log('НДС', ndcprice);
       return Math.round(price + price * this.ndc / 100);
     }
   }, {
@@ -9570,7 +9791,7 @@ var Order = /*#__PURE__*/function () {
     value:
     // Рассчет покраски по RAL
     function calcRAL() {
-      var total = 0;
+      var pokraska = 0;
       if (this.ral === true) {
         // Получаем данные для RAL из импортированных данных
         var ral = _price.default.employee.Ramochnaya25.frame_color.find(function (item) {
@@ -9585,12 +9806,12 @@ var Order = /*#__PURE__*/function () {
 
         // Рассчитываем стоимость в зависимости от количества товаров
         if (quantity <= 2) {
-          total += ralMin.price; // Минимальная стоимость
+          pokraska += ralMin.price; // Минимальная стоимость
         } else if (quantity > 2) {
-          total += ralMin.price + ral.price * (quantity - 2); // Минимальная стоимость плюс стоимость за дополнительное количество
+          pokraska += ralMin.price + ral.price * (quantity - 2); // Минимальная стоимость плюс стоимость за дополнительное количество
         }
       }
-      return total;
+      return pokraska;
     }
   }, {
     key: "calcSpecialDelivery",
@@ -9606,10 +9827,26 @@ var Order = /*#__PURE__*/function () {
       delivery_cdek += this.deliveryCdek;
       return delivery_cdek;
     }
+
+    // Новый метод для проверки наличия сетки Perekat в корзине
+  }, {
+    key: "hasPerekat",
+    value: function hasPerekat() {
+      var products = _classPrivateFieldGet(_cartProducts, this).getItems();
+      return products.some(function (item) {
+        return item.name.includes('Перекат');
+      });
+    }
   }, {
     key: "calcTotalPrice",
     value: function calcTotalPrice() {
-      var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5000;
+      var minOrderAmount = 5000;
+
+      // Проверка наличия сетки Perekat и установка минимальной суммы заказа в 0
+      if (this.hasPerekat()) {
+        minOrderAmount = 0;
+      }
+
       // Рассчет по умолчанию
       var total = this.calcTotalPriceProducts() + this.calcTotalPriceExtras();
       // Рассчет с покраской по RAL
@@ -9620,17 +9857,17 @@ var Order = /*#__PURE__*/function () {
       // + Рассчет с спецтранспортом
       var specialDeliveryCost = this.calcSpecialDelivery();
       total += specialDeliveryCost;
-      var DeliveryCdelCost = this.calcDeliveryCdek();
-      total += DeliveryCdelCost;
+      var deliveryCdekCost = this.calcDeliveryCdek();
+      total += deliveryCdekCost;
 
       // Рассчет со скидкой только на товары и комплектующие
       total = this.calcDiscount(total);
       total = this.calcBeznal(total);
       total = this.calcNdc(total);
-      if (total < min && !this.pickup) {
-        total = min;
+      if (total < minOrderAmount && !this.pickup) {
+        total = minOrderAmount;
         total += specialDeliveryCost;
-        total += DeliveryCdelCost;
+        total += deliveryCdekCost;
       }
       return +total.toFixed(2); // Округляем итоговую стоимость до двух знаков после запятой
     }
@@ -9663,10 +9900,6 @@ var Order = /*#__PURE__*/function () {
     value: function calcTotalKPIAssembler() {
       return _classPrivateFieldGet(_cartProducts, this).totalKPIAssembler();
     }
-
-    /**
-     * Уведомление наблюдателей об изменениях в заказе
-     */
   }, {
     key: "update",
     value: function update() {
@@ -9689,8 +9922,41 @@ var Order = /*#__PURE__*/function () {
         // Сумма KPI установщика
         this.kpi.assembler = this.calcTotalKPIAssembler();
 
-        // Сумма заказа
-        this.totalPrice = this.calcTotalPrice();
+        // Сумма продукции и комплектующих
+        this.totalZakaz = this.calcTotalPriceProducts() + this.calcTotalPriceExtras() + this.calcBeznal();
+
+        // Сумма покраски
+        this.totalRAL = this.calcRAL();
+
+        // Сумма доставки
+        this.totalDelivery = this.calcDelivery() + this.calcCdek() + this.calcDeliveryCdek();
+
+        //Доп услуги
+        this.totalDopuslugi = this.calcSpecialDelivery();
+
+        // Итоговая сумма до применения скидки
+        var totalBeforeDiscount = this.totalZakaz;
+
+        // Cкидка
+        this.totalDis = this.getDiscountAmount(totalBeforeDiscount);
+
+        //Сумма с учетом скидки
+        this.totalPriceDis = this.calcDiscount(totalBeforeDiscount);
+
+        // Итоговая цена с учетом скидки
+        this.totalPrice = this.calcDiscount(totalBeforeDiscount) + this.totalDelivery;
+
+        // Проверка минимальной суммы заказа и добавление стоимости спецтранспорта и доставки при необходимости
+        var minOrderAmount = 5000;
+        if (this.hasPerekat()) {
+          minOrderAmount = 0;
+        }
+        if (this.totalPrice < minOrderAmount && !this.pickup) {
+          this.totalPrice = minOrderAmount;
+          this.totalPrice += this.calcSpecialDelivery();
+          this.totalPrice += this.calcDeliveryCdek();
+          this.totalPrice += this.calcBeznal();
+        }
       }
       this.broadcast();
       return this;
@@ -9708,7 +9974,9 @@ var Order = /*#__PURE__*/function () {
       this.deliveryCdek = 0; // Тариф ТК СДЭК
       this.specificalMontage = 0; //Стоимость работ по специфическому монтажу
       this.discount = 0; // Скидка (%)
+      this.totalDis = 0; //Сумма скидки
       this.beznal = 0; //Безнал
+      this.totalBeznal = 0;
       this.ndc = 0; //Безнал
       this.cdek = 0; //Доставка до ТК СДЭК отгрузка
       this.pickup = _classPrivateFieldGet(_userRole, this) === 'dealer'; // Самовывоз (true/false) У диллеров самовывоз по умолчанию "Да" 
@@ -9854,10 +10122,10 @@ var Ramochnaya25 = exports.default = /*#__PURE__*/function (_ProductForm) {
           inputKomplekt.setDisabled(true);
           switch (this.getValue()) {
             case 'plungery':
-              inputKomplekt.setDisabled(false);
+              inputHandles.setDisabled(true);
               break;
             case 'plungery':
-              inputHandles.setDisabled(true);
+              inputKomplekt.setDisabled(false);
               break;
             case 'vnutrennie-zacepi':
               inputKomplekt.setDisabled(true);
@@ -9946,6 +10214,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _polotna = _interopRequireDefault(require("../../../data/polotna.js"));
 var _ProductForm2 = _interopRequireDefault(require("../ProductForm.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -9960,37 +10229,47 @@ function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError(
 function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
-function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); } // Убедитесь, что путь корректен
 var RulonnayaItalia = exports.default = /*#__PURE__*/function (_ProductForm) {
   function RulonnayaItalia() {
     var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
     _classCallCheck(this, RulonnayaItalia);
     return _callSuper(this, RulonnayaItalia, [config]);
   }
-
-  /* Функции для изменения полей (зависимости/поведение/события и т.д) */
-
-  // Изменение максимальной высоты в зависимости от полотна
   _inherits(RulonnayaItalia, _ProductForm);
   return _createClass(RulonnayaItalia, [{
     key: "canvas",
     value: function canvas(field) {
       var height = this.getInput('height'); // Поле "высота"
-      field.on('change', function () {
-        switch (this.getValue()) {
-          case 'antipo-gray':
-          case 'antipo-black':
-            height.setMax('1800').validate();
-            break;
-          default:
-            height.setMax('2500').validate();
-            break;
-        }
-      });
+      var canvasColors = this.getInput('canvas_color'); // Поле для выбора цвета
+
+      if (canvasColors !== undefined) {
+        field.on('change', function () {
+          var canvasValue = field.getValue();
+
+          // Обновление доступных цветов
+          if (_polotna.default.hasOwnProperty(canvasValue)) {
+            canvasColors.setOptions(_polotna.default[canvasValue]);
+          }
+
+          // Обновление максимальной высоты
+          switch (canvasValue) {
+            case 'polltexrollet':
+              height.setMax('1800').validate();
+              break;
+            case 'fiberglassrollet':
+              height.setMax('2500').validate();
+              break;
+            default:
+              height.setMax('2500').validate();
+              break;
+          }
+        });
+      }
     }
   }]);
 }(_ProductForm2.default);
-},{"../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/PlisseItalia.js":[function(require,module,exports) {
+},{"../../../data/polotna.js":"src/data/polotna.js","../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/PlisseItalia.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10031,34 +10310,33 @@ var PlisseItalia = exports.default = /*#__PURE__*/function (_ProductForm) {
         switch (this.getValue()) {
           case 'vstrechnoe':
           case 'reversivnoe':
-            width.setMax('6000').validate();
+            width.setMax('4000').validate();
             break;
           default:
-            width.setMax('3000').validate();
+            width.setMax('2000').validate();
             break;
         }
       });
     }
-
+    /*
     // Изменение максимальной высоты в зависимости от полотна
-  }, {
-    key: "canvas",
-    value: function canvas(field) {
-      var height = this.getInput('height'); // Поле "высота"
-      field.on('change', function () {
-        switch (this.getValue()) {
-          case 'antivandal-gray':
-            height.setMax('2800').validate();
-            break;
-          case 'maxivision-black':
-            height.setMax('2400').validate();
-            break;
-          default:
-            height.setMax('3000').validate();
-            break;
-        }
-      });
+    canvas(field) {
+        const height = this.getInput('height'); // Поле "высота"
+        field.on('change', function() {
+            switch (this.getValue()) {
+                case 'antivandal-gray': 
+                    height.setMax('2800').validate();
+                break;
+                case 'maxivision-black': 
+                    height.setMax('2400').validate();
+                break; 
+                default: 
+                    height.setMax('3000').validate();
+                break;   
+            }
+        });
     }
+        */
   }]);
 }(_ProductForm2.default);
 },{"../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/PlisseRussia.js":[function(require,module,exports) {
@@ -10102,37 +10380,218 @@ var PlisseRussia = exports.default = /*#__PURE__*/function (_ProductForm) {
         switch (this.getValue()) {
           case 'vstrechnoe':
           case 'reversivnoe':
-            width.setMax('6000').validate();
+            width.setMax('2000').validate();
             break;
           default:
-            width.setMax('3000').validate();
-            break;
-        }
-      });
-    }
-
-    // Изменение максимальной высоты в зависимости от полотна
-  }, {
-    key: "canvas",
-    value: function canvas(field) {
-      var height = this.getInput('height'); // Поле "высота"
-      field.on('change', function () {
-        switch (this.getValue()) {
-          case 'antivandal-gray':
-            height.setMax('2800').validate();
-            break;
-          case 'maxivision-black':
-            height.setMax('2400').validate();
-            break;
-          default:
-            height.setMax('3000').validate();
+            width.setMax('4000').validate();
             break;
         }
       });
     }
   }]);
 }(_ProductForm2.default);
-},{"../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/index.js":[function(require,module,exports) {
+},{"../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/Ramochnaya32.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _User = _interopRequireDefault(require("../../../user/User.js"));
+var _ProductForm2 = _interopRequireDefault(require("../ProductForm.js"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+var Ramochnaya32 = exports.default = /*#__PURE__*/function (_ProductForm) {
+  function Ramochnaya32() {
+    var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    _classCallCheck(this, Ramochnaya32);
+    return _callSuper(this, Ramochnaya32, [config]);
+  }
+
+  /* Функции для изменения полей (зависимости/поведение/события и т.д) */
+  // Крепления
+  _inherits(Ramochnaya32, _ProductForm);
+  return _createClass(Ramochnaya32, [{
+    key: "fastings",
+    value: function fastings(field) {
+      var inputMontage = this.getInput('montage'); // Поле "монтаж"
+      var inputHandles = this.getInput('handles'); // Поле "ручки"
+      var inputKomplekt = this.getInput('komplekt'); // Поле "ручки"
+
+      if (inputMontage && inputHandles && inputKomplekt) {
+        field.on('change', function () {
+          inputMontage.setDisabled(_User.default.getRole() === 'dealer');
+          inputHandles.setDisabled(false);
+          inputKomplekt.setDisabled(true);
+          switch (this.getValue()) {
+            case 'plungery':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'plungery':
+              inputHandles.setDisabled(true);
+              break;
+            case 'vnutrennie-zacepi':
+              inputKomplekt.setDisabled(true);
+              break;
+            case 'z-krepleniya-m':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'z-krepleniya-p':
+              inputKomplekt.setDisabled(false);
+              break;
+          }
+        });
+      }
+    }
+  }]);
+}(_ProductForm2.default);
+},{"../../../user/User.js":"src/user/User.js","../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/TrapeciyaStandart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _User = _interopRequireDefault(require("../../../user/User.js"));
+var _ProductForm2 = _interopRequireDefault(require("../ProductForm.js"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+var TrapeciyaStandart = exports.default = /*#__PURE__*/function (_ProductForm) {
+  function TrapeciyaStandart() {
+    var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    _classCallCheck(this, TrapeciyaStandart);
+    return _callSuper(this, TrapeciyaStandart, [config]);
+  }
+
+  /* Функции для изменения полей (зависимости/поведение/события и т.д) */
+  // Крепления
+  _inherits(TrapeciyaStandart, _ProductForm);
+  return _createClass(TrapeciyaStandart, [{
+    key: "fastings",
+    value: function fastings(field) {
+      var inputMontage = this.getInput('montage'); // Поле "монтаж"
+      var inputHandles = this.getInput('handles'); // Поле "ручки"
+      var inputKomplekt = this.getInput('komplekt'); // Поле "ручки"
+
+      if (inputMontage && inputHandles && inputKomplekt) {
+        field.on('change', function () {
+          inputMontage.setDisabled(_User.default.getRole() === 'dealer');
+          inputHandles.setDisabled(false);
+          inputKomplekt.setDisabled(true);
+          switch (this.getValue()) {
+            case 'plungery':
+              inputHandles.setDisabled(true);
+              break;
+            case 'plungery':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'vnutrennie-zacepi':
+              inputKomplekt.setDisabled(true);
+              break;
+            case 'z-krepleniya-m':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'z-krepleniya-p':
+              inputKomplekt.setDisabled(false);
+              break;
+          }
+        });
+      }
+    }
+  }]);
+}(_ProductForm2.default);
+},{"../../../user/User.js":"src/user/User.js","../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/products/Arochnaya.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _User = _interopRequireDefault(require("../../../user/User.js"));
+var _ProductForm2 = _interopRequireDefault(require("../ProductForm.js"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+var Ramochnaya32 = exports.default = /*#__PURE__*/function (_ProductForm) {
+  function Ramochnaya32() {
+    var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    _classCallCheck(this, Ramochnaya32);
+    return _callSuper(this, Ramochnaya32, [config]);
+  }
+
+  /* Функции для изменения полей (зависимости/поведение/события и т.д) */
+  // Крепления
+  _inherits(Ramochnaya32, _ProductForm);
+  return _createClass(Ramochnaya32, [{
+    key: "fastings",
+    value: function fastings(field) {
+      var inputMontage = this.getInput('montage'); // Поле "монтаж"
+      var inputHandles = this.getInput('handles'); // Поле "ручки"
+      var inputKomplekt = this.getInput('komplekt'); // Поле "ручки"
+
+      if (inputMontage && inputHandles && inputKomplekt) {
+        field.on('change', function () {
+          inputMontage.setDisabled(_User.default.getRole() === 'dealer');
+          inputHandles.setDisabled(false);
+          inputKomplekt.setDisabled(true);
+          switch (this.getValue()) {
+            case 'plungery':
+              inputHandles.setDisabled(true);
+              break;
+            case 'plungery':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'vnutrennie-zacepi':
+              inputKomplekt.setDisabled(true);
+              break;
+            case 'z-krepleniya-m':
+              inputKomplekt.setDisabled(false);
+              break;
+            case 'z-krepleniya-p':
+              inputKomplekt.setDisabled(false);
+              break;
+          }
+        });
+      }
+    }
+  }]);
+}(_ProductForm2.default);
+},{"../../../user/User.js":"src/user/User.js","../ProductForm.js":"src/module/Product/ProductForm.js"}],"src/module/Product/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10152,11 +10611,15 @@ var _KPIInstaller = _interopRequireDefault(require("./kpi/KPIInstaller.js"));
 var _KPIAssembler = _interopRequireDefault(require("./kpi/KPIAssembler.js"));
 var _DTOProduct = _interopRequireDefault(require("../../dto/DTOProduct.js"));
 var _Order = _interopRequireDefault(require("../Order/Order.js"));
+var _Price = _interopRequireDefault(require("./price/Price.js"));
 var _Ramochnaya = _interopRequireDefault(require("./products/Ramochnaya25.js"));
 var _RamochnayaOptima = _interopRequireDefault(require("./products/RamochnayaOptima.js"));
 var _RulonnayaItalia = _interopRequireDefault(require("./products/RulonnayaItalia.js"));
 var _PlisseItalia = _interopRequireDefault(require("./products/PlisseItalia.js"));
 var _PlisseRussia = _interopRequireDefault(require("./products/PlisseRussia.js"));
+var _Ramochnaya2 = _interopRequireDefault(require("./products/Ramochnaya32.js"));
+var _TrapeciyaStandart = _interopRequireDefault(require("./products/TrapeciyaStandart.js"));
+var _Arochnaya = _interopRequireDefault(require("./products/Arochnaya.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -10166,7 +10629,10 @@ var ProductKeys = {
   'RamochnayaOptima': _RamochnayaOptima.default,
   'RulonnayaItalia': _RulonnayaItalia.default,
   'PlisseItalia': _PlisseItalia.default,
-  'PlisseRussia': _PlisseRussia.default
+  'PlisseRussia': _PlisseRussia.default,
+  'Ramochnaya32': _Ramochnaya2.default,
+  'TrapeciyaStandart': _TrapeciyaStandart.default,
+  'Arochnaya': _Arochnaya.default
 };
 var userRole = _User.default.getRole();
 
@@ -10197,38 +10663,68 @@ function render() {
 
 // Обработчик формы товара (сетки) для добавления в корзину/заказ
 function createOrderItem(form) {
-  var _formData$get, _formData$get2, _formData$get3, _formData$get4;
+  var _formData$get, _formData$get2, _formData$get3;
   var productKey = form.key;
   var formData = form.getFormData();
 
-  // Получение значения монтажных работ
-  var montagePrice = parseFloat((_formData$get = formData.get('mogtagespes')) === null || _formData$get === void 0 ? void 0 : _formData$get.value) || 0;
-
   // Цена сетки с монтажом или без (считается сразу в ProductPrice)
-  var productPrice = new _ProductPrice.default(productKey, userRole, formData).calculate();
+  var productPriceInstance = new _ProductPrice.default(productKey, userRole, formData);
+  var productPrice = productPriceInstance.calculate();
+  console.log('Цена продукции за 1 шт:', productPrice);
+
   // Итоговая цена с учётом стоимости монтажа
-  var totalPrice = productPrice + montagePrice;
+  var totalPrice = productPrice;
+
+  // Получаем результаты расчетов
+  var priceResults = productPriceInstance.priceStrategy.getResults();
+
+  // Получаем отдельные значения из результатов
+  var canvasPrice = priceResults.CanvasPrice;
+  var ralPrice = priceResults.ralPrice;
+  var ralMinPrice = priceResults.ralMinPrice;
+  var MontagePrice = priceResults.MontagePrice;
+  var OptionsPrice = priceResults.OptionsPrice;
+  console.log('Цена за доп.покраску:', ralMinPrice);
+  console.log('Цена за полотно:', canvasPrice);
+  console.log('Цена за покраску:', ralPrice);
+  console.log('Цена за монтаж', MontagePrice);
+  console.log('Цена за опции:', OptionsPrice);
 
   // KPI Монтажника
   var kpiInstaller = new _KPIInstaller.default(productKey, formData, totalPrice).calculate();
+  console.log('KPI Монтажник:', kpiInstaller);
+
   // KPI Сборщика
   var kpiAssembler = new _KPIAssembler.default(productKey, formData).calculate();
+  console.log('KPI сборщик:', kpiAssembler);
+
   // Распил
   var productSawing = new _ProductSawing.default(productKey, formData).calculate();
+  console.log('Распил:', productSawing);
+
+  // Создаем DTOProduct объект с дополнительными результатами
   var product = new _DTOProduct.default({
     id: new Date().getTime(),
     name: createProductName(form, totalPrice),
     quantity: formData.get('quantity').value,
     price: Math.round(totalPrice),
     // Округляем до целого числа
-    montage: ((_formData$get2 = formData.get('montage')) === null || _formData$get2 === void 0 ? void 0 : _formData$get2.value) && ((_formData$get3 = formData.get('montage')) === null || _formData$get3 === void 0 ? void 0 : _formData$get3.value) !== 'off',
-    ral: ((_formData$get4 = formData.get('frame_color')) === null || _formData$get4 === void 0 ? void 0 : _formData$get4.value) === 'ral',
+    montage: ((_formData$get = formData.get('montage')) === null || _formData$get === void 0 ? void 0 : _formData$get.value) && ((_formData$get2 = formData.get('montage')) === null || _formData$get2 === void 0 ? void 0 : _formData$get2.value) !== 'off',
+    ral: ((_formData$get3 = formData.get('frame_color')) === null || _formData$get3 === void 0 ? void 0 : _formData$get3.value) === 'ral',
     kpi: {
       installer: Math.round(kpiInstaller),
       assembler: Math.round(kpiAssembler)
     },
-    sawing: productSawing
+    sawing: productSawing,
+    canvasPrice: Math.round(canvasPrice),
+    // Добавляем цену за полотно
+    ralPrice: Math.round(ralPrice),
+    // Добавляем цену за раму
+    ralMinPrice: Math.round(ralMinPrice),
+    MontagePrice: Math.round(MontagePrice),
+    OptionsPrice: Math.round(OptionsPrice)
   });
+  console.log('Продукт:', product);
   return product;
 }
 
@@ -10307,7 +10803,7 @@ function createProductName(form) {
   fields.push("\u0426\u0435\u043D\u0430: ".concat(price, " \u20BD"));
   return fields.join('. ');
 }
-},{"../../user/User.js":"src/user/User.js","../../data/products.js":"src/data/products.js","../../components/form/FieldGroup.js":"src/components/form/FieldGroup.js","../../components/form/Select.js":"src/components/form/Select.js","../../components/buttons/Button.js":"src/components/buttons/Button.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./ProductForm.js":"src/module/Product/ProductForm.js","./ProductPrice.js":"src/module/Product/ProductPrice.js","./ProductSawing.js":"src/module/Product/ProductSawing.js","./kpi/KPIInstaller.js":"src/module/Product/kpi/KPIInstaller.js","./kpi/KPIAssembler.js":"src/module/Product/kpi/KPIAssembler.js","../../dto/DTOProduct.js":"src/dto/DTOProduct.js","../Order/Order.js":"src/module/Order/Order.js","./products/Ramochnaya25.js":"src/module/Product/products/Ramochnaya25.js","./products/RamochnayaOptima.js":"src/module/Product/products/RamochnayaOptima.js","./products/RulonnayaItalia.js":"src/module/Product/products/RulonnayaItalia.js","./products/PlisseItalia.js":"src/module/Product/products/PlisseItalia.js","./products/PlisseRussia.js":"src/module/Product/products/PlisseRussia.js"}],"src/module/Extras/ExtrasSearch.js":[function(require,module,exports) {
+},{"../../user/User.js":"src/user/User.js","../../data/products.js":"src/data/products.js","../../components/form/FieldGroup.js":"src/components/form/FieldGroup.js","../../components/form/Select.js":"src/components/form/Select.js","../../components/buttons/Button.js":"src/components/buttons/Button.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./ProductForm.js":"src/module/Product/ProductForm.js","./ProductPrice.js":"src/module/Product/ProductPrice.js","./ProductSawing.js":"src/module/Product/ProductSawing.js","./kpi/KPIInstaller.js":"src/module/Product/kpi/KPIInstaller.js","./kpi/KPIAssembler.js":"src/module/Product/kpi/KPIAssembler.js","../../dto/DTOProduct.js":"src/dto/DTOProduct.js","../Order/Order.js":"src/module/Order/Order.js","./price/Price.js":"src/module/Product/price/Price.js","./products/Ramochnaya25.js":"src/module/Product/products/Ramochnaya25.js","./products/RamochnayaOptima.js":"src/module/Product/products/RamochnayaOptima.js","./products/RulonnayaItalia.js":"src/module/Product/products/RulonnayaItalia.js","./products/PlisseItalia.js":"src/module/Product/products/PlisseItalia.js","./products/PlisseRussia.js":"src/module/Product/products/PlisseRussia.js","./products/Ramochnaya32.js":"src/module/Product/products/Ramochnaya32.js","./products/TrapeciyaStandart.js":"src/module/Product/products/TrapeciyaStandart.js","./products/Arochnaya.js":"src/module/Product/products/Arochnaya.js"}],"src/module/Extras/ExtrasSearch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10331,611 +10827,23 @@ var _default = exports.default = {
     "name": "Оконная ручка (Белая)",
     "unit": "шт",
     "price": "100"
-  }, {
-    "name": "Оконная ручка (Коричневая)",
-    "unit": "шт",
-    "price": "110"
-  }, {
-    "name": "Оконная ручка (Антрацит)",
-    "unit": "шт",
-    "price": "190"
-  }, {
-    "name": "Оконная ручка с замком (Белая)",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Оконная ручка с замком (Коричневая)",
-    "unit": "шт",
-    "price": "450"
-  }, {
-    "name": "Заглушка водоотведения оконная (Белая)",
-    "unit": "шт",
-    "price": "2"
-  }, {
-    "name": "Ручка балконная курильщика пластиковая (Белая)",
-    "unit": "шт",
-    "price": "20"
-  }, {
-    "name": "Ручка балконная курильщика металл (Белая)",
-    "unit": "шт",
-    "price": "40"
-  }, {
-    "name": "Ручка балконная курильщика металл (Коричневая)",
-    "unit": "шт",
-    "price": "40"
-  }, {
-    "name": "Ограничитель окна металл (Белая)",
-    "unit": "шт",
-    "price": "100"
-  }, {
-    "name": "Ограничитель окна металл  (Коричневая)",
-    "unit": "шт",
-    "price": "110"
-  }, {
-    "name": "Ограничитель окна пластик (Белая)",
-    "unit": "шт",
-    "price": "50"
-  }, {
-    "name": "Детский замок ТРОС (Белая)",
-    "unit": "шт",
-    "price": "500"
-  }, {
-    "name": "Детский замок ТРОС (Коричневая)",
-    "unit": "шт",
-    "price": "550"
-  }, {
-    "name": "Дверца для домашних животных mini",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Дверца для домашних животных max",
-    "unit": "шт",
-    "price": "1500"
-  }, {
-    "name": "Уплотнитель щеточный (Шлегель) 12мм серый",
-    "unit": "пог.м.",
-    "price": "40"
-  }, {
-    "name": "Уплотнитель щеточный (Шлегель) 6мм серый",
-    "unit": "пог.м.",
-    "price": "20"
-  }, {
-    "name": "Двухсторонней скотч черный",
-    "unit": "пог.м.",
-    "price": "100"
-  }, {
-    "name": "Двухсторонней скотч белый",
-    "unit": "пог.м.",
-    "price": "100"
-  }, {
-    "name": "Ролик для закатки шнура",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Ролик для закатки шнура металлический",
-    "unit": "шт",
-    "price": "600"
-  }, {
-    "name": "Угол 25мм цельнолитой пластиковый (Белый)",
-    "unit": "шт",
-    "price": "5"
-  }, {
-    "name": "Угол 25мм цельнолитой пластиковый (Коричневый)",
-    "unit": "шт",
-    "price": "6"
-  }, {
-    "name": "Угол 25мм цельнолитой пластиковый (Антрацит)",
-    "unit": "шт",
-    "price": "8"
-  }, {
-    "name": "Металлические Угол 25мм (Белый)",
-    "unit": "шт",
-    "price": "60"
-  }, {
-    "name": "Металлические Угол 25мм (Коричневый) ",
-    "unit": "шт",
-    "price": "70"
-  }, {
-    "name": "Металлические Угол 25мм (Антрацит)",
-    "unit": "шт",
-    "price": "80"
-  }, {
-    "name": "Металлические Угол 32мм (Белый)",
-    "unit": "шт",
-    "price": "90"
-  }, {
-    "name": "Металлические Угол 32мм (Коричневый) ",
-    "unit": "шт",
-    "price": "90"
-  }, {
-    "name": "Углы «Provedal» 4шт комплект",
-    "unit": "компл.",
-    "price": "100"
-  }, {
-    "name": "Угол «SKF» (Белый)",
-    "unit": "шт",
-    "price": "18"
-  }, {
-    "name": "Угол «SKF» (Коричневый)",
-    "unit": "шт",
-    "price": "20"
-  }, {
-    "name": "Угол «SKF» (Антрацит)",
-    "unit": "шт",
-    "price": "35"
-  }, {
-    "name": "Угол «Крыло» (Белый)",
-    "unit": "шт",
-    "price": "12"
-  }, {
-    "name": "Угол «Крыло» (Коричневый)",
-    "unit": "шт",
-    "price": "14"
-  }, {
-    "name": "Угол «Крыло» (Антрацит)",
-    "unit": "шт",
-    "price": "18"
-  }, {
-    "name": "Угол «Плиссе Россия» (Белый) 4шт",
-    "unit": "компл.",
-    "price": "600"
-  }, {
-    "name": "Угол «Плиссе Россия» (Коричневый) 4шт",
-    "unit": "компл.",
-    "price": "600"
-  }, {
-    "name": "Углы профиль 42мм 8шт комплект",
-    "unit": "компл.",
-    "price": "140"
-  }, {
-    "name": "Металлическая Ручка МС (Белые)",
-    "unit": "шт",
-    "price": "10"
-  }, {
-    "name": "Металлическая Ручка МС (Коричневые)",
-    "unit": "шт",
-    "price": "12"
-  }, {
-    "name": "Металлическая Ручка МС (Антрацит)",
-    "unit": "шт",
-    "price": "16"
-  }, {
-    "name": "Ручка МС пластиковой (Прозрачная)",
-    "unit": "шт",
-    "price": "2"
-  }, {
-    "name": "Z-крепления металлические Белые (комплект) 4 шт.",
-    "unit": "компл.",
-    "price": "30"
-  }, {
-    "name": "Z-крепления металлические Коричневые (комплект) 4 шт.",
-    "unit": "компл.",
-    "price": "32"
-  }, {
-    "name": "Z-крепления металлические Антрацит (комплект) 4 шт.",
-    "unit": "компл.",
-    "price": "40"
-  }, {
-    "name": "Плунжерные крепления 1шт. ",
-    "unit": "шт",
-    "price": "80"
-  }, {
-    "name": "Внутренние крепления (перья)(комплект) 4 шт",
-    "unit": "компл.",
-    "price": "100"
-  }, {
-    "name": "«Флажки» крепления для сеток (Белые)",
-    "unit": "шт",
-    "price": "10"
-  }, {
-    "name": "«Флажки» крепления для сеток (Коричневые)",
-    "unit": "шт",
-    "price": "10"
-  }, {
-    "name": "Крепление «SKF»",
-    "unit": "шт",
-    "price": "40"
-  }, {
-    "name": "Крепления «Крыло»",
-    "unit": "шт",
-    "price": "15"
-  }, {
-    "name": "Шнур 4,5мм",
-    "unit": "пог.м.",
-    "price": "5"
-  }, {
-    "name": "Шнур 5мм",
-    "unit": "пог.м.",
-    "price": "5"
-  }, {
-    "name": "Шнур 5,5мм",
-    "unit": "пог.м.",
-    "price": "6"
-  }, {
-    "name": "Шнур 6мм",
-    "unit": "пог.м.",
-    "price": "7"
-  }, {
-    "name": "Петли с доводчиками (Белые) ",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Петли с доводчиками (Коричневые)",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Петли металлические (Белые) ",
-    "unit": "шт",
-    "price": "70"
-  }, {
-    "name": "Петли металлические (Коричневые) ",
-    "unit": "шт",
-    "price": "80"
-  }, {
-    "name": "Петли металлические (Антрацит)",
-    "unit": "шт",
-    "price": "130"
-  }, {
-    "name": "Магнитный держатель (Белые) ",
-    "unit": "шт",
-    "price": "60"
-  }, {
-    "name": "Магнитный держатель (Коричневые) ",
-    "unit": "шт",
-    "price": "70"
-  }, {
-    "name": "Защелка (Белая) ",
-    "unit": "шт",
-    "price": "60"
-  }, {
-    "name": "Защелка (Коричневая) ",
-    "unit": "шт",
-    "price": "70"
-  }, {
-    "name": "Профиль 25мм (Белые)",
-    "unit": "пог.м.",
-    "price": "80"
-  }, {
-    "name": "Профиль 25мм (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "85"
-  }, {
-    "name": "Профиль 25мм (Антрацит)",
-    "unit": "пог.м.",
-    "price": "100"
-  }, {
-    "name": "Профиль 32мм (Белые)",
-    "unit": "пог.м.",
-    "price": "250"
-  }, {
-    "name": "Профиль 32мм (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "250"
-  }, {
-    "name": "Профиль 42мм (Белые)",
-    "unit": "пог.м.",
-    "price": "350"
-  }, {
-    "name": "Профиль 42мм (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "350"
-  }, {
-    "name": "Профиль SKF (Белые)",
-    "unit": "пог.м.",
-    "price": "200"
-  }, {
-    "name": "Профиль SKF (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "210"
-  }, {
-    "name": "Профиль SKF (Антрацит)",
-    "unit": "пог.м.",
-    "price": "250"
-  }, {
-    "name": "Профиль Provedal (Белые)",
-    "unit": "пог.м.",
-    "price": "300"
-  }, {
-    "name": "Профиль Provedal (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "320"
-  }, {
-    "name": "Профиль Provedal (Антрацит)",
-    "unit": "пог.м.",
-    "price": "350"
-  }, {
-    "name": "Профиль «Плиссе Россия» (Белый)",
-    "unit": "пог.м.",
-    "price": "450"
-  }, {
-    "name": "Профиль «Плиссе Россия» (Коричневый)",
-    "unit": "пог.м.",
-    "price": "450"
-  }, {
-    "name": "Профиль ручка «Плиссе Россия» (Белый)",
-    "unit": "пог.м.",
-    "price": "500"
-  }, {
-    "name": "Профиль ручка «Плиссе Россия» (Коричневый)",
-    "unit": "пог.м.",
-    "price": "500"
-  }, {
-    "name": "Профиль Крыло (Белые)",
-    "unit": "пог.м.",
-    "price": "110"
-  }, {
-    "name": "Профиль Крыло (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "120"
-  }, {
-    "name": "Профиль Крыло (Антрацит)",
-    "unit": "пог.м.",
-    "price": "150"
-  }, {
-    "name": "Профиль Поперечный (Белые)",
-    "unit": "пог.м.",
-    "price": "90"
-  }, {
-    "name": "Профиль Поперечный (Коричневые) ",
-    "unit": "пог.м.",
-    "price": "95"
-  }, {
-    "name": "Профиль Поперечный (Антрацит)",
-    "unit": "пог.м.",
-    "price": "110"
-  }, {
-    "name": "Полотно Стандарт 1.6м серое",
-    "unit": "пог.м.",
-    "price": "100"
-  }, {
-    "name": "Полотно Стандарт 1.4м серое",
-    "unit": "пог.м.",
-    "price": "90"
-  }, {
-    "name": "Полотно Стандарт 1.6м черное ",
-    "unit": "пог.м.",
-    "price": "110"
-  }, {
-    "name": "Полотно Стандарт 1.4м черное ",
-    "unit": "пог.м.",
-    "price": "100"
-  }, {
-    "name": "Полотно Антикошка 1.6м белое ",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м белое ",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антикошка 1.6м серое ",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м серое ",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антикошка 1.6м светло-серое",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м светло-серое",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антикошка 1.6м черное",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м черное",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антикошка 1.6м черно-белое ",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м черно-белое ",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антикошка 1.6м бронза ",
-    "unit": "пог.м.",
-    "price": "900"
-  }, {
-    "name": "Полотно Антикошка 1.4м бронза ",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Антипыль 1.6м серый ",
-    "unit": "пог.м.",
-    "price": "550"
-  }, {
-    "name": "Антипыль 1.4м серый ",
-    "unit": "пог.м.",
-    "price": "500"
-  }, {
-    "name": "Антипыль 1.6м черный",
-    "unit": "пог.м.",
-    "price": "550"
-  }, {
-    "name": "Антипыль 1.4м черный",
-    "unit": "пог.м.",
-    "price": "500"
-  }, {
-    "name": "Полотно Ультравью 1.6м серое ",
-    "unit": "пог.м.",
-    "price": "350"
-  }, {
-    "name": "Полотно Ультравью 1.4м серое ",
-    "unit": "пог.м.",
-    "price": "300"
-  }, {
-    "name": "Полотно Ультравью 1.6м черное",
-    "unit": "пог.м.",
-    "price": "350"
-  }, {
-    "name": "Полотно Ультравью 1.4м черное",
-    "unit": "пог.м.",
-    "price": "300"
-  }, {
-    "name": "Полотно Антиптица 1.4м",
-    "unit": "пог.м.",
-    "price": "800"
-  }, {
-    "name": "Полотно Антипыльца 1.6м черное",
-    "unit": "пог.м.",
-    "price": "1500"
-  }, {
-    "name": "Полотно Солнцезащитное 1.6м ",
-    "unit": "пог.м.",
-    "price": "1500"
-  }, {
-    "name": "Образец Рамочная 25мм Антиптици, 4 крепления, 4цвета",
-    "unit": "шт",
-    "price": "500"
-  }, {
-    "name": "Образец SKF Стандарт",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Образец Крыло Стандарт",
-    "unit": "шт",
-    "price": "400"
-  }, {
-    "name": "Образцы полотен 14 полотен",
-    "unit": "шт",
-    "price": "600"
-  }, {
-    "name": "Образец «Плиссе Россия» 2 цвета, Антипыль",
-    "unit": "шт",
-    "price": "2000"
-  }, {
-    "name": "Образец «Плиссе Италия» 2 цвета, Стандарт",
-    "unit": "шт",
-    "price": "3500"
-  }, {
-    "name": "Образцы полотен Плиссе",
-    "unit": "шт",
-    "price": "100"
-  }, {
-    "name": "Образец «Рулонная Италия»",
-    "unit": "шт",
-    "price": "3000"
-  }, {
-    "name": "Стальное полотно 1.6 черное",
-    "unit": "пог.м.",
-    "price": "1300"
   }],
   employee: [{
     "name": "Фетр (белый)",
-    "unit": "пог.м.",
+    "unit": "п.м.",
     "price": "110"
   }, {
     "name": "Фетр (коричневый)",
-    "unit": "пог.м.",
+    "unit": "п.м.",
     "price": "110"
   }, {
     "name": "Фетр (RAL7016)",
-    "unit": "пог.м.",
+    "unit": "п.м.",
     "price": "110"
   }, {
-    "name": "Крепление Z-образное металл, комплект 4шт (белый)",
+    "name": "Ручка оконная HOPP (белая)",
     "unit": "шт",
     "price": "800"
-  }, {
-    "name": "Крепление Z-образное металл, комплект 4шт (коричневый)",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Крепление Z-образное металл, комплект 4шт (RAL7016)",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Крепление Z-образное пвх, комплект 4шт (белый)",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Крепление Z-образное пвх, комплект 4шт (коричневый)",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Крепление Z-образное пвх, комплект 4шт (RAL7016)",
-    "unit": "шт",
-    "price": "800"
-  }, {
-    "name": "Крепление внутренние крючки, комплект 4шт",
-    "unit": "шт",
-    "price": "660"
-  }, {
-    "name": "Крепление плунжерное, комплект 4шт",
-    "unit": "шт",
-    "price": "1000"
-  }, {
-    "name": "Металлические соединительные уголки рамочной сетки, комплект (белый)",
-    "unit": "шт",
-    "price": "450"
-  }, {
-    "name": "Металлические соединительные уголки рамочной сетки, комплект (коричневый)",
-    "unit": "шт",
-    "price": "450"
-  }, {
-    "name": "Металлические соединительные уголки рамочной сетки, комплект (RAL7016)",
-    "unit": "шт",
-    "price": "450"
-  }, {
-    "name": "Пластиковые соединительные уголки рамочной сетки, комплект (белый)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Пластиковые соединительные уголки рамочной сетки, комплект (коричневый)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Пластиковые соединительные уголки рамочной сетки, комплект (RAL7016)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Металлические ручки для рамочной сетки, комплект (белый)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Металлические ручки для рамочной сетки, комплект (коричневый)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Металлические ручки для рамочной сетки, комплект (RAL7016)",
-    "unit": "шт",
-    "price": "220"
-  }, {
-    "name": "Пластиковые ручки для рамочной сетки, комплект (белый)",
-    "unit": "шт",
-    "price": "170"
-  }, {
-    "name": "Пластиковые ручки для рамочной сетки, комплект (коричневый)",
-    "unit": "шт",
-    "price": "170"
-  }, {
-    "name": "Пластиковые ручки для рамочной сетки, комплект (RAL7016)",
-    "unit": "шт",
-    "price": "170"
-  }, {
-    "name": "Дверной доп. профиль",
-    "unit": "шт",
-    "price": "550"
-  }, {
-    "name": "Плиссе дополнительный профиль",
-    "unit": "пог.м.",
-    "price": "770"
-  }, {
-    "name": "Стандартный профиль или перемычка",
-    "unit": "пог.м.",
-    "price": "400"
-  }, {
-    "name": "Установка доп.рамки",
-    "unit": "шт.",
-    "price": "060"
   }, {
     "name": "Ручка оконная HOPP (коричневая)",
     "unit": "шт",
@@ -10947,15 +10855,11 @@ var _default = exports.default = {
   }, {
     "name": "Ручка оконная ROTO (коричневая)",
     "unit": "шт",
-    "price": "1500"
+    "price": "2000"
   }, {
-    "name": "Ручка оконная REHAU (белая)",
+    "name": "Ручка оконная REHAU с детским замком (белая)",
     "unit": "шт",
-    "price": "1500"
-  }, {
-    "name": "Ручка оконная REHAU (коричневая)",
-    "unit": "шт",
-    "price": "800"
+    "price": "3000"
   }, {
     "name": "Ручка оконная ROTO с ключем (белая)",
     "unit": "шт",
@@ -10965,43 +10869,51 @@ var _default = exports.default = {
     "unit": "шт",
     "price": "5500"
   }, {
-    "name": "Ручка оконная HOPP (коричневая)",
+    "name": "Ручка оконная HOPP с ключем (белая) ",
     "unit": "шт",
     "price": "2000"
   }, {
-    "name": "Ручка оконная HOPP (коричневая)",
+    "name": "Ручка оконная HOPP с ключем (коричневая) ",
     "unit": "шт",
     "price": "2000"
   }, {
-    "name": "Гребенка ПВХ (белая)",
+    "name": "Ограничитель открывания окна пластик (белая)",
     "unit": "шт",
     "price": "500"
   }, {
-    "name": "Гребенка ПВХ (коричневая)",
+    "name": "Ограничитель открывания окна пластик (коричневый)",
     "unit": "шт",
     "price": "500"
   }, {
-    "name": "Гребенка металлическая (белая)",
+    "name": "Ограничитель открывания окна пластик (серый)",
+    "unit": "шт",
+    "price": "500"
+  }, {
+    "name": "Ограничитель открывания окна металл (белый)",
     "unit": "шт",
     "price": "800"
   }, {
-    "name": "Гребенка металлическая (коричневая)",
+    "name": "Ограничитель открывания окна металл (коричневая)",
     "unit": "шт",
     "price": "800"
   }, {
-    "name": "Грбенка под АЛ (белая)",
+    "name": "Ограничитель открывания окна металл под АЛ (белая)",
     "unit": "шт",
     "price": "900"
   }, {
-    "name": "Шпингалет",
+    "name": "Ограничитель открывания окна металл под АЛ (коричневая)",
+    "unit": "шт",
+    "price": "900"
+  }, {
+    "name": "Шпингалет ",
     "unit": "шт",
     "price": "600"
   }, {
-    "name": "Детски замок на тросике (белый)",
+    "name": "Детски замок на тросике  (белый)",
     "unit": "шт",
     "price": "2000"
   }, {
-    "name": "Детски замок на тросике (коричневый)",
+    "name": "Детски замок на тросике  (коричневый)",
     "unit": "шт",
     "price": "2000"
   }, {
@@ -11025,7 +10937,15 @@ var _default = exports.default = {
     "unit": "шт",
     "price": "500"
   }, {
-    "name": "Ручка ракушка металлическая (белая)",
+    "name": "Ручка ракушка пластиковая (серая)",
+    "unit": "шт",
+    "price": "500"
+  }, {
+    "name": "Ручка ракушка пластиковая (чёрная)",
+    "unit": "шт",
+    "price": "500"
+  }, {
+    "name": "Ручка ракушка металлическая (беллая)",
     "unit": "шт",
     "price": "800"
   }, {
@@ -11033,25 +10953,37 @@ var _default = exports.default = {
     "unit": "шт",
     "price": "800"
   }, {
-    "name": "Балконная защелка",
+    "name": "Ручка ракушка металлическая (серая)",
     "unit": "шт",
     "price": "800"
   }, {
-    "name": "Магнитная балконная защелка",
+    "name": "Ручка ракушка металлическая (чёрная)",
     "unit": "шт",
-    "price": "900"
+    "price": "800"
   }, {
-    "name": "Двухсторонняя ручка ",
+    "name": "Ручка двухстороння симметричная (белая). ",
     "unit": "шт",
     "price": "4000"
   }, {
-    "name": "Крепление боковое (барашек) (белый) ",
+    "name": "Ручка двухстороння симметричная (коричневая). ",
     "unit": "шт",
-    "price": "120"
+    "price": "4000"
   }, {
-    "name": "Крепление боковое (барашек) (коричневый) ",
+    "name": "Ручка двухстороння ассиметричная (белая). ",
     "unit": "шт",
-    "price": "120"
+    "price": "4000"
+  }, {
+    "name": "Ручка двухстороння ассиметричная (коричневая). ",
+    "unit": "шт",
+    "price": "4000"
+  }, {
+    "name": "Ручка двухстороння с ключом (белая). ",
+    "unit": "шт",
+    "price": "6000"
+  }, {
+    "name": "Ручка двухстороння с ключом (коричневая). ",
+    "unit": "шт",
+    "price": "6000"
   }, {
     "name": "Лючок Мини 240*290",
     "unit": "шт",
@@ -11060,6 +10992,302 @@ var _default = exports.default = {
     "name": "Лючок Макс 350*450",
     "unit": "шт",
     "price": "4000"
+  }, {
+    "name": "Уплотнитель щеточный (Шлегель) 12мм серый",
+    "unit": "пог.м.",
+    "price": "110"
+  }, {
+    "name": "Уплотнитель щеточный (Шлегель) 12мм коичневый",
+    "unit": "пог.м.",
+    "price": "110"
+  }, {
+    "name": "Уплотнитель щеточный (Шлегель) 12мм белый",
+    "unit": "пог.м.",
+    "price": "110"
+  }, {
+    "name": "Уплотнитель щеточный (Шлегель) 12мм чёрный",
+    "unit": "пог.м.",
+    "price": "110"
+  }, {
+    "name": "Двухсторонней скотч черный",
+    "unit": "пог.м.",
+    "price": "150"
+  }, {
+    "name": "Двухсторонней скотч белый",
+    "unit": "пог.м.",
+    "price": "150"
+  }, {
+    "name": "Крепление «VSN»",
+    "unit": "шт",
+    "price": "250"
+  }, {
+    "name": "Металлическая Ручка МС (Белые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Металлическая Ручка МС (Коричневые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Металлическая Ручка МС (Серые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Металлическая Ручка МС (Чёрные)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Пластиковая Ручка МС (Белые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Пластиковая Ручка МС (Коричневые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Пластиковая Ручка МС (Серые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Пластиковая Ручка МС (Чёрные)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "«Флажки» крепления для сеток (Белые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "«Флажки» крепления для сеток (Коричневые)",
+    "unit": "шт",
+    "price": "120"
+  }, {
+    "name": "Z-крепления металлические Белые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "450"
+  }, {
+    "name": "Z-крепления металлические Коричневые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "450"
+  }, {
+    "name": "Z-крепления металлические Серые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "450"
+  }, {
+    "name": "Z-крепления металлические Чёрные (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "450"
+  }, {
+    "name": "Z-крепления пластиковые Белые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "220"
+  }, {
+    "name": "Z-крепления пластиковые Коричневые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "220"
+  }, {
+    "name": "Z-крепления пластиковые Серые (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "220"
+  }, {
+    "name": "Z-крепления пластиковые Чёрные (комплект) 4 шт.",
+    "unit": "компл.",
+    "price": "220"
+  }, {
+    "name": "Плунжерные крепления 1шт. ",
+    "unit": "шт",
+    "price": "225"
+  }, {
+    "name": "Петли с доводчиками (Белые) ",
+    "unit": "шт",
+    "price": "600"
+  }, {
+    "name": "Петли с доводчиками (Коричневые)",
+    "unit": "шт",
+    "price": "600"
+  }, {
+    "name": "Петли без доводчиков (Белые) ",
+    "unit": "шт",
+    "price": "400"
+  }, {
+    "name": "Петли без доводчиков (Коричневые)",
+    "unit": "шт",
+    "price": "400"
+  }, {
+    "name": "Петли без доводчиков (Серые) ",
+    "unit": "шт",
+    "price": "400"
+  }, {
+    "name": "Петли без доводчиков (Чёрные)",
+    "unit": "шт",
+    "price": "400"
+  }, {
+    "name": "Петли усиленные (Белые) ",
+    "unit": "шт",
+    "price": "600"
+  }, {
+    "name": "Петли усиленные (Коричневые)",
+    "unit": "шт",
+    "price": "600"
+  }, {
+    "name": "Магнитный держатель (Белый) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Магнитный держатель (Коричневый) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Магнитный держатель (Серый) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Магнитный держатель (Чёрный) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Защелка (Белая) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Защелка (Коричневая) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Защелка (Серая) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Защелка (Чёрная) ",
+    "unit": "шт",
+    "price": "100"
+  }, {
+    "name": "Профиль 25мм (Белый)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль 25мм (Коричневый) ",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль 25мм (Серый)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль 25мм (Чёрный)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль 42мм (Белый)",
+    "unit": "пог.м.",
+    "price": "550"
+  }, {
+    "name": "Профиль 42мм (Коричневый) ",
+    "unit": "пог.м.",
+    "price": "550"
+  }, {
+    "name": "Профиль 42мм (Серый) ",
+    "unit": "пог.м.",
+    "price": "550"
+  }, {
+    "name": "Профиль 42мм (Чёрный) ",
+    "unit": "пог.м.",
+    "price": "550"
+  }, {
+    "name": "Профиль Поперечный (Белый)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль Поперечный (Коричневый) ",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль Поперечный (Серый)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль Поперечный (Чёрный)",
+    "unit": "пог.м.",
+    "price": "400"
+  }, {
+    "name": "Профиль Плиссе 22мм (Белый). ",
+    "unit": "пог.м.",
+    "price": "770"
+  }, {
+    "name": "Профиль Плиссе 22мм (Коричневый). ",
+    "unit": "пог.м.",
+    "price": "770"
+  }, {
+    "name": "Полотно антимоситное серое, 1,6м.",
+    "unit": "пог.м.",
+    "price": "1584"
+  }, {
+    "name": "Полотно антимоситное чёрное, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "1584"
+  }, {
+    "name": "Полотно антикот белый, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот серый, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот черный, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот бронзовый, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот черно-белый, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот белый блеск, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антикот коричневый, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно ультравью черное, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3279"
+  }, {
+    "name": "Полотно антимошка черная, 1,6м.",
+    "unit": "пог.м.",
+    "price": "3036"
+  }, {
+    "name": "Полотно антипыль серая, 1,6м.",
+    "unit": "пог.м.",
+    "price": "3036"
+  }, {
+    "name": "Полотно антипыльца черная, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3886"
+  }, {
+    "name": "Полотно антибактериальная, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "5222"
+  }, {
+    "name": "Полотно светоотражающее, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3943"
+  }, {
+    "name": "Полотно диаманд, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3590"
+  }, {
+    "name": "Полотно антипыль Италия серая, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3836"
+  }, {
+    "name": "Полотно антипыль Италия черная, 1,6м. ",
+    "unit": "пог.м.",
+    "price": "3836"
   }]
 };
 },{}],"src/components/Table.js":[function(require,module,exports) {
@@ -11258,7 +11486,7 @@ var ExtrasTable = /*#__PURE__*/function (_Table) {
     var _this;
     _classCallCheck(this, ExtrasTable);
     _this = _callSuper(this, ExtrasTable, ['extras']);
-    _this.thead(['#', 'Наименование', 'Кол-во', 'Цена, руб.', '#']);
+    _this.thead(['№', 'Наименование', 'Кол-во', 'Цена, руб.', '', '']);
 
     // Загружаем таблицу
     _this.setRowsFromData();
@@ -11293,14 +11521,21 @@ var ExtrasTable = /*#__PURE__*/function (_Table) {
         });
         ButtonOrder.addClass('active').setText('Изменить');
       });
-      return [item.id, item.name, ItemQuantity.render(), item.price + ' ₽', ButtonOrder.render()];
+      var discountAmountPerUnit = 0;
+      if (_Order.default.discount) {
+        discountAmountPerUnit = item.price * (_Order.default.discount / 100);
+      }
+      var discountAmount = discountAmountPerUnit;
+      return [item.id, item.name, ItemQuantity.render(), "".concat(item.price, " \u20BD"), "".concat(discountAmount.toFixed(0), " \u20BD"),
+      // Отображаем скидку
+      ButtonOrder.render()];
     }
   }, {
     key: "createItemQuantity",
     value: function createItemQuantity(item) {
       var input = new _InputQuantity.default('input-qty', 1);
       input.setLabel(item.unit);
-      input.setId('input-qty-' + item.id);
+      input.setId("input-qty-".concat(item.id));
       return input;
     }
   }, {
@@ -11311,16 +11546,10 @@ var ExtrasTable = /*#__PURE__*/function (_Table) {
       inOrder ? button.addClass('active').setText('Изменить') : button.removeClass('active').setText('В заказ');
       return button;
     }
-
-    /**
-     * Функция отрабатывающая на изменение данных в заказе
-     */
   }, {
     key: "update",
     value: function update(order) {
-      // Обновляем таблицу
       this.setRowsFromData();
-      // console.log('Extras Table updated');
     }
   }]);
 }(_Table2.default);
@@ -11427,7 +11656,98 @@ var ButtonDelete = exports.default = /*#__PURE__*/function (_Button) {
   _inherits(ButtonDelete, _Button);
   return _createClass(ButtonDelete);
 }(_Button2.default);
-},{"./Button.js":"src/components/buttons/Button.js"}],"src/module/Order/OrderTableProducts.js":[function(require,module,exports) {
+},{"./Button.js":"src/components/buttons/Button.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
+var getBundleURL = require('./bundle-url').getBundleURL;
+function loadBundlesLazy(bundles) {
+  if (!Array.isArray(bundles)) {
+    bundles = [bundles];
+  }
+  var id = bundles[bundles.length - 1];
+  try {
+    return Promise.resolve(require(id));
+  } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      return new LazyPromise(function (resolve, reject) {
+        loadBundles(bundles.slice(0, -1)).then(function () {
+          return require(id);
+        }).then(resolve, reject);
+      });
+    }
+    throw err;
+  }
+}
+function loadBundles(bundles) {
+  return Promise.all(bundles.map(loadBundle));
+}
+var bundleLoaders = {};
+function registerBundleLoader(type, loader) {
+  bundleLoaders[type] = loader;
+}
+module.exports = exports = loadBundlesLazy;
+exports.load = loadBundles;
+exports.register = registerBundleLoader;
+var bundles = {};
+function loadBundle(bundle) {
+  var id;
+  if (Array.isArray(bundle)) {
+    id = bundle[1];
+    bundle = bundle[0];
+  }
+  if (bundles[bundle]) {
+    return bundles[bundle];
+  }
+  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
+  var bundleLoader = bundleLoaders[type];
+  if (bundleLoader) {
+    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
+      if (resolved) {
+        module.bundle.register(id, resolved);
+      }
+      return resolved;
+    }).catch(function (e) {
+      delete bundles[bundle];
+      throw e;
+    });
+  }
+}
+function LazyPromise(executor) {
+  this.executor = executor;
+  this.promise = null;
+}
+LazyPromise.prototype.then = function (onSuccess, onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.then(onSuccess, onError);
+};
+LazyPromise.prototype.catch = function (onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.catch(onError);
+};
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/module/Order/OrderTableProducts.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11459,7 +11779,13 @@ var OrderTableProducts = /*#__PURE__*/function (_Table) {
     var _this;
     _classCallCheck(this, OrderTableProducts);
     _this = _callSuper(this, OrderTableProducts, ['order']);
-    _this.thead(['#', 'Наименование', 'Кол-во', 'Цена, руб.', '#']);
+    _this.columns = ['№', 'Наименование', 'Кол-во', 'Цена,руб.', 'Скидка,руб.', 'Итого,руб.', ''];
+    _this.thead(_this.columns);
+
+    // Используем тайм-аут, чтобы дать таблице время на рендеринг
+    setTimeout(function () {
+      return _this.updateDiscountColumn();
+    }, 0);
     return _this;
   }
   _inherits(OrderTableProducts, _Table);
@@ -11475,45 +11801,208 @@ var OrderTableProducts = /*#__PURE__*/function (_Table) {
         product.quantity = quantityInput.getValue();
         _Order.default.setProduct(product.id, product);
       });
-      return [product.index, product.name, quantityInput.render(), product.price + ' ₽', deleteButton.render()];
+      var productPrice = product.price;
+      var productRAL = product.ral;
+      var CanvasPrice = product.canvasPrice;
+      var ralMinPrice = product.ralMinPrice;
+      var OptionsPrice = product.OptionsPrice;
+      var MontagePrice = product.MontagePrice;
+      var ndc = _Order.default.ndc;
+      var beznal = _Order.default.beznal;
+      var discount = _Order.default.discount;
 
-      // const debug = document.createElement('div');
-      // debug.innerHTML = `
-      //     ${product.name} <br>
-      //     <div style="font-weight: bold; margin-top:5px;">
-      //         KPI-монт: ${product.kpi.installer}; 
-      //         KPI-сбор: ${product.kpi.assembler};
-      //         распил: Ш:${product.sawing.width}/В:${product.sawing.height}/И:${product.sawing.impost}
-      //     </div>
-      // `
+      // Рассчитываем коэффициент rate с учётом beznal
+      var rate = 1 + (beznal || 0) / 100;
 
-      // return [
-      //     product.index, 
-      //     debug, 
-      //     quantityInput.render(), 
-      //     product.price + ' ₽', 
-      //     deleteButton.render()
-      // ]
+      // Расчёт цены с учётом beznal
+      var productPriceWithBeznal = productPrice * rate;
+
+      // Общая цена с учётом количества и beznal
+      var totalPrice;
+      var discountAmount = 0;
+      if (productRAL) {
+        if (product.quantity === 1) {
+          totalPrice = productPriceWithBeznal;
+          discountAmount = totalPrice * (discount / 100);
+          totalPrice -= discountAmount;
+        } else if (product.quantity === 2) {
+          totalPrice = (productPrice + CanvasPrice + OptionsPrice + MontagePrice) * rate;
+          discountAmount = totalPrice * (discount / 100);
+          totalPrice -= discountAmount;
+        } else {
+          totalPrice = (productPrice + CanvasPrice + OptionsPrice + MontagePrice + (CanvasPrice + ralMinPrice + OptionsPrice + MontagePrice) * (product.quantity - 2)) * rate;
+          discountAmount = totalPrice * (discount / 100);
+          totalPrice -= discountAmount;
+        }
+      } else {
+        totalPrice = productPriceWithBeznal * product.quantity;
+        discountAmount = totalPrice * (discount / 100);
+        totalPrice -= discountAmount;
+      }
+
+      // Обновляем данные заказа
+      _Order.default.totalPriceWithoutDiscount += totalPrice + discountAmount;
+      _Order.default.totalDiscount += discountAmount;
+      _Order.default.totalPriceWithDiscount += totalPrice;
+      var row = [product.index, product.name, quantityInput.render(), "".concat(productPriceWithBeznal.toFixed(0), " \u20BD"),
+      // Цена с учётом beznal
+      discount ? "".concat(discountAmount.toFixed(0), " \u20BD") : '', // Общая сумма скидки
+      "".concat(totalPrice.toFixed(0), " \u20BD"), deleteButton.render()];
+      return row;
     }
-
-    /**
-     * Функция отрабатывающая на изменение данных в заказе
-     */
   }, {
     key: "update",
     value: function update(order) {
       var _this2 = this;
-      this.clear(); // Fix table HTML refresh bug
+      this.clear();
+      order.totalPriceWithoutDiscount = 0;
+      order.totalDiscount = 0;
+      order.totalPrice = 0;
+      order.totalPriceWithDiscount = 0;
       order.getProducts().forEach(function (product, index) {
         product.index = index + 1;
         _this2.addRow(product.id, _this2.createRow(product));
       });
       _get(_getPrototypeOf(OrderTableProducts.prototype), "update", this).call(this);
+      this.updateDiscountColumn(); // Обновляем видимость столбца скидки
+    }
+  }, {
+    key: "updateDiscountColumn",
+    value: function updateDiscountColumn() {
+      var discountColumnIndex = this.columns.indexOf('Скидка,руб.') + 1;
+      if (_Order.default.discount) {
+        // Показываем столбец скидки
+        document.querySelectorAll("thead th:nth-child(".concat(discountColumnIndex, ")")).forEach(function (th) {
+          return th.style.display = 'table-cell';
+        });
+        document.querySelectorAll("tbody td:nth-child(".concat(discountColumnIndex, ")")).forEach(function (td) {
+          return td.style.display = 'table-cell';
+        });
+      } else {
+        // Скрываем столбец скидки
+        document.querySelectorAll("thead th:nth-child(".concat(discountColumnIndex, ")")).forEach(function (th) {
+          return th.style.display = 'none';
+        });
+        document.querySelectorAll("tbody td:nth-child(".concat(discountColumnIndex, ")")).forEach(function (td) {
+          return td.style.display = 'none';
+        });
+      }
+    }
+  }, {
+    key: "saveAsPDF",
+    value: function saveAsPDF() {
+      var element = document.getElementById('OrderTableProducts');
+      if (!element) return;
+
+      // Temporarily hide buttons and inputs
+      var iqPlusElements = Array.from(document.querySelectorAll('.iq-plus'));
+      var iqMinusElements = Array.from(document.querySelectorAll('.iq-minus'));
+      var deleteButtonElements = Array.from(document.querySelectorAll('tbody td:last-child'));
+      var quantityContainers = Array.from(document.querySelectorAll('.input-quantity'));
+
+      // Hide buttons and inputs
+      iqPlusElements.forEach(function (el) {
+        return el.style.display = 'none';
+      });
+      iqMinusElements.forEach(function (el) {
+        return el.style.display = 'none';
+      });
+      deleteButtonElements.forEach(function (el) {
+        return el.style.display = 'none';
+      });
+
+      // Store original quantities and replace inputs with their values
+      var originalQuantities = [];
+      quantityContainers.forEach(function (container) {
+        var input = container.querySelector('input');
+        if (input) {
+          var value = input.value;
+          originalQuantities.push({
+            container: container,
+            input: input,
+            value: value
+          });
+
+          // Create a new span element to replace the input
+          var span = document.createElement('span');
+          span.style.display = 'inline-block';
+          span.style.textAlign = 'center';
+          span.style.width = '100%';
+          span.style.verticalAlign = 'middle'; // Center the text vertically
+          span.textContent = value;
+
+          // Replace input with span
+          input.style.display = 'none';
+          container.insertBefore(span, input);
+          container.style.textAlign = 'center'; // Center the text horizontally
+          container.style.verticalAlign = 'middle'; // Center the text vertically
+        }
+      });
+
+      // Use jsPDF and html2canvas to save the modified table as PDF
+      require("_bundle_loader")(require.resolve('jspdf')).then(function (jsPDF) {
+        require("_bundle_loader")(require.resolve('html2canvas')).then(function (html2canvas) {
+          html2canvas(element, {
+            scale: 2
+          }).then(function (canvas) {
+            var imgData = canvas.toDataURL('image/png');
+            var pdf = new jsPDF.jsPDF('p', 'pt', 'a4'); // 'portrait', 'points', 'A4'
+            var imgProps = pdf.getImageProperties(imgData);
+            var pdfWidth = pdf.internal.pageSize.getWidth() - 80; // Include margins
+            var pdfHeight = imgProps.height * pdfWidth / imgProps.width;
+            var marginLeft = 40;
+            var marginTop = 40;
+            pdf.addImage(imgData, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeight);
+            pdf.save('OrderTableProducts.pdf');
+
+            // Restore original state
+            iqPlusElements.forEach(function (el) {
+              return el.style.display = '';
+            });
+            iqMinusElements.forEach(function (el) {
+              return el.style.display = '';
+            });
+            deleteButtonElements.forEach(function (el) {
+              return el.style.display = '';
+            });
+            originalQuantities.forEach(function (_ref) {
+              var container = _ref.container,
+                input = _ref.input,
+                value = _ref.value;
+              container.style.textAlign = ''; // Reset the text alignment
+              container.style.verticalAlign = ''; // Reset the vertical alignment
+              container.innerHTML = ''; // Clear the content
+              container.appendChild(input); // Re-add the input element
+              input.style.display = '';
+
+              // Recreate and re-add buttons with correct positioning
+              var plusButton = document.createElement('button');
+              plusButton.type = 'button';
+              plusButton.className = 'iq-plus';
+              container.appendChild(plusButton);
+              var minusButton = document.createElement('button');
+              minusButton.type = 'button';
+              minusButton.className = 'iq-minus';
+              container.insertBefore(minusButton, input);
+
+              // Re-add click handlers to the buttons
+              plusButton.addEventListener('click', function () {
+                input.value = parseInt(input.value, 10) + 1;
+                input.dispatchEvent(new Event('change'));
+              });
+              minusButton.addEventListener('click', function () {
+                input.value = parseInt(input.value, 10) - 1;
+                input.dispatchEvent(new Event('change'));
+              });
+            });
+          });
+        });
+      });
     }
   }]);
 }(_Table2.default);
 var _default = exports.default = new OrderTableProducts();
-},{"../../components/Table.js":"src/components/Table.js","../../components/buttons/ButtonDelete.js":"src/components/buttons/ButtonDelete.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./Order.js":"src/module/Order/Order.js"}],"src/module/Order/OrderTableExtras.js":[function(require,module,exports) {
+},{"../../components/Table.js":"src/components/Table.js","../../components/buttons/ButtonDelete.js":"src/components/buttons/ButtonDelete.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./Order.js":"src/module/Order/Order.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","jspdf":[["jspdf.es.min.df4e901b.js","node_modules/jspdf/dist/jspdf.es.min.js"],"jspdf.es.min.df4e901b.js.map","node_modules/jspdf/dist/jspdf.es.min.js"],"html2canvas":[["html2canvas.20130824.js","node_modules/html2canvas/dist/html2canvas.js"],"html2canvas.20130824.js.map","node_modules/html2canvas/dist/html2canvas.js"]}],"src/module/Order/OrderTableExtras.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11521,12 +12010,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _Table2 = _interopRequireDefault(require("../../components/Table.js"));
-var _Button = _interopRequireDefault(require("../../components/buttons/Button.js"));
 var _ButtonDelete = _interopRequireDefault(require("../../components/buttons/ButtonDelete.js"));
 var _InputQuantity = _interopRequireDefault(require("../../components/form/InputQuantity.js"));
 var _Order = _interopRequireDefault(require("./Order.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, catch: function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
@@ -11546,7 +12037,11 @@ var OrderTableExtras = /*#__PURE__*/function (_Table) {
     var _this;
     _classCallCheck(this, OrderTableExtras);
     _this = _callSuper(this, OrderTableExtras, ['order']);
-    _this.thead(['#', 'Наименование', 'Кол-во', 'Цена, руб.', '#']);
+    _this.columns = ['№', 'Наименование', 'Кол-во', 'Цена,руб.', 'Скидка,руб.', 'Итого,руб.', ''];
+    _this.thead(_this.columns);
+
+    // Изначально скрываем столбец скидки, если скидка не активна
+    _this.updateDiscountColumn(true);
     return _this;
   }
   _inherits(OrderTableExtras, _Table);
@@ -11564,30 +12059,277 @@ var OrderTableExtras = /*#__PURE__*/function (_Table) {
   }, {
     key: "createRow",
     value: function createRow(item) {
+      var _this3 = this;
       var deleteButton = new _ButtonDelete.default();
       var quantityInput = new _InputQuantity.default('input-qty', 1, 99).setValue(item.quantity);
+      var ndc = _Order.default.ndc;
+      var beznal = _Order.default.beznal;
+      var discount = _Order.default.discount;
+      var rate = item.productRAL && item.quantity === 1 ? 1 : beznal ? 1 + beznal / 100 : 1 + ndc / 100;
+      var itemPriceWithRate = item.price * rate;
+      var discountAmountPerUnit = 0;
+      if (discount) {
+        discountAmountPerUnit = itemPriceWithRate * (discount / 100);
+      }
+      var finalItemPricePerUnit = itemPriceWithRate - discountAmountPerUnit;
+      var totalDiscountAmount = discountAmountPerUnit * item.quantity;
+      var totalPrice = item.quantity * finalItemPricePerUnit;
       deleteButton.on('click', function () {
         _Order.default.deleteExtras(item.id);
       });
       quantityInput.on('change', function () {
         item.quantity = quantityInput.getValue();
         _Order.default.setExtrasItem(item.id, item);
+        var newTotalDiscountAmount = discountAmountPerUnit * item.quantity;
+        var newTotalPrice = item.quantity * finalItemPricePerUnit;
+        _this3.updateTotalPrice(item.id, newTotalPrice, newTotalDiscountAmount);
       });
-      return [item.index, item.name, quantityInput.render(), item.price + ' ₽', deleteButton.render()];
+      var row = [item.index, item.name, quantityInput.render(), "".concat(itemPriceWithRate.toFixed(0), " \u20BD"), discount ? "".concat(totalDiscountAmount.toFixed(0), " \u20BD") : '', // Показ общей скидки
+      "".concat(totalPrice.toFixed(0), " \u20BD"), deleteButton.render()];
+      return row;
     }
-
-    /**
-     * Функция отрабатывающая на изменение данных в заказе
-     */
+  }, {
+    key: "updateTotalPrice",
+    value: function updateTotalPrice(itemId, newTotal, newDiscountTotal) {
+      var totalElement = document.getElementById("total-".concat(itemId));
+      var discountElement = document.getElementById("discount-".concat(itemId));
+      if (totalElement) {
+        totalElement.textContent = "".concat(newTotal.toFixed(0), " \u20BD");
+      }
+      if (discountElement) {
+        discountElement.textContent = "".concat(newDiscountTotal.toFixed(0), " \u20BD");
+      }
+    }
   }, {
     key: "update",
     value: function update(order) {
       this.setRowsFromCart(order.getExtras());
+      this.updateDiscountColumn(); // Обновляем видимость столбца скидки
+
+      // Обновляем общие суммы
+      order.totalExtrasDiscount = this.calculateTotalDiscount(order.getExtras());
+      order.totalExtrasPrice = this.calculateTotalPrice(order.getExtras());
     }
+
+    // Метод для обновления видимости столбца скидки
+  }, {
+    key: "updateDiscountColumn",
+    value: function updateDiscountColumn() {
+      var initial = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      var discountColumnIndex = this.columns.indexOf('Скидка,руб.');
+      if (_Order.default.discount || initial) {
+        document.querySelectorAll("thead th:nth-child(".concat(discountColumnIndex + 1, ")")).forEach(function (th) {
+          return th.style.display = 'table-cell';
+        });
+        document.querySelectorAll("tbody td:nth-child(".concat(discountColumnIndex + 1, ")")).forEach(function (td) {
+          return td.style.display = 'table-cell';
+        });
+      } else {
+        document.querySelectorAll("thead th:nth-child(".concat(discountColumnIndex + 1, ")")).forEach(function (th) {
+          return th.style.display = 'none';
+        });
+        document.querySelectorAll("tbody td:nth-child(".concat(discountColumnIndex + 1, ")")).forEach(function (td) {
+          return td.style.display = 'none';
+        });
+      }
+    }
+
+    // Метод для расчета общей скидки
+  }, {
+    key: "calculateTotalDiscount",
+    value: function calculateTotalDiscount(extras) {
+      return extras.reduce(function (sum, item) {
+        var ndc = _Order.default.ndc;
+        var beznal = _Order.default.beznal;
+        var discount = _Order.default.discount;
+        var rate = item.productRAL && item.quantity === 1 ? 1 : beznal ? 1 + beznal / 100 : 1 + ndc / 100;
+        var itemPriceWithRate = item.price * rate;
+        var discountAmountPerUnit = 0;
+        if (discount) {
+          discountAmountPerUnit = itemPriceWithRate * (discount / 100);
+        }
+        return sum + discountAmountPerUnit * item.quantity;
+      }, 0);
+    }
+
+    // Метод для расчета общей суммы
+  }, {
+    key: "calculateTotalPrice",
+    value: function calculateTotalPrice(extras) {
+      return extras.reduce(function (sum, item) {
+        var ndc = _Order.default.ndc;
+        var beznal = _Order.default.beznal;
+        var discount = _Order.default.discount;
+        var rate = item.productRAL && item.quantity === 1 ? 1 : beznal ? 1 + beznal / 100 : 1 + ndc / 100;
+        var itemPriceWithRate = item.price * rate;
+        var discountAmountPerUnit = 0;
+        if (discount) {
+          discountAmountPerUnit = itemPriceWithRate * (discount / 100);
+        }
+        var finalItemPricePerUnit = itemPriceWithRate - discountAmountPerUnit;
+        return sum + item.quantity * finalItemPricePerUnit;
+      }, 0);
+    }
+  }, {
+    key: "saveAsPDF",
+    value: function () {
+      var _saveAsPDF = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var elementProducts, elementExtras, iqPlusElements, iqMinusElements, deleteButtonElements, quantityContainers, originalQuantities, jsPDF, html2canvas, canvasProducts, canvasExtras, pdf, imgDataProducts, imgPropsProducts, pdfWidth, pdfHeightProducts, marginLeft, marginTop, imgDataExtras, imgPropsExtras, pdfHeightExtras;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              elementProducts = document.getElementById('OrderTableProducts');
+              elementExtras = document.getElementById('OrderTableExtras');
+              if (!(!elementProducts || !elementExtras)) {
+                _context.next = 4;
+                break;
+              }
+              return _context.abrupt("return");
+            case 4:
+              // Temporarily hide buttons and inputs for both tables
+              iqPlusElements = Array.from(document.querySelectorAll('.iq-plus'));
+              iqMinusElements = Array.from(document.querySelectorAll('.iq-minus'));
+              deleteButtonElements = Array.from(document.querySelectorAll('tbody td:last-child'));
+              quantityContainers = Array.from(document.querySelectorAll('.input-quantity')); // Hide buttons and inputs
+              iqPlusElements.forEach(function (el) {
+                return el.style.display = 'none';
+              });
+              iqMinusElements.forEach(function (el) {
+                return el.style.display = 'none';
+              });
+              deleteButtonElements.forEach(function (el) {
+                return el.style.display = 'none';
+              });
+
+              // Store original quantities and replace inputs with their values
+              originalQuantities = [];
+              quantityContainers.forEach(function (container) {
+                var input = container.querySelector('input');
+                if (input) {
+                  var value = input.value;
+                  originalQuantities.push({
+                    container: container,
+                    input: input,
+                    value: value
+                  });
+
+                  // Create a new span element to replace the input
+                  var span = document.createElement('span');
+                  span.style.display = 'inline-block';
+                  span.style.textAlign = 'center';
+                  span.style.width = '100%';
+                  span.style.verticalAlign = 'middle'; // Center the text vertically
+                  span.textContent = value;
+
+                  // Replace input with span
+                  input.style.display = 'none';
+                  container.insertBefore(span, input);
+                  container.style.textAlign = 'center'; // Center the text horizontally
+                  container.style.verticalAlign = 'middle'; // Center the text vertically
+                }
+              });
+
+              // Use jsPDF and html2canvas to save the modified tables as a single PDF
+              _context.prev = 13;
+              _context.next = 16;
+              return require("_bundle_loader")(require.resolve('jspdf'));
+            case 16:
+              jsPDF = _context.sent;
+              _context.next = 19;
+              return require("_bundle_loader")(require.resolve('html2canvas'));
+            case 19:
+              html2canvas = _context.sent;
+              _context.next = 22;
+              return html2canvas(elementProducts, {
+                scale: 2
+              });
+            case 22:
+              canvasProducts = _context.sent;
+              _context.next = 25;
+              return html2canvas(elementExtras, {
+                scale: 2
+              });
+            case 25:
+              canvasExtras = _context.sent;
+              pdf = new jsPDF.jsPDF('p', 'pt', 'a4'); // 'portrait', 'points', 'A4'
+              // Add first table
+              imgDataProducts = canvasProducts.toDataURL('image/png');
+              imgPropsProducts = pdf.getImageProperties(imgDataProducts);
+              pdfWidth = pdf.internal.pageSize.getWidth() - 80; // Include margins
+              pdfHeightProducts = imgPropsProducts.height * pdfWidth / imgPropsProducts.width;
+              marginLeft = 40;
+              marginTop = 40;
+              pdf.addImage(imgDataProducts, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightProducts);
+
+              // Add second table on a new page
+              pdf.addPage();
+              imgDataExtras = canvasExtras.toDataURL('image/png');
+              imgPropsExtras = pdf.getImageProperties(imgDataExtras);
+              pdfHeightExtras = imgPropsExtras.height * pdfWidth / imgPropsExtras.width;
+              pdf.addImage(imgDataExtras, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightExtras);
+              pdf.save('OrderTables.pdf');
+
+              // Restore original state
+              iqPlusElements.forEach(function (el) {
+                return el.style.display = '';
+              });
+              iqMinusElements.forEach(function (el) {
+                return el.style.display = '';
+              });
+              deleteButtonElements.forEach(function (el) {
+                return el.style.display = '';
+              });
+              originalQuantities.forEach(function (_ref) {
+                var container = _ref.container,
+                  input = _ref.input,
+                  value = _ref.value;
+                container.style.textAlign = ''; // Reset the text alignment
+                container.style.verticalAlign = ''; // Reset the vertical alignment
+                container.innerHTML = ''; // Clear the content
+                container.appendChild(input); // Re-add the input element
+                input.style.display = '';
+
+                // Recreate and re-add buttons with correct positioning
+                var plusButton = document.createElement('button');
+                plusButton.type = 'button';
+                plusButton.className = 'iq-plus';
+                container.appendChild(plusButton);
+                var minusButton = document.createElement('button');
+                minusButton.type = 'button';
+                minusButton.className = 'iq-minus';
+                container.insertBefore(minusButton, input);
+
+                // Re-add click handlers to the buttons
+                plusButton.addEventListener('click', function () {
+                  input.value = parseInt(input.value, 10) + 1;
+                  input.dispatchEvent(new Event('change'));
+                });
+                minusButton.addEventListener('click', function () {
+                  input.value = parseInt(input.value, 10) - 1;
+                  input.dispatchEvent(new Event('change'));
+                });
+              });
+              _context.next = 49;
+              break;
+            case 46:
+              _context.prev = 46;
+              _context.t0 = _context["catch"](13);
+              console.error('Error loading jsPDF or html2canvas', _context.t0);
+            case 49:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[13, 46]]);
+      }));
+      function saveAsPDF() {
+        return _saveAsPDF.apply(this, arguments);
+      }
+      return saveAsPDF;
+    }()
   }]);
 }(_Table2.default);
 var _default = exports.default = new OrderTableExtras();
-},{"../../components/Table.js":"src/components/Table.js","../../components/buttons/Button.js":"src/components/buttons/Button.js","../../components/buttons/ButtonDelete.js":"src/components/buttons/ButtonDelete.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./Order.js":"src/module/Order/Order.js"}],"src/components/form/InputPhone.js":[function(require,module,exports) {
+},{"../../components/Table.js":"src/components/Table.js","../../components/buttons/ButtonDelete.js":"src/components/buttons/ButtonDelete.js","../../components/form/InputQuantity.js":"src/components/form/InputQuantity.js","./Order.js":"src/module/Order/Order.js","_bundle_loader":"node_modules/parcel-bundler/src/builtins/bundle-loader.js","jspdf":[["jspdf.es.min.df4e901b.js","node_modules/jspdf/dist/jspdf.es.min.js"],"jspdf.es.min.df4e901b.js.map","node_modules/jspdf/dist/jspdf.es.min.js"],"html2canvas":[["html2canvas.20130824.js","node_modules/html2canvas/dist/html2canvas.js"],"html2canvas.20130824.js.map","node_modules/html2canvas/dist/html2canvas.js"]}],"src/components/form/InputPhone.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11839,7 +12581,6 @@ var OrderForm = /*#__PURE__*/function (_Form) {
         /*this.addField(this.inputCustomerPhone());*/
         /*this.addField(this.inputCustomerPickup());*/
         _this.addField(_this.inputBeznal());
-        _this.addField(_this.inputNdc());
         _this.addField(_this.inputCdek());
         _this.addField(_this.inputDiscount());
         _this.addField(_this.inputComment());
@@ -11921,7 +12662,7 @@ var OrderForm = /*#__PURE__*/function (_Form) {
     key: "inputDeliveryCustom",
     value: function inputDeliveryCustom() {
       var input = new _InputCount.default('delivery_custom', 0);
-      input.setLabel('Доставка cпецтранспорт');
+      input.setLabel('Дополнительные услуги');
       input.setDefault('0');
       input.on('change', function () {
         _Order.default.setDeliveryCustom(this.getValue());
@@ -12048,28 +12789,13 @@ var OrderForm = /*#__PURE__*/function (_Form) {
     key: "inputBeznal",
     value: function inputBeznal() {
       var input = new _Radio.default('beznal');
-      input.setLabel('Безнал (Без НДС)');
+      input.setLabel('Безнал / Счёт');
       input.addItem('0', 'Нет', true);
-      input.addItem('10', 'Да');
+      input.addItem('10', 'Без НДС +10%');
+      input.addItem('20', 'с НДС +20%');
       input.setDefault('0');
       input.on('change', function () {
         _Order.default.setBeznal(this.getValue());
-      });
-      this.addInput(input);
-      return input;
-    }
-
-    // с НДС:
-  }, {
-    key: "inputNdc",
-    value: function inputNdc() {
-      var input = new _Radio.default('ndc');
-      input.setLabel('Безнал c (НДС 20%)');
-      input.addItem('0', 'Нет', true);
-      input.addItem('20', 'Да');
-      input.setDefault('0');
-      input.on('change', function () {
-        _Order.default.setNdc(this.getValue());
       });
       this.addInput(input);
       return input;
@@ -12284,6 +13010,8 @@ var _Button = _interopRequireDefault(require("../../components/buttons/Button.js
 var _Order = _interopRequireDefault(require("./Order.js"));
 var _OrderForm = _interopRequireDefault(require("./OrderForm.js"));
 var _DTOOrderBitrix = _interopRequireDefault(require("../../dto/DTOOrderBitrix.js"));
+var _OrderTableExtras = _interopRequireDefault(require("./OrderTableExtras.js"));
+var _OrderTableProducts = _interopRequireDefault(require("./OrderTableProducts.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -12297,20 +13025,21 @@ function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = 
 function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+// Импортируем ваш объект с таблицей
 var OrderTotal = /*#__PURE__*/function () {
   function OrderTotal() {
     _classCallCheck(this, OrderTotal);
     this.$wrapper = document.createElement('div');
-    this.$buttonOrder = new _Button.default('button_order').setText('Заказать').setIcon('icon-loader');
-    this.$buttonSave = new _Button.default('button_save').setText('Сохранить рассчет');
+    this.$buttonOrder = new _Button.default('button_order').setText('Отправить в CRM').setIcon('icon-loader');
+    this.$buttonSave = new _Button.default('button_save').setText('Сохранить');
     this.$actions = document.createElement('div');
     this.$total = document.createElement('div');
     this.$wrapper.className = 'container';
-    this.$actions.className = 'order-actions';
     this.$total.className = 'order-total';
+    this.$actions.className = 'order-actions';
     this.$buttonOrder.setClass('button button-order');
     this.$buttonSave.setClass('button button-save');
-    this.$actions.append(this.$buttonOrder.render());
+    //this.$actions.append(this.$buttonOrder.render());
     this.$wrapper.append(this.$total, this.$actions);
     this.setButtonOrderActions();
   }
@@ -12332,7 +13061,6 @@ var OrderTotal = /*#__PURE__*/function () {
     key: "sendOrderToBitrix",
     value: function sendOrderToBitrix() {
       var _this2 = this;
-      // Loader start ...
       this.$buttonOrder.addClass('loading').setDisabled(true);
       var OrderFormData = {};
       var _iterator = _createForOfIteratorHelper(_OrderForm.default.getFormData().values()),
@@ -12370,28 +13098,52 @@ var OrderTotal = /*#__PURE__*/function () {
   }, {
     key: "update",
     value: function update(order) {
+      // Добавляем сумму скидок и итого из OrderTableExtras
+      var extrasDiscount = _OrderTableExtras.default.calculateTotalDiscount(order.getExtras());
+      var extrasTotalPrice = _OrderTableExtras.default.calculateTotalPrice(order.getExtras());
       var summary = "<ul class=\"order-total-debug\">";
-      summary += "<li>\u0421\u0443\u043C\u043C\u0430: <span>".concat(order.totalPrice, "</span> \u20BD</li>");
-      /*
-      if (order.getUserRole() === 'employee') {
-          summary += `<li>KPI.Монт: <span>${order.kpi.installer}</span> ₽ </li>`;
-      }
-      summary += `</ul>`;
-      */
-      // console.log(order.kpi);
+      summary += "<li>\u0418\u0442\u043E\u0433\u043E: <span>".concat((order.totalPriceWithDiscount + extrasTotalPrice - extrasDiscount + order.totalDelivery + order.totalDopuslugi).toFixed(0), "</span>\u20BD</li>");
+      summary += "</ul>"; // Закрываем тег <ul>
 
-      this.$total.innerHTML = summary;
+      var summarydelivery = "<ul class=\"order-total-delivery\">";
+      summarydelivery += "<li>\u0414\u043E\u0441\u0442\u0430\u0432\u043A\u0430: <span>".concat(order.totalDelivery, "</span>\u20BD</li>");
+      summarydelivery += "</ul>"; // Закрываем тег <ul>
+
+      var summarydiscount = "<ul class=\"order-total-discount\">";
+      summarydiscount += "<li>\u0421\u043A\u0438\u0434\u043A\u0430: <span>".concat((order.totalDiscount + extrasDiscount).toFixed(0), "</span>\u20BD</li>");
+      summarydiscount += "</ul>"; // Закрываем тег <ul>
+
+      var summarytotal = "<ul class=\"order-total-discount\">";
+      summarytotal += "<li>\u0421\u043E \u0441\u043A\u0438\u0434\u043A\u043E\u0439: <span>".concat((order.totalPriceWithDiscount + extrasTotalPrice).toFixed(0), "</span>\u20BD</li>");
+      summarytotal += "</ul>"; // Закрываем тег <ul>
+
+      var summarytotalDop = "<ul class=\"order-total-discount\">";
+      summarytotalDop += "<li>\u0414\u043E\u043F.\u0423\u0441\u043B\u0443\u0433\u0438: <span>".concat(order.totalDopuslugi, "</span>\u20BD</li>");
+      summarytotalDop += "</ul>"; // Закрываем тег <ul>
+
+      var summaryZakaz = "<ul class=\"order-total-zakaz\">";
+      summaryZakaz += "<li>\u0421\u0443\u043C\u043C\u0430: <span>".concat((order.totalPriceWithoutDiscount + extrasTotalPrice + extrasDiscount).toFixed(0), "</span>\u20BD</li>");
+      summaryZakaz += "</ul>"; // Закрываем тег <ul>
+
+      this.$total.innerHTML = summaryZakaz + summarydiscount + summarytotal + summarydelivery + summarytotalDop + summary;
+
+      // Обновляем таблицу продуктов
+      _OrderTableProducts.default.update(order);
     }
   }, {
     key: "render",
     value: function render() {
-      // this.$actions.append(this.$buttonSave.render(), this.$buttonOrder.render());
+      this.$actions.append(this.$buttonSave.render());
+      this.$buttonSave.on('click', function (event) {
+        event.preventDefault(); // Prevent default action to avoid page refresh
+        _OrderTableExtras.default.saveAsPDF();
+      });
       return this.$wrapper;
     }
   }]);
 }();
 var _default = exports.default = new OrderTotal();
-},{"../../api.js":"src/api.js","../../components/buttons/Button.js":"src/components/buttons/Button.js","./Order.js":"src/module/Order/Order.js","./OrderForm.js":"src/module/Order/OrderForm.js","../../dto/DTOOrderBitrix.js":"src/dto/DTOOrderBitrix.js"}],"src/module/Order/components/OrderToggler.js":[function(require,module,exports) {
+},{"../../api.js":"src/api.js","../../components/buttons/Button.js":"src/components/buttons/Button.js","./Order.js":"src/module/Order/Order.js","./OrderForm.js":"src/module/Order/OrderForm.js","../../dto/DTOOrderBitrix.js":"src/dto/DTOOrderBitrix.js","./OrderTableExtras.js":"src/module/Order/OrderTableExtras.js","./OrderTableProducts.js":"src/module/Order/OrderTableProducts.js"}],"src/module/Order/components/OrderToggler.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12455,7 +13207,7 @@ _ButtonClear.default.on('click', function () {
   _OrderForm.default.reset(); // Очистка формы заказа на значения по умолчанию
 });
 function render() {
-  $wrapper.innerHTML = "\n        <div class=\"module-order-table\">\n            <div class=\"container\">\n                <div class=\"module-header\" id=\"OrderHeader\">\n                    <h2>\u0412\u0430\u0448 \u0437\u0430\u043A\u0430\u0437</h2>\n                </div>\n                <div class=\"table-responsive\" id=\"OrderTableProducts\"></div>\n                <div class=\"table-responsive\" id=\"OrderTableExtras\"></div>\n            </div>\n        </div>\n        <div class=\"module-order-form\">\n            <div class=\"container\">\n                <div class=\"module-header\">\n                    <h2>\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F</h2>\n                </div>\n                <div id=\"OrderForm\"></div>\n            </div>\n        </div>\n        <div class=\"module-order-total fixed\" id=\"OrderTotal\"></div> \n    ";
+  $wrapper.innerHTML = "\n        <div class=\"module-order-table\">\n            <div class=\"container\">\n                <div class=\"module-header\" id=\"OrderHeader\">\n                    <h2>\u0412\u0430\u0448 \u0437\u0430\u043A\u0430\u0437</h2>\n                </div>\n                <div class=\"table-responsive\" id=\"OrderTableProducts\"></div>\n                <div class=\"table-responsive\" id=\"OrderTableExtras\"></div>\n            </div>\n        </div>\n        <div class=\"module-order-form\">\n            <div class=\"container\">\n                <div class=\"module-header\">\n                    <h2>\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E \u0432 \u0437\u0430\u043A\u0430\u0437</h2>\n                </div>\n                <div id=\"OrderForm\"></div>\n            </div>\n        </div>\n        <div class=\"module-order-total fixed\" id=\"OrderTotal\"></div> \n    ";
   $wrapper.querySelector('#OrderHeader').append(_ButtonClear.default.render());
   $wrapper.querySelector('#OrderTableProducts').append(_OrderTableProducts.default.render());
   $wrapper.querySelector('#OrderTableExtras').append(_OrderTableExtras.default.render());
@@ -12480,7 +13232,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function createCalculator() {
   var container = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'app';
   var $app = document.getElementById(container);
-  $app.innerHTML = "\n\n        <div class=\"container\">\n                <div class=\"content\">\n                 <div class=\"logo\"></div>\n                 <div class=\"logo-text\">\u0420\u0430\u0441\u0447\u0435\u0442 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0437\u0430\u043A\u0430\u0437\u0430</div>\n        </div>\n            <ul class=\"nav nav-tabs mb-3\">\n                <li class=\"nav-item\">\n                    <button class=\"nav-link active\" data-bs-toggle=\"tab\" data-bs-target=\"#ModuleProduct\" type=\"button\">\u041C\u043E\u0441\u043A\u0438\u0442\u043D\u044B\u0435 \u0441\u0435\u0442\u043A\u0438</button>\n                </li>\n                <li class=\"nav-item\">\n                    <button class=\"nav-link\" data-bs-toggle=\"tab\" data-bs-target=\"#ModuleExtras\" type=\"button\">\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0442\u0443\u044E\u0449\u0438\u0435</button>\n                </li>\n            </ul>\n        </div>\n        <div class=\"tab-content\">\n            <div class=\"tab-pane fade show active\" id=\"ModuleProduct\"></div>\n            <div class=\"tab-pane fade\" id=\"ModuleExtras\"></div>   \n        </div>\n        <div class=\"module-order\" id=\"ModuleOrder\"></div>\n    ";
+  $app.innerHTML = "\n\n        <div class=\"container\">\n                <div class=\"content\">\n                 <div class=\"logo\"></div>\n                 <div class=\"logo-text\">\u0420\u0430\u0441\u0447\u0435\u0442 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438 \u0437\u0430\u043A\u0430\u0437\u0430</div>\n        </div>\n            <ul class=\"nav nav-tabs mb-3\">\n                <li class=\"nav-item\">\n                    <button class=\"nav-link active\" data-bs-toggle=\"tab\" data-bs-target=\"#ModuleProduct\" type=\"button\">\u041C\u043E\u0441\u043A\u0438\u0442\u043D\u044B\u0435 \u0441\u0435\u0442\u043A\u0438</button>\n                </li>\n                <li class=\"nav-item\">\n                    <button class=\"nav-link\" data-bs-toggle=\"tab\" data-bs-target=\"#ModuleExtras\" type=\"button\">\u041A\u043E\u043C\u043F\u043B\u0435\u043A\u0442\u0443\u044E\u0449\u0438\u0435</button>\n                </li>\n            </ul>\n        </div>\n        <div class=\"tab-content\">\n            <div class=\"tab-pane fade show active\" id=\"ModuleProduct\"></div>\n            <div class=\"tab-pane fade\" id=\"ModuleExtras\"></div>   \n        </div>\n        <div class=\"module-order\" id=\"ModuleOrder\"></div>\n    ";
   $app.querySelector('#ModuleProduct').append(ModuleProduct.render());
   $app.querySelector('#ModuleExtras').append(ModuleExtras.render());
   $app.querySelector('#ModuleOrder').append(ModuleOrder.render());
@@ -12510,7 +13262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60733" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57296" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
@@ -12654,5 +13406,26 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+},{}],"node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js":[function(require,module,exports) {
+module.exports = function loadJSBundle(bundle) {
+  return new Promise(function (resolve, reject) {
+    var script = document.createElement('script');
+    script.async = true;
+    script.type = 'text/javascript';
+    script.charset = 'utf-8';
+    script.src = bundle;
+    script.onerror = function (e) {
+      script.onerror = script.onload = null;
+      reject(e);
+    };
+    script.onload = function () {
+      script.onerror = script.onload = null;
+      resolve();
+    };
+    document.getElementsByTagName('head')[0].appendChild(script);
+  });
+};
+},{}],0:[function(require,module,exports) {
+var b=require("node_modules/parcel-bundler/src/builtins/bundle-loader.js");b.register("js",require("node_modules/parcel-bundler/src/builtins/loaders/browser/js-loader.js"));
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js",0,"src/index.js"], null)
 //# sourceMappingURL=/src.a2b27638.js.map
