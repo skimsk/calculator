@@ -144,22 +144,22 @@ class OrderTableExtras extends Table {
         }, 0);
     }
 
-    saveAsPDF() {
+    async saveAsPDF() {
         const elementProducts = document.getElementById('OrderTableProducts');
         const elementExtras = document.getElementById('OrderTableExtras');
         if (!elementProducts || !elementExtras) return;
-
+    
         // Temporarily hide buttons and inputs for both tables
         const iqPlusElements = Array.from(document.querySelectorAll('.iq-plus'));
         const iqMinusElements = Array.from(document.querySelectorAll('.iq-minus'));
         const deleteButtonElements = Array.from(document.querySelectorAll('tbody td:last-child'));
         const quantityContainers = Array.from(document.querySelectorAll('.input-quantity'));
-
+    
         // Hide buttons and inputs
         iqPlusElements.forEach(el => el.style.display = 'none');
         iqMinusElements.forEach(el => el.style.display = 'none');
         deleteButtonElements.forEach(el => el.style.display = 'none');
-
+    
         // Store original quantities and replace inputs with their values
         const originalQuantities = [];
         quantityContainers.forEach(container => {
@@ -167,7 +167,7 @@ class OrderTableExtras extends Table {
             if (input) {
                 const value = input.value;
                 originalQuantities.push({ container, input, value });
-
+    
                 // Create a new span element to replace the input
                 const span = document.createElement('span');
                 span.style.display = 'inline-block';
@@ -175,7 +175,7 @@ class OrderTableExtras extends Table {
                 span.style.width = '100%';
                 span.style.verticalAlign = 'middle'; // Center the text vertically
                 span.textContent = value;
-
+    
                 // Replace input with span
                 input.style.display = 'none';
                 container.insertBefore(span, input);
@@ -183,72 +183,74 @@ class OrderTableExtras extends Table {
                 container.style.verticalAlign = 'middle'; // Center the text vertically
             }
         });
-
+    
         // Use jsPDF and html2canvas to save the modified tables as a single PDF
-        import('jspdf').then(jsPDF => {
-            import('html2canvas').then(html2canvas => {
-                html2canvas(elementProducts, { scale: 2 }).then(canvasProducts => {
-                    html2canvas(elementExtras, { scale: 2 }).then(canvasExtras => {
-                        const pdf = new jsPDF.jsPDF('p', 'pt', 'a4'); // 'portrait', 'points', 'A4'
-
-                        // Add first table
-                        const imgDataProducts = canvasProducts.toDataURL('image/png');
-                        const imgPropsProducts = pdf.getImageProperties(imgDataProducts);
-                        const pdfWidth = pdf.internal.pageSize.getWidth() - 80; // Include margins
-                        const pdfHeightProducts = (imgPropsProducts.height * pdfWidth) / imgPropsProducts.width;
-                        const marginLeft = 40;
-                        const marginTop = 40;
-
-                        pdf.addImage(imgDataProducts, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightProducts);
-
-                        // Add second table on a new page
-                        pdf.addPage();
-                        const imgDataExtras = canvasExtras.toDataURL('image/png');
-                        const imgPropsExtras = pdf.getImageProperties(imgDataExtras);
-                        const pdfHeightExtras = (imgPropsExtras.height * pdfWidth) / imgPropsExtras.width;
-
-                        pdf.addImage(imgDataExtras, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightExtras);
-
-                        pdf.save('OrderTables.pdf');
-
-                        // Restore original state
-                        iqPlusElements.forEach(el => el.style.display = '');
-                        iqMinusElements.forEach(el => el.style.display = '');
-                        deleteButtonElements.forEach(el => el.style.display = '');
-                        originalQuantities.forEach(({ container, input, value }) => {
-                            container.style.textAlign = ''; // Reset the text alignment
-                            container.style.verticalAlign = ''; // Reset the vertical alignment
-                            container.innerHTML = ''; // Clear the content
-                            container.appendChild(input); // Re-add the input element
-                            input.style.display = '';
-
-                            // Recreate and re-add buttons with correct positioning
-                            const plusButton = document.createElement('button');
-                            plusButton.type = 'button';
-                            plusButton.className = 'iq-plus';
-                            container.appendChild(plusButton);
-
-                            const minusButton = document.createElement('button');
-                            minusButton.type = 'button';
-                            minusButton.className = 'iq-minus';
-                            container.insertBefore(minusButton, input);
-
-                            // Re-add click handlers to the buttons
-                            plusButton.addEventListener('click', () => {
-                                input.value = parseInt(input.value, 10) + 1;
-                                input.dispatchEvent(new Event('change'));
-                            });
-
-                            minusButton.addEventListener('click', () => {
-                                input.value = parseInt(input.value, 10) - 1;
-                                input.dispatchEvent(new Event('change'));
-                            });
-                        });
-                    });
+        try {
+            const jsPDF = await import('jspdf');
+            const html2canvas = await import('html2canvas');
+    
+            const canvasProducts = await html2canvas(elementProducts, { scale: 2 });
+            const canvasExtras = await html2canvas(elementExtras, { scale: 2 });
+    
+            const pdf = new jsPDF.jsPDF('p', 'pt', 'a4'); // 'portrait', 'points', 'A4'
+    
+            // Add first table
+            const imgDataProducts = canvasProducts.toDataURL('image/png');
+            const imgPropsProducts = pdf.getImageProperties(imgDataProducts);
+            const pdfWidth = pdf.internal.pageSize.getWidth() - 80; // Include margins
+            const pdfHeightProducts = (imgPropsProducts.height * pdfWidth) / imgPropsProducts.width;
+            const marginLeft = 40;
+            const marginTop = 40;
+    
+            pdf.addImage(imgDataProducts, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightProducts);
+    
+            // Add second table on a new page
+            pdf.addPage();
+            const imgDataExtras = canvasExtras.toDataURL('image/png');
+            const imgPropsExtras = pdf.getImageProperties(imgDataExtras);
+            const pdfHeightExtras = (imgPropsExtras.height * pdfWidth) / imgPropsExtras.width;
+    
+            pdf.addImage(imgDataExtras, 'PNG', marginLeft, marginTop, pdfWidth, pdfHeightExtras);
+    
+            pdf.save('OrderTables.pdf');
+    
+            // Restore original state
+            iqPlusElements.forEach(el => el.style.display = '');
+            iqMinusElements.forEach(el => el.style.display = '');
+            deleteButtonElements.forEach(el => el.style.display = '');
+            originalQuantities.forEach(({ container, input, value }) => {
+                container.style.textAlign = ''; // Reset the text alignment
+                container.style.verticalAlign = ''; // Reset the vertical alignment
+                container.innerHTML = ''; // Clear the content
+                container.appendChild(input); // Re-add the input element
+                input.style.display = '';
+    
+                // Recreate and re-add buttons with correct positioning
+                const plusButton = document.createElement('button');
+                plusButton.type = 'button';
+                plusButton.className = 'iq-plus';
+                container.appendChild(plusButton);
+    
+                const minusButton = document.createElement('button');
+                minusButton.type = 'button';
+                minusButton.className = 'iq-minus';
+                container.insertBefore(minusButton, input);
+    
+                // Re-add click handlers to the buttons
+                plusButton.addEventListener('click', () => {
+                    input.value = parseInt(input.value, 10) + 1;
+                    input.dispatchEvent(new Event('change'));
+                });
+    
+                minusButton.addEventListener('click', () => {
+                    input.value = parseInt(input.value, 10) - 1;
+                    input.dispatchEvent(new Event('change'));
                 });
             });
-        });
-    }
+        } catch (error) {
+            console.error('Error loading jsPDF or html2canvas', error);
+        }
+    }    
 }
 
 export default new OrderTableExtras();
