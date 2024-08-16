@@ -29,9 +29,19 @@ class ExtrasTable extends Table {
         const itemInOrder = Order.getExtrasItem(item.id);
         const ItemQuantity = this.createItemQuantity(item);
         const ButtonOrder = this.createButtonOrder(itemInOrder);
-
+    
         ItemQuantity.setValue(itemInOrder ? itemInOrder.quantity : 1);
-
+    
+        ItemQuantity.on('change', () => {
+            Order.addOrUpdateExtras({
+                id: item.id,
+                name: item.name,
+                quantity: ItemQuantity.getValue(),
+                price: item.price,
+            });
+            ButtonOrder.addClass('active').setText('Изменить');
+        });
+    
         ButtonOrder.on('click', () => {
             Order.addOrUpdateExtras({
                 id: item.id,
@@ -41,22 +51,22 @@ class ExtrasTable extends Table {
             });
             ButtonOrder.addClass('active').setText('Изменить');
         });
-
+    
         let discountAmountPerUnit = 0;
         if (Order.discount) {
             discountAmountPerUnit = item.price * (Order.discount / 100);
         }
         const discountAmount = discountAmountPerUnit;
-
+    
         return [
             item.id,
-            item.name, 
-            ItemQuantity.render(), 
-            `${item.price} ₽`, 
-            `${discountAmount.toFixed(0)} ₽`,  // Отображаем скидку
+            item.name,
+            ItemQuantity.render(),
+            `${item.price} ₽`,
+            `${discountAmount.toFixed(0)} ₽`,
             ButtonOrder.render()
         ];
-    }
+    }    
 
     createItemQuantity(item) {
         const input = new InputQuantity('input-qty', 1)

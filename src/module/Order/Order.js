@@ -12,7 +12,7 @@ class Order {
     #cartProducts = new CartProducts();
     #cartExtras = new CartExtras();
     #observers = new Set();
-
+pickup = '0';
     constructor(user) {
         if (!user.getRole()) throw Error(`Order[constructor] User.getRole error`);        
         this.#userRole = user.getRole();
@@ -34,16 +34,18 @@ class Order {
 
     setProduct(id, item) {
         this.#cartProducts.setItem(id, item);
+        this.#cartExtras.setItem(id, item);
         return this.update();
     }
 
     deleteProduct(id) {
         this.#cartProducts.removeItem(id);
+        this.#cartExtras.removeItem(id);
         return this.update();
     }
 
     getProducts() {
-        return this.#cartProducts.getItems();       
+        return this.#cartProducts.getItems();  
     }
 
     getTotalDiscount() {
@@ -105,9 +107,17 @@ class Order {
     }
 
     setCdek(amount) {
-        if (amount !== undefined) this.cdek = Number(amount) || 0;  // Преобразуем amount в число или 0, если NaN
-        return this.update();   // Обновляем состояние заказа
-    } 
+        // Преобразуем amount в число и проверяем его
+        const numericAmount = Number(amount);
+        if (!isNaN(numericAmount) && numericAmount !== 0) {
+            this.cdek = numericAmount;
+        } else {
+            this.cdek = 0; // Устанавливаем 0, если значение некорректное
+        }
+
+        return this.update();  // Обновляем состояние заказа
+    }
+    
 
     setNdc(percent) {
         if (percent !== undefined) this.ndc = Number(percent) || 0;
@@ -119,21 +129,27 @@ class Order {
         return this.update(); 
     }
 
+    setDeliveryCustom(distancecustom) {
+        this.deliveryCustom = distancecustom;
+        return this.update(); 
+    }
+
     setDeliveryCdek(dostavkacdek) {
         this.deliveryCdek= dostavkacdek;
         return this.update(); 
     }
 
-    setDeliveryCustom(distancecustom) {
-        this.deliveryCustom= distancecustom;
-        return this.update(); 
-    }
+    setPickup(amount) {
+        // Преобразуем amount в число и проверяем его
+        const numericAmount = Number(amount);
+        if (!isNaN(numericAmount) && numericAmount !== 0) {
+            this.pickups = numericAmount;
+        } else {
+            this.pickups = 0; // Устанавливаем 0, если значение некорректное
+        }
 
-    setPickup(pickup) {
-        this.pickup = pickup;
-        return this.update();
+        return this.update();  // Обновляем состояние заказа
     }
-
 
     /**
      * Рассчеты
@@ -164,7 +180,6 @@ class Order {
     }
 
     calcBeznal(price = 0) {
-        console.log('проверка', price)
         return Math.round(price + (price * this.beznal / 100));
     }
     
@@ -176,7 +191,11 @@ class Order {
     }
 
     calcCdek(price = 0) {
-        return Math.round(price + this.cdek ); 
+        return Math.round(price + this.cdek); 
+    }
+
+    calcPickup(price = 0) {
+        return Math.round(price + this.pickups); 
     }
     
 
@@ -186,7 +205,6 @@ class Order {
     calcDelivery(min = 800, mkad = 80) {
         let delivery = 0;
         if (!this.pickup) delivery += min + (mkad * this.deliveryDistance);    
-        
         return delivery;
     }
 
@@ -217,6 +235,12 @@ class Order {
         let delivery = 0;
         if (!this.pickup) delivery += min + (mkad * this.deliveryDistance);    
         return delivery;
+    }
+
+    calcDeliveryDistance() {
+        let distance = 0
+        distance += 0 + this.deliveryDistance; 
+        return distance;
     }
 
     calcSpecialDelivery() {
@@ -376,6 +400,7 @@ class Order {
         this.totalBeznal =0;
         this.ndc = 0;                          //Безнал
         this.cdek = 0;                          //Доставка до ТК СДЭК отгрузка
+        this.pickups = 0;
         this.pickup = this.#userRole === 'dealer';  // Самовывоз (true/false) У диллеров самовывоз по умолчанию "Да" 
         this.montage = false;                       // Монтаж (true/false)
         this.ral = false;                           // RAL (true/false)

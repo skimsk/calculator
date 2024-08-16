@@ -32,6 +32,7 @@ class OrderForm extends Form {
                 /*this.addField(this.inputCustomerPickup());*/
                 this.addField(this.inputBeznal());
                 this.addField(this.inputCdek());
+                this.addField(this.inputPickup());
                 this.addField(this.inputDiscount());
                 this.addField(this.inputComment());
                 this.addField(this.inputDealID());
@@ -208,21 +209,70 @@ class OrderForm extends Form {
         return input;
     }
 
-    // Доставка до сдек
-    inputCdek() {
-        const input = new Radio('cdek');
-        input.setLabel('Доставка до СДЭК (+1700р)');
-        input.addItem('0', 'Нет', true);  // По умолчанию нет доставки
-        input.addItem('1700', 'Да');  // Стоимость доставки при выборе опции
-    
-        input.on('change', function() {
-            Order.setCdek(this.getValue());  // Передаем значение радиокнопки в setCdek
-        })
-    
-        this.addInput(input);
-        return input;
+    // Доставка до СДЭК
+inputCdek() {
+    const input = new Radio('cdek');
+    input.setLabel('Доставка до СДЭК (+1700р)');
+    input.addItem('0', 'Нет', true);  // По умолчанию нет доставки
+    input.addItem('1700', 'Да');  // Стоимость доставки при выборе опции
+
+    input.on('change', () => {
+        console.log(`Cdek input value changed to: ${input.getValue()}`);
+        Order.setCdek(input.getValue());
+        this.updatePickupAndCdekState(); // Обновляем состояние радио кнопок
+    });
+
+    this.addInput(input);
+    return input;
+}
+
+// Самовывоз
+inputPickup() {
+    const input = new Radio('pickup');
+    input.setLabel('Самовывоз');
+    input.addItem('0', 'Нет', true);  // По умолчанию нет самовывоза
+    input.addItem('1', 'Да');  // Устанавливаем значение, если самовывоз выбран
+
+    input.on('change', () => {
+        Order.setPickup(input.getValue());  // Устанавливаем значение самовывоза
+        this.updatePickupAndCdekState(); // Обновляем состояние радио кнопок и таблицы
+    });
+
+    this.addInput(input);
+    return input;
+}
+
+
+
+// Обновление состояния полей в зависимости от выбранной опции
+updatePickupAndCdekState() {
+    const cdekInput = this.getInput('cdek');
+    const pickupInput = this.getInput('pickup');
+
+    if (cdekInput && pickupInput) {
+        const cdekValue = cdekInput.getValue();
+        const pickupValue = pickupInput.getValue();
+
+        // Если выбрано 'Самовывоз', отключаем 'Доставка до СДЭК'
+        if (pickupValue === '1') {
+            cdekInput.setDisabled(true);
+            cdekInput.setValue('0'); // Сбрасываем значение
+        } else {
+            cdekInput.setDisabled(false);
+        }
+
+        // Если выбрана 'Доставка до СДЭК', отключаем 'Самовывоз'
+        if (cdekValue === '1700') {
+            pickupInput.setDisabled(true);
+            pickupInput.setValue('0'); // Сбрасываем значение
+        } else {
+            pickupInput.setDisabled(false);
+        }
+
+        console.log(`Updated Cdek and Pickup state. Cdek: ${cdekValue}, Pickup: ${pickupValue}`);
     }
-    
+}
+
     
     // Безнал:
     inputBeznal() {

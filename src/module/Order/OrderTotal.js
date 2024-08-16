@@ -74,7 +74,7 @@ class OrderTotal {
         // Добавляем сумму скидок и итого из OrderTableExtras
         const extrasDiscount = OrderTableExtras.calculateTotalDiscount(order.getExtras());
         const extrasTotalPrice = OrderTableExtras.calculateTotalPrice(order.getExtras());
-
+/*
         let summary = `<ul class="order-total-debug">`;
         summary += `<li>Итого: <span>${(order.totalPriceWithDiscount + extrasTotalPrice - extrasDiscount + order.totalDelivery + order.totalDopuslugi).toFixed(0)}</span>₽</li>`;
         summary += `</ul>`;  // Закрываем тег <ul>
@@ -100,7 +100,7 @@ class OrderTotal {
         summaryZakaz += `</ul>`;  // Закрываем тег <ul>
         
         this.$total.innerHTML = summaryZakaz + summarydiscount + summarytotal + summarydelivery + summarytotalDop + summary;
-
+*/
         // Обновляем таблицу продуктов
         OrderTableProducts.update(order);
     }
@@ -109,8 +109,11 @@ class OrderTotal {
         this.$actions.append(this.$buttonSave.render());
         this.$buttonSave.on('click', (event) => {
             event.preventDefault();  // Prevent default action to avoid page refresh
-            OrderTableExtras.saveAsPDF();
+            console.log('Save button clicked');  // Debugging line
+            OrderTableProducts.saveAsPDF();
         });
+        
+        
     
         return this.$wrapper;
     }    

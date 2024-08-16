@@ -15,6 +15,7 @@ export default class DTOProduct {
         this.ralMinPrice = data.ralMinPrice;
         this.OptionsPrice = data.OptionsPrice;
         this.MontagePrice = data.MontagePrice;
+        this.ralCode = data.ralCode;
     }
 
 }

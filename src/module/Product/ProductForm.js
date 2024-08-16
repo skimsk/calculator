@@ -107,7 +107,7 @@ export default class ProductForm extends Form {
         const input = new Textarea('mogtagespes');
         input.setLabel('Монтажные работы');
         input.setPlaceholder('Укажите сумму');
-    
+
         // Скрыть поле по умолчанию
         input.setVisible(false);
     
@@ -124,18 +124,40 @@ export default class ProductForm extends Form {
     
             const inputSpesmontaz = this.getInput('mogtagespes'); // Поле ввода стоимости монтажа
     
-            field.on('change', function() {
-                if (this.getValue() === 'specific') {
+            field.on('change', () => {
+                const selectedValue = field.getValue();
+    
+                if (selectedValue === 'specific') {
                     inputSpesmontaz.setVisible(true); // Показываем поле ввода стоимости монтажа
                 } else {
                     inputSpesmontaz.setVisible(false); // Скрываем поле ввода стоимости монтажа
+                    inputSpesmontaz.setValue(''); // Сбрасываем значение на пустое или
+                    // inputSpesmontaz.setValue('0'); // можно сбросить на ноль, если требуется
                 }
             });
+    
+            // Сохранение значения при изменении значения в поле ввода
+            inputSpesmontaz.on('change', () => {
+                this.saveMontageCost();
+            });
+    
         } else {
             field.setVisible(false);
             field.setDisabled(true);
         }
-    }    
+    }
+    
+        
+
+    saveMontageCost() {
+        const inputSpesmontaz = this.getInput('mogtagespes');
+        const costValue = inputSpesmontaz.getValue();
+    
+        // Сохранение значения, например, через API или в локальное хранилище
+        // Example API call:
+        // Api.saveMontageCost({ cost: costValue });
+    
+    }
     
 
 

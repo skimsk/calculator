@@ -86,10 +86,13 @@ function createOrderItem(form) {
     // Цена сетки с монтажом или без (считается сразу в ProductPrice)
     const productPriceInstance = new ProductPrice(productKey, userRole, formData);
     const productPrice = productPriceInstance.calculate();
-    console.log('Цена продукции за 1 шт:', productPrice);
+    //console.log('Цена продукции за 1 шт:', productPrice);
 
-    // Итоговая цена с учётом стоимости монтажа
-    const totalPrice = productPrice;
+    // Получаем сохраненное значение стоимости монтажа
+    const savedMontageCost = formData.get('mogtagespes')?.value || 0; // например, из formData или другого источника
+
+    // Итоговая цена с учетом стоимости монтажа
+    const totalPrice = productPrice + parseFloat(savedMontageCost);
 
     // Получаем результаты расчетов
     const priceResults = productPriceInstance.priceStrategy.getResults();
@@ -100,14 +103,14 @@ function createOrderItem(form) {
     const ralMinPrice = priceResults.ralMinPrice;
     const MontagePrice = priceResults.MontagePrice;
     const OptionsPrice = priceResults.OptionsPrice;
-
-
-    console.log('Цена за доп.покраску:', ralMinPrice);
     
+    /*
+    console.log('Цена за доп.покраску:', ralMinPrice);
     console.log('Цена за полотно:', canvasPrice);
     console.log('Цена за покраску:', ralPrice);
-    console.log('Цена за монтаж', MontagePrice);
+    console.log('Цена за монтаж:', MontagePrice);
     console.log('Цена за опции:', OptionsPrice);
+    */
 
     // KPI Монтажника
     const kpiInstaller = new KPIInstaller(productKey, formData, totalPrice).calculate();
@@ -121,10 +124,15 @@ function createOrderItem(form) {
     const productSawing = new ProductSawing(productKey, formData).calculate();
     console.log('Распил:', productSawing);
 
+    const productName = createProductName(form, totalPrice);
+
+    const ralCodeMatch = productName.match(/Код RAL:\s*(\d{4})/);
+    const ralCode = ralCodeMatch ? ralCodeMatch[1] : null;
+
     // Создаем DTOProduct объект с дополнительными результатами
     const product = new DTOProduct({
         id: new Date().getTime(), 
-        name: createProductName(form, totalPrice),
+        name: productName,
         quantity: formData.get('quantity').value,
         price: Math.round(totalPrice), // Округляем до целого числа
         montage: (formData.get('montage')?.value && formData.get('montage')?.value !== 'off'),
@@ -139,12 +147,15 @@ function createOrderItem(form) {
         ralMinPrice: Math.round(ralMinPrice),  
         MontagePrice: Math.round(MontagePrice),
         OptionsPrice:  Math.round(OptionsPrice),
+        ralCode: ralCode,
+        savedMontageCost: Math.round(savedMontageCost) // Сохраненная стоимость монтажа
     });
 
     console.log('Продукт:', product);
 
     return product;
 }
+
 
 
 
@@ -213,8 +224,6 @@ function createProductName(form, price = 0) {
             }  
         }
     }
-
-    fields.push(`Цена: ${price} ₽`);
 
     return fields.join('. ');
 }

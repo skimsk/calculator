@@ -12,7 +12,6 @@ $wrapper.className = 'module-container is-hidden';
 // Регистрация наблюдателей для компонентов модуля
 Order.registerObserver(new OrderToggler($wrapper));
 Order.registerObserver(OrderTableProducts);
-Order.registerObserver(OrderTableExtras);
 Order.registerObserver(OrderForm);
 Order.registerObserver(OrderTotal);
 
@@ -29,6 +28,7 @@ ButtonClear.on('click', () => {
 
 
 function render() {
+
     $wrapper.innerHTML = `
         <div class="module-order-table">
             <div class="container">
@@ -36,7 +36,9 @@ function render() {
                     <h2>Ваш заказ</h2>
                 </div>
                 <div class="table-responsive" id="OrderTableProducts"></div>
-                <div class="table-responsive" id="OrderTableExtras"></div>
+                    <div class="order-summary-container">
+                        <div id="order-summary"></div>
+                    </div>
             </div>
         </div>
         <div class="module-order-form">
@@ -49,10 +51,21 @@ function render() {
         </div>
         <div class="module-order-total fixed" id="OrderTotal"></div> 
     `;
+
+
+    
+
+    const orderTableProductsElement = $wrapper.querySelector('#OrderTableProducts');
+    orderTableProductsElement.append(OrderTableProducts.render());
+
+    const orderSummaryElement = $wrapper.querySelector('#order-summary');
+    if (OrderTableProducts.summaryElement) {
+        orderSummaryElement.innerHTML = OrderTableProducts.summaryElement.innerHTML;
+    }
     
     $wrapper.querySelector('#OrderHeader').append(ButtonClear.render());
     $wrapper.querySelector('#OrderTableProducts').append(OrderTableProducts.render());
-    $wrapper.querySelector('#OrderTableExtras').append(OrderTableExtras.render());
+
     $wrapper.querySelector('#OrderForm').append(OrderForm.render());
     $wrapper.querySelector('#OrderTotal').append(OrderTotal.render());
 
