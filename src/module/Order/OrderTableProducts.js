@@ -27,7 +27,8 @@ class OrderTableProducts extends Table {
             item.index = index + 1;
             if (item.ral) {
                 if (item.ralCode !== previousRALCode) {
-                    if (ralQuantity > 0) {
+                    if (previousRALCode !== null) {
+                        // Создаем строку для предыдущего RAL кода, если есть данные
                         const { row, totalRALPriceWithDiscount } = this.createRALRow(previousRALCode, ralQuantity, ralPrice, ralMinPrice);
                         this.addRow(`ral-${previousRALCode}`, row);
                         ralTotal += totalRALPriceWithDiscount; // Добавляем к общей сумме RAL
@@ -45,19 +46,19 @@ class OrderTableProducts extends Table {
             }
         });
     
-        if (ralQuantity > 0) {
+        // Обработка последнего RAL-кода
+        if (previousRALCode !== null) {
             const { row, totalRALPriceWithDiscount } = this.createRALRow(previousRALCode, ralQuantity, ralPrice, ralMinPrice);
             this.addRow(`ral-${previousRALCode}`, row);
             ralTotal += totalRALPriceWithDiscount; // Добавляем к общей сумме RAL
         }
     
-        // Продолжение кода
+        // Добавляем строки доставки и дополнительных услуг
         const dosToCdek = Order.calcCdek();
         const pickup = Order.calcPickup(); 
         const dopUslugi = Order.calcSpecialDelivery();
         const tariffCdek = Order.calcDeliveryCdek();
     
-        // Добавляем строки доставки и дополнительных услуг
         if (dosToCdek <= 0 && pickup <= 0) {
             this.addRow('delivery', this.createDeliveryRow());
         }
@@ -71,12 +72,11 @@ class OrderTableProducts extends Table {
             this.addRow('cdek', this.createTariffCdekRow(tariffCdek));
         }
     
-        // Обновляем блок с итогами
-        this.addSummary(ralTotal); // Передаем общую сумму RAL
         super.update();
+        this.addSummary(ralTotal); // Передаем ralTotal для обновления в summary
     }
     
-
+     
     createDeliveryRow() {
         // Calculate delivery cost
         const deliveryCost = Order.calcDelivery();
@@ -153,26 +153,30 @@ class OrderTableProducts extends Table {
     }
 
     createProductRow(product) {
+        if (product.key === 'ral.min' || product.key === 'ral') {
+            return null; // Пропускаем создание строки для этих ключей
+        }
+    
         const deleteButton = new ButtonDelete();
         const quantityInput = new InputQuantity('input-qty', 1, 99).setValue(product.quantity);
-
+    
         deleteButton.on('click', () => {
             Order.deleteProduct(product.id);
             this.update(Order.getCurrentOrder());
         });
-
+    
         quantityInput.on('change', () => {
             const newQuantity = quantityInput.getValue();
             Order.setProduct(product.id, { ...product, quantity: newQuantity });
             this.update(Order.getCurrentOrder());
         });
-
+    
         let rate = this.getRate(product);
         let productPriceWithRate = product.price * rate;
         let totalPrice = productPriceWithRate * product.quantity;
         let discountAmount = totalPrice * (Order.discount / 100);
         let finalPrice = totalPrice - discountAmount;
-
+    
         const row = [
             product.index,
             product.name,
@@ -182,9 +186,10 @@ class OrderTableProducts extends Table {
             `${finalPrice.toFixed(0)} ₽`,
             deleteButton.render()
         ];
-
+    
         return row;
     }
+    
 
     createRALRow(ralCode, quantity, ralPrice, ralMinPrice) {
         let rate = this.getRate();
@@ -199,7 +204,7 @@ class OrderTableProducts extends Table {
             discountAmount = totalRALPrice * (Order.discount / 100);
             totalRALPriceWithDiscount -= discountAmount;
         }
-    
+
         const row = [
             '',
             `Покраска по RAL ${ralCode}`,
@@ -209,10 +214,10 @@ class OrderTableProducts extends Table {
             `${totalRALPriceWithDiscount.toFixed(0)} ₽`,
             ''
         ];
-    
+
         // Возвращаем итоговую сумму
         return { row, totalRALPriceWithDiscount };
-    }    
+    }  
     
 
     getRate(product = null) {
@@ -229,16 +234,38 @@ class OrderTableProducts extends Table {
     update(order) {
         this.setRows([...order.getProducts(), ...order.getExtras()]);
         this.updateDiscountColumn();
-
+    
         order.totalExtrasDiscount = this.calculateTotalDiscount(order.getExtras());
         order.totalExtrasPrice = this.calculateTotalPrice(order.getExtras());
         order.totalPriceWithoutDiscount = this.calculateTotalPrice(order.getProducts(), false);
         order.totalDiscount = this.calculateTotalDiscount(order.getProducts());
         order.totalPriceWithDiscount = this.calculateTotalPrice(order.getProducts());
-
-        this.addSummary(); // Ensure summary includes updated delivery cost
+    
+        // Получаем общую сумму RAL для обновления в summary
+        const ralTotal = this.calculateTotalRAL(order.getProducts());
+        this.addSummary(ralTotal); // Передаем ralTotal для обновления в summary
     }
+    
 
+    calculateTotalRAL(products) {
+        return products.reduce((total, product) => {
+            if (product.ral) {
+                let rate = this.getRate(product);
+                let ralPriceWithRate = product.ralPrice * rate;
+                let productTotal = ralPriceWithRate;
+                if (product.quantity > 2) {
+                    productTotal += (product.quantity - 2) * product.ralMinPrice * rate;
+                }
+                if (Order.discount) {
+                    productTotal -= productTotal * (Order.discount / 100);
+                }
+                return total + productTotal;
+            }
+            return total;
+        }, 0);
+    }
+    
+    
     addSummary(ralTotal) {
         const summaryElement = document.getElementById('order-summary');
         if (!summaryElement) return;
@@ -265,19 +292,20 @@ class OrderTableProducts extends Table {
             }
         }
     
+        // Create summary HTML
         const summaryHTML = `
             <div class="summary-row">Кол-во изделий: <span>${totalQuantity}</span></div>
             <div class="summary-row">Сумма заказа: <span>${totalPriceWithoutDiscount.toFixed(0)} ₽</span></div>
             ${totalDiscount > 0 ? `<div class="summary-row">Скидка: <span>${totalDiscount.toFixed(0)} ₽</span></div>` : ''}
             ${pickup <= 0 ? `<div class="summary-row">Доставка: <span>${deliveryCost.toFixed(0)} ₽</span></div>` : ''}
             ${dopUslugi > 0 ? `<div class="summary-row">Доп.услуги: <span>${dopUslugi.toFixed(0)} ₽</span></div>` : ''}
-            <div class="summary-row">Покраска по RAL: <span>${ralTotal.toFixed(0)} ₽</span></div>
+            ${ralTotal > 0 ? `<div class="summary-row">Покраска по RAL: <span>${ralTotal.toFixed(0)} ₽</span></div>` : ''}
             <div class="summary-row total">Итого: <span>${(totalPriceWithDiscount + deliveryCost + dopUslugi + ralTotal).toFixed(0)} ₽</span></div>
         `;
     
         summaryElement.innerHTML = summaryHTML;
     }
-
+    
     calculateTotalQuantity() {
         return [...Order.getProducts(), ...Order.getExtras()].reduce((total, item) => total + item.quantity, 0);
     }
@@ -324,7 +352,13 @@ class OrderTableProducts extends Table {
     
         // Устанавливаем размер шрифта
         pdf.setFontSize(13);
-
+    
+        // Функция для добавления текста в PDF
+        const addTextToPDF = (pdf, text, yPosition) => {
+            pdf.setFontSize(13); // Размер шрифта для текста
+            pdf.text(text, 10, yPosition);
+        };
+    
         // Функция для добавления таблицы в PDF
         const addTableToPDF = (pdf, tableElement, yPosition) => {
             const rows = [];
@@ -392,63 +426,90 @@ class OrderTableProducts extends Table {
                 headStyles: { fillColor: [255, 255, 255], textColor: [0, 0, 0] },
                 bodyStyles: { textColor: [0, 0, 0] }
             });
+    
+            // Возвращаем последнюю позицию Y после таблицы
+            return pdf.autoTable.previous.finalY;
         };
     
         // Функция для добавления итоговой строки в PDF
-        const addSummaryToPDF = (pdf, summaryElement, yPosition) => {
-            const summaryLines = summaryElement.innerText.trim().split('\n').map(line => line.trim()).filter(line => line.length > 0); // Убираем пустые строки
-            const pageWidth = pdf.internal.pageSize.getWidth();
-    
+        const addSummaryToPDF = (pdf, summaryData, yPosition) => {
             pdf.setFontSize(11); // Устанавливаем размер шрифта как в таблице
             pdf.setFont('Roboto'); // Устанавливаем шрифт как в таблице
-    
-            const leftMargin = 27; // Отступ от левого края страницы
-            let currentY = yPosition;
+        
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const rightMargin = 57; // Отступ от правого края страницы
             const lineHeight = 6; // Высота строки
-    
-            // Проверяем и обрабатываем строки парами "название: значение"
-            for (let i = 0; i < summaryLines.length; i++) {
-                // Убираем лишние двоеточия в конце
-                const line = summaryLines[i].replace(/:$/, '').trim();
-                
-                // Проверяем, если это последняя строка или если есть следующая строка
-                if (i < summaryLines.length - 1) {
-                    const nextLine = summaryLines[i + 1].trim();
-                    if (nextLine) {
-                        // Формируем строку с названием и значением
-                        const text = `${line}: ${nextLine}`;
-                        const textWidth = pdf.getStringUnitWidth(text) * pdf.internal.scaleFactor;
-                        const xPosition = pageWidth - leftMargin - textWidth; // Позиция текста справа с отступом
-    
-                        // Добавляем строку в PDF
-                        pdf.text(text, xPosition, currentY);
-    
-                        // Переходим к следующей строке
-                        currentY += lineHeight;
-                        i++; // Пропускаем следующую строку, так как она уже обработана
-                    }
-                }
-            }
+        
+            let currentY = yPosition;
+        
+            summaryData.forEach(({ label, value }) => {
+                // Определяем ширину названия и значения
+                const labelWidth = pdf.getStringUnitWidth(label) * pdf.internal.scaleFactor;
+                const valueWidth = pdf.getStringUnitWidth(value) * pdf.internal.scaleFactor;
+        
+                // Определяем позицию X для текста так, чтобы он был выровнен по правому краю
+                const xPosition = pageWidth - rightMargin + 3; // 3 - небольшой дополнительный отступ между названием и значением
+        
+                // Формируем строку с названием и значением
+                const text = `${label}: ${value}`;
+        
+                // Добавляем строку в PDF
+                pdf.text(text, xPosition, currentY);
+        
+                // Переходим к следующей строке
+                currentY += lineHeight;
+            });
         };
+        
+    
+        // Получаем номер заказа
+        const deal = Order.deal ? String(Order.deal).trim() : '';
+        const orderNumber = deal ? `Заказ №${deal}` : '';
+    
+        // Убедитесь, что переменная orderNumber не содержит лишние пробелы и корректно установлена
+        console.log('Номер заказа:', orderNumber); // Отладочная информация
+    
+        // Добавляем номер заказа перед таблицей, если он существует
+        let finalY = 10; // Начальная позиция Y
+        if (orderNumber) {
+            addTextToPDF(pdf, orderNumber, finalY); // Добавляем текст номера заказа
+            finalY += 10; // Отступ после текста
+        }
     
         // Добавляем таблицу продуктов
         const tableElement = document.querySelector('.table-responsive');
-        let finalY = 10;
         if (tableElement) {
-            addTableToPDF(pdf, tableElement, finalY);
-            finalY = pdf.autoTable.previous.finalY; // Получаем последнюю позицию Y после таблицы
+            finalY = addTableToPDF(pdf, tableElement, finalY);
         }
     
+        // Подготовка данных для итоговой строки
+        const summaryData = [
+            { label: 'Кол-во изделий', value: '3' },
+            { label: 'Сумма заказа', value: '11750' },
+            { label: 'Доставка', value: '800' },
+            { label: 'Итого', value: '12550' }
+        ];
+    
         // Добавляем итоговую строку
-        const summaryElement = document.getElementById('order-summary');
-        if (summaryElement) {
-            addSummaryToPDF(pdf, summaryElement, finalY + 10); // Устанавливаем позицию Y для итоговой строки
+        addSummaryToPDF(pdf, summaryData, finalY + 10); // Устанавливаем позицию Y для итоговой строки
+    
+        // Добавляем комментарий
+        const comment = Order.comment ? String(Order.comment).trim() : ''; // Убираем возможные пробелы по краям
+        if (comment) {
+            pdf.setFontSize(13); // Восстанавливаем размер шрифта для заголовка комментария
+            pdf.text('Комментарий к заказу:', 10, finalY + 35); // Заголовок комментария
+            pdf.setFontSize(11); // Устанавливаем размер шрифта для комментария
+            const splitComment = pdf.splitTextToSize(comment, 190); // Разбиваем комментарий на строки, если он длинный
+            pdf.text(splitComment, 10, finalY + 44); // Добавляем комментарий в PDF
         }
     
         // Сохраняем PDF
         pdf.save('order-summary.pdf');
     }
-       
+    
+    
+    
+           
 }
 
 export default new OrderTableProducts();

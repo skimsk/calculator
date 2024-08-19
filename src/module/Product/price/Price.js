@@ -112,14 +112,16 @@ export default class Price {
         // Получаем массив цен по ключу 'frame_color'
         const frameColors = this.getInputPrice('frame_color');
     
-        // Если frameColors является массивом, суммируем все цены
-        const framePrice = Array.isArray(frameColors) 
-            ? frameColors.reduce((acc, item) => acc + item.price, 0) 
-            : frameColors.price;
+        // Если frameColors является массивом, фильтруем и суммируем только цены, не относящиеся к RAL
+        const framePrice = Array.isArray(frameColors)
+            ? frameColors
+                .filter(item => item.key !== 'ral' && item.key !== 'ral.min') // Исключаем RAL из подсчета
+                .reduce((acc, item) => acc + item.price, 0)
+            : (frameColors.key !== 'ral' && frameColors.key !== 'ral.min' ? frameColors.price : 0);
     
         // Сохраняем значение ralMinPrice без проверки на массив
-        const ralMinPrice = this.findPrice('frame_color', 'ral.min');
-        this.ralMinPrice = ralMinPrice ? ralMinPrice.price : 0;  // Присваиваем только значение цены или 0
+        const ralMinPriceObj = this.findPrice('frame_color', 'ral.min');
+        this.ralMinPrice = ralMinPriceObj ? ralMinPriceObj.price : 0;  // Присваиваем только значение цены или 0
     
         // Получаем цену покраски RAL
         const ralPriceObj = this.findPrice('frame_color', 'ral');
@@ -130,9 +132,10 @@ export default class Price {
             console.log(`Цена доп.покраски: ${this.ralMinPrice ? this.ralMinPrice : 'Не найдено'}`);
         }
     
-        // Возвращаем итоговую цену с учетом RAL
+        // Возвращаем только итоговую цену, исключая RAL
         return framePrice;
     }
+    
     
     
 
@@ -202,9 +205,6 @@ export default class Price {
         // Сохраняем результат
         this.OptionsPrice= price;
         
-        // Debug
-        if (this.debug === true) console.log(`calcOptionsPrice = ${price}`);
-    
         return price;
     }
     
@@ -237,6 +237,7 @@ export default class Price {
     calcMontage(productPrice) {
         let total = 0;
         const inputPriceData = this.getInputPrice('montage');
+        
         if (inputPriceData) {
             // Если встречается data в виде массива, значит есть поля которые влияют на цену монтажа
             if (inputPriceData.data) {
@@ -286,9 +287,6 @@ export default class Price {
         // Сохраняем результат
         this.MontagePrice = total;
 
-        // Debug
-        if (this.debug === true) console.log(`calcMontage = ${total}`);
-        
         return total;
     }
 

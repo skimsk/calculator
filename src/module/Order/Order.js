@@ -139,6 +139,16 @@ pickup = '0';
         return this.update(); 
     }
 
+    setComment(textcommet) {
+        this.comment = textcommet;
+        return this.update(); 
+    }
+
+    setDealId(dealid) {
+        this.deal = dealid;
+        return this.update(); 
+    }
+
     setPickup(amount) {
         // Преобразуем amount в число и проверяем его
         const numericAmount = Number(amount);
@@ -406,6 +416,8 @@ pickup = '0';
         this.ral = false;                           // RAL (true/false)
         this.products = [];                         // Массив продуктов
         this.extras = [];                           // Массив комплектующих
+        this.comment = [];
+        this.deal = [];
         this.kpi = {
             installer: 0,                           // Суммарное KPI Монтажника 
             assembler: 0                            // Суммарное KPI Сборщика 

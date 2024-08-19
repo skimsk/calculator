@@ -184,7 +184,9 @@ class OrderForm extends Form {
     inputDealID() {
         const input = new InputText('deal_id')
         input.setLabel('Идентификатор сделки');
-
+        input.on('change', () => {
+            Order.setDealId(input.getValue());
+        });
         this.addInput(input);
         return input;
     }
@@ -210,38 +212,37 @@ class OrderForm extends Form {
     }
 
     // Доставка до СДЭК
-inputCdek() {
-    const input = new Radio('cdek');
-    input.setLabel('Доставка до СДЭК (+1700р)');
-    input.addItem('0', 'Нет', true);  // По умолчанию нет доставки
-    input.addItem('1700', 'Да');  // Стоимость доставки при выборе опции
+    inputCdek() {
+        const input = new Radio('cdek');
+        input.setLabel('Доставка до СДЭК (+1700р)');
+        input.addItem('0', 'Нет', true);  // По умолчанию нет доставки
+        input.addItem('1700', 'Да');  // Стоимость доставки при выборе опции
 
-    input.on('change', () => {
-        console.log(`Cdek input value changed to: ${input.getValue()}`);
-        Order.setCdek(input.getValue());
+        input.on('change', () => {
+            console.log(`Cdek input value changed to: ${input.getValue()}`);
+            Order.setCdek(input.getValue());
         this.updatePickupAndCdekState(); // Обновляем состояние радио кнопок
-    });
+        });
 
-    this.addInput(input);
-    return input;
-}
+        this.addInput(input);
+        return input;
+    }
 
-// Самовывоз
-inputPickup() {
-    const input = new Radio('pickup');
-    input.setLabel('Самовывоз');
-    input.addItem('0', 'Нет', true);  // По умолчанию нет самовывоза
-    input.addItem('1', 'Да');  // Устанавливаем значение, если самовывоз выбран
+    // Самовывоз
+    inputPickup() {
+        const input = new Radio('pickup');
+            input.setLabel('Самовывоз');
+            input.addItem('0', 'Нет', true);  // По умолчанию нет самовывоза
+            input.addItem('1', 'Да');  // Устанавливаем значение, если самовывоз выбран
 
-    input.on('change', () => {
-        Order.setPickup(input.getValue());  // Устанавливаем значение самовывоза
-        this.updatePickupAndCdekState(); // Обновляем состояние радио кнопок и таблицы
-    });
+            input.on('change', () => {
+                Order.setPickup(input.getValue());  // Устанавливаем значение самовывоза
+                this.updatePickupAndCdekState(); // Обновляем состояние радио кнопок и таблицы
+        });
 
-    this.addInput(input);
-    return input;
-}
-
+        this.addInput(input);
+        return input;
+    }
 
 
 // Обновление состояния полей в зависимости от выбранной опции
@@ -296,6 +297,10 @@ updatePickupAndCdekState() {
         const input = new Textarea('comment')
         input.setLabel('Комментарий к заказу');
         input.setRequired(true);
+
+        input.on('change', () => {
+            Order.setComment(input.getValue());
+        });
 
         this.addInput(input);
         return input;
